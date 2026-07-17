@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abolfazl Sajadi — Digital Hardware Engineer · Hardware Security</title>
+<meta name="description" content="Abolfazl Sajadi — digital hardware engineer completing a PhD at Leiden University: RTL/SoC design, RISC-V integration, FPGA prototyping, ASIC implementation and hardware security, from RTL through tape-out of the PROACT 22 nm test chip.">
+<link rel="canonical" href="https://abolfazlsajadi.com/">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://abolfazlsajadi.com/">
+<meta property="og:title" content="Abolfazl Sajadi — Digital Hardware Engineer · Hardware Security">
+<meta property="og:description" content="Digital hardware engineer completing a PhD at Leiden University, with hands-on experience in RTL/SoC design, RISC-V integration, FPGA prototyping, ASIC implementation, and hardware security.">
+<meta property="og:image" content="https://abolfazlsajadi.com/assets/portrait.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Abolfazl Sajadi — Digital Hardware Engineer · Hardware Security">
+<meta name="twitter:description" content="RTL/SoC design, RISC-V integration, FPGA prototyping, ASIC implementation and hardware security — from RTL through tape-out.">
+<meta name="theme-color" content="#0a0f16" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%233ce8a8' stroke-width='2'/%3E%3Cpath stroke='%233ce8a8' stroke-width='2' stroke-linecap='round' d='M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4'/%3E%3Crect x='13.5' y='13.5' width='5' height='5' fill='%233ce8a8'/%3E%3C/svg%3E">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abolfazl Sajadi",
+  "url": "https://abolfazlsajadi.com/",
+  "jobTitle": "Digital Hardware Engineer",
+  "description": "Digital hardware engineer completing a PhD at Leiden University, working on hardware security and digital IC design: RTL/SoC design, RISC-V integration, FPGA prototyping and ASIC implementation through tape-out.",
+  "email": "mailto:a.sajadi@liacs.leidenuniv.nl",
+  "telephone": "+31681183983",
+  "image": "https://abolfazlsajadi.com/assets/portrait.jpg",
+  "address": { "@type": "PostalAddress", "addressLocality": "Alphen aan den Rijn", "addressCountry": "NL" },
+  "worksFor": { "@type": "Organization", "name": "Leiden University (LIACS)" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "University of Tehran" },
+    { "@type": "CollegeOrUniversity", "name": "Mohajer Technical University of Isfahan" },
+    { "@type": "CollegeOrUniversity", "name": "Amirkabir Technical and Vocational University of Markazi" }
+  ],
+  "knowsAbout": ["RTL design", "SoC design", "RISC-V", "FPGA prototyping", "ASIC implementation", "Hardware security", "Side-channel analysis", "Cryptographic hardware", "Graph neural networks"],
+  "sameAs": [
+    "https://www.linkedin.com/in/abisj",
+    "https://github.com/abolfazlsajadi",
+    "https://orcid.org/0000-0003-0657-7022",
+    "https://scholar.google.com/citations?user=6oefRlcAAAAJ&hl=en",
+    "https://www.universiteitleiden.nl/en/staffmembers/abolfazl-sajadi#tab-1"
+  ]
+}
+</script>
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Shared SVG defs: square-wave pattern + gate symbols used by hero routing -->
+<svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="sqwave" width="46" height="12" patternUnits="userSpaceOnUse">
+      <path class="wave-ln" d="M0 10 H10 V2 H27 V10 H46" fill="none" stroke-width="1.5"/>
+    </pattern>
+    <pattern id="hatch-core" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line class="hx hx-core" x1="0.5" y1="0" x2="0.5" y2="7"/>
+    </pattern>
+    <pattern id="hatch-crypto" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line class="hx hx-crypto" x1="0.5" y1="0" x2="0.5" y2="7"/>
+    </pattern>
+    <pattern id="hatch-amber" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line class="hx hx-amber" x1="0.5" y1="0" x2="0.5" y2="6"/>
+    </pattern>
+    <pattern id="cellgrid" width="14" height="14" patternUnits="userSpaceOnUse">
+      <path class="cg" d="M14 0H0v14" fill="none"/>
+    </pattern>
+    <g id="g-inv">
+      <path class="gate-body" d="M-11 -11 L10 0 L-11 11 Z"/>
+      <circle class="gate-body" cx="13.5" cy="0" r="3.2"/>
+    </g>
+    <g id="g-and">
+      <path class="gate-body" d="M-15 -12 H1 a12 12 0 0 1 0 24 H-15 Z"/>
+    </g>
+    <g id="g-xor">
+      <path class="gate-arc" d="M-17 -12 C-11.5 -4 -11.5 4 -17 12" fill="none"/>
+      <path class="gate-body" d="M-11 -12 H-3 C7 -12 13.5 -6 15.5 0 C13.5 6 7 12 -3 12 H-11 C-5.5 4 -5.5 -4 -11 -12 Z"/>
+    </g>
+    <g id="g-dff">
+      <rect class="gate-body" x="-14" y="-15" width="28" height="30" rx="1.5"/>
+      <path class="gate-arc" d="M-14 5 L-8 9 L-14 13" fill="none"/>
+    </g>
+    <g id="g-buf">
+      <path class="gate-body" d="M-11 -11 L10 0 L-11 11 Z"/>
+    </g>
+    <g id="g-nand">
+      <path class="gate-body" d="M-15 -12 H1 a12 12 0 0 1 0 24 H-15 Z"/>
+      <circle class="gate-body" cx="16.2" cy="0" r="3.2"/>
+    </g>
+    <g id="g-or">
+      <path class="gate-body" d="M-15 -12 C-4 -12 8 -8 13 0 C8 8 -4 12 -15 12 C-9 5 -9 -5 -15 -12 Z"/>
+    </g>
+    <g id="g-nor">
+      <path class="gate-body" d="M-15 -12 C-4 -12 8 -8 13 0 C8 8 -4 12 -15 12 C-9 5 -9 -5 -15 -12 Z"/>
+      <circle class="gate-body" cx="16.2" cy="0" r="3.2"/>
+    </g>
+    <g id="g-mux">
+      <path class="gate-body" d="M-10 -18 L10 -10 L10 10 L-10 18 Z"/>
+    </g>
+    <!-- Distinct per-signal separator waveforms (#12): each tile is periodic so
+         the CSS scroll (translateX by one period) loops seamlessly. Geometry and
+         cadence differ per signal; #wave_clk is kept for the thesis pages too. -->
+    <path id="wave_clk" d="M0 2 H20 V10 H40 V2 H60 V10 H80 V2 H100 V10 H120 V2 H140 V10 H160 V2 H180 V10 H200 V2 H220 V10 H240 V2 H260 V10 H280 V2 H300 V10 H320 V2 H340 V10 H360 V2 H380 V10 H400 V2 H420 V10 H440 V2 H460 V10 H480 V2 H500 V10 H520 V2 H540 V10 H560 V2 H580 V10 H600 V2 H620 V10 H640 V2 H660 V10 H680 V2 H700 V10 H720 V2 H740 V10 H760 V2 H780 V10 H800 V2 H820 V10 H840 V2 H860 V10 H880 V2 H900 V10 H920 V2 H940 V10 H960 V2 H980 V10 H1000 V2 H1020 V10 H1040 V2 H1060 V10 H1080 V2 H1100 V10 H1120 V2 H1140 V10 H1160 V2 H1180 V10 H1200 V2 H1220 V10 H1240 V2 H1260 V10 H1280 V2 H1300 V10 H1320 V2 H1340 V10 H1360 V2 H1380 V10 H1400 V2 H1420 V10 H1440 V2 H1460 V10 H1480 V2 H1500 V10 H1520 V2 H1540 V10 H1560 V2 H1580 V10 H1600 V2 H1620 V10 H1640 V2 H1660 V10 H1680 V2 H1700 V10 H1720 V2 H1740 V10 H1760 V2 H1780 V10 H1800 V2 H1820 V10 H1840 V2 H1860 V10 H1880 V2 H1900 V10 H1920 V2 H1940 V10 H1960 V2 H1980 V10 H2000 V2 H2020 V10 H2040 V2 H2060 V10 H2080 V2 H2100 V10 H2120 V2 H2140 V10 H2160 V2 H2180 V10 H2200 V2 H2220 V10 H2240 V2 H2260 V10 H2280 V2 H2300 V10 H2320 V2 H2340 V10 H2360 V2 H2380 V10 H2400 V2 H2420 V10 H2440 V2 H2460 V10 H2480 V2 H2500 V10 H2520" fill="none"/>
+    <path id="wave_en" d="M0 10 H90 V2 H116 V10 H224 H314 V2 H340 V10 H448 H538 V2 H564 V10 H672 H762 V2 H788 V10 H896 H986 V2 H1012 V10 H1120 H1210 V2 H1236 V10 H1344 H1434 V2 H1460 V10 H1568 H1658 V2 H1684 V10 H1792 H1882 V2 H1908 V10 H2016 H2106 V2 H2132 V10 H2240 H2330 V2 H2356 V10 H2464 H2554 V2 H2580 V10 H2688" fill="none"/>
+    <path id="wave_rstn" d="M0 10 H44 V2 H344 V10 H388 V2 H688 V10 H732 V2 H1032 V10 H1076 V2 H1376 V10 H1420 V2 H1720 V10 H1764 V2 H2064 V10 H2108 V2 H2408 V10 H2452 V2 H2752" fill="none"/>
+    <path id="wave_req" d="M0 10 H36 V2 H90 V10 H186 H222 V2 H276 V10 H372 H408 V2 H462 V10 H558 H594 V2 H648 V10 H744 H780 V2 H834 V10 H930 H966 V2 H1020 V10 H1116 H1152 V2 H1206 V10 H1302 H1338 V2 H1392 V10 H1488 H1524 V2 H1578 V10 H1674 H1710 V2 H1764 V10 H1860 H1896 V2 H1950 V10 H2046 H2082 V2 H2136 V10 H2232 H2268 V2 H2322 V10 H2418 H2454 V2 H2508 V10 H2604" fill="none"/>
+    <path id="wave_ack" d="M0 10 H70 V2 H122 V10 H188 H258 V2 H310 V10 H376 H446 V2 H498 V10 H564 H634 V2 H686 V10 H752 H822 V2 H874 V10 H940 H1010 V2 H1062 V10 H1128 H1198 V2 H1250 V10 H1316 H1386 V2 H1438 V10 H1504 H1574 V2 H1626 V10 H1692 H1762 V2 H1814 V10 H1880 H1950 V2 H2002 V10 H2068 H2138 V2 H2190 V10 H2256 H2326 V2 H2378 V10 H2444 H2514 V2 H2566 V10 H2632" fill="none"/>
+    <path id="wave_data" d="M0 2 H18 V10 H30 V2 H40 V10 H62 V2 H88 V10 H102 V2 H118 V10 H138 V2 H156 V10 H168 V2 H178 V10 H200 V2 H226 V10 H240 V2 H256 V10 H276 V2 H294 V10 H306 V2 H316 V10 H338 V2 H364 V10 H378 V2 H394 V10 H414 V2 H432 V10 H444 V2 H454 V10 H476 V2 H502 V10 H516 V2 H532 V10 H552 V2 H570 V10 H582 V2 H592 V10 H614 V2 H640 V10 H654 V2 H670 V10 H690 V2 H708 V10 H720 V2 H730 V10 H752 V2 H778 V10 H792 V2 H808 V10 H828 V2 H846 V10 H858 V2 H868 V10 H890 V2 H916 V10 H930 V2 H946 V10 H966 V2 H984 V10 H996 V2 H1006 V10 H1028 V2 H1054 V10 H1068 V2 H1084 V10 H1104 V2 H1122 V10 H1134 V2 H1144 V10 H1166 V2 H1192 V10 H1206 V2 H1222 V10 H1242 V2 H1260 V10 H1272 V2 H1282 V10 H1304 V2 H1330 V10 H1344 V2 H1360 V10 H1380 V2 H1398 V10 H1410 V2 H1420 V10 H1442 V2 H1468 V10 H1482 V2 H1498 V10 H1518 V2 H1536 V10 H1548 V2 H1558 V10 H1580 V2 H1606 V10 H1620 V2 H1636 V10 H1656 V2 H1674 V10 H1686 V2 H1696 V10 H1718 V2 H1744 V10 H1758 V2 H1774 V10 H1794 V2 H1812 V10 H1824 V2 H1834 V10 H1856 V2 H1882 V10 H1896 V2 H1912 V10 H1932 V2 H1950 V10 H1962 V2 H1972 V10 H1994 V2 H2020 V10 H2034 V2 H2050 V10 H2070 V2 H2088 V10 H2100 V2 H2110 V10 H2132 V2 H2158 V10 H2172 V2 H2188 V10 H2208 V2 H2226 V10 H2238 V2 H2248 V10 H2270 V2 H2296 V10 H2310 V2 H2326 V10 H2346 V2 H2364 V10 H2376 V2 H2386 V10 H2408 V2 H2434 V10 H2448 V2 H2464 V10 H2484 V2 H2502 V10 H2514 V2 H2524 V10 H2546 V2 H2572 V10 H2586 V2 H2602 V10 H2622" fill="none"/>
+    <path id="wave_valid" d="M0 10 H66 V2 H186 V10 H240 H306 V2 H426 V10 H480 H546 V2 H666 V10 H720 H786 V2 H906 V10 H960 H1026 V2 H1146 V10 H1200 H1266 V2 H1386 V10 H1440 H1506 V2 H1626 V10 H1680 H1746 V2 H1866 V10 H1920 H1986 V2 H2106 V10 H2160 H2226 V2 H2346 V10 H2400 H2466 V2 H2586 V10 H2640" fill="none"/>
+    <path id="wave_addr" d="M0 2 H22 V10 H40 V2 H68 V10 H84 V2 H98 V10 H122 V2 H144 V10 H162 V2 H190 V10 H206 V2 H220 V10 H244 V2 H266 V10 H284 V2 H312 V10 H328 V2 H342 V10 H366 V2 H388 V10 H406 V2 H434 V10 H450 V2 H464 V10 H488 V2 H510 V10 H528 V2 H556 V10 H572 V2 H586 V10 H610 V2 H632 V10 H650 V2 H678 V10 H694 V2 H708 V10 H732 V2 H754 V10 H772 V2 H800 V10 H816 V2 H830 V10 H854 V2 H876 V10 H894 V2 H922 V10 H938 V2 H952 V10 H976 V2 H998 V10 H1016 V2 H1044 V10 H1060 V2 H1074 V10 H1098 V2 H1120 V10 H1138 V2 H1166 V10 H1182 V2 H1196 V10 H1220 V2 H1242 V10 H1260 V2 H1288 V10 H1304 V2 H1318 V10 H1342 V2 H1364 V10 H1382 V2 H1410 V10 H1426 V2 H1440 V10 H1464 V2 H1486 V10 H1504 V2 H1532 V10 H1548 V2 H1562 V10 H1586 V2 H1608 V10 H1626 V2 H1654 V10 H1670 V2 H1684 V10 H1708 V2 H1730 V10 H1748 V2 H1776 V10 H1792 V2 H1806 V10 H1830 V2 H1852 V10 H1870 V2 H1898 V10 H1914 V2 H1928 V10 H1952 V2 H1974 V10 H1992 V2 H2020 V10 H2036 V2 H2050 V10 H2074 V2 H2096 V10 H2114 V2 H2142 V10 H2158 V2 H2172 V10 H2196 V2 H2218 V10 H2236 V2 H2264 V10 H2280 V2 H2294 V10 H2318 V2 H2340 V10 H2358 V2 H2386 V10 H2402 V2 H2416 V10 H2440 V2 H2462 V10 H2480 V2 H2508 V10 H2524 V2 H2538 V10 H2562" fill="none"/>
+    <path id="wave_ready" d="M0 10 H30 V2 H180 V10 H210 V2 H360 V10 H390 V2 H540 V10 H570 V2 H720 V10 H750 V2 H900 V10 H930 V2 H1080 V10 H1110 V2 H1260 V10 H1290 V2 H1440 V10 H1470 V2 H1620 V10 H1650 V2 H1800 V10 H1830 V2 H1980 V10 H2010 V2 H2160 V10 H2190 V2 H2340 V10 H2370 V2 H2520" fill="none"/>
+    <path id="wave_csn" d="M0 2 H96 V10 H126 V2 H276 H372 V10 H402 V2 H552 H648 V10 H678 V2 H828 H924 V10 H954 V2 H1104 H1200 V10 H1230 V2 H1380 H1476 V10 H1506 V2 H1656 H1752 V10 H1782 V2 H1932 H2028 V10 H2058 V2 H2208 H2304 V10 H2334 V2 H2484 H2580 V10 H2610 V2 H2760" fill="none"/>
+    <path id="wave_wren" d="M0 10 H40 V2 H68 V10 H122 V2 H144 V10 H184 V2 H212 V10 H266 V2 H288 V10 H328 V2 H356 V10 H410 V2 H432 V10 H472 V2 H500 V10 H554 V2 H576 V10 H616 V2 H644 V10 H698 V2 H720 V10 H760 V2 H788 V10 H842 V2 H864 V10 H904 V2 H932 V10 H986 V2 H1008 V10 H1048 V2 H1076 V10 H1130 V2 H1152 V10 H1192 V2 H1220 V10 H1274 V2 H1296 V10 H1336 V2 H1364 V10 H1418 V2 H1440 V10 H1480 V2 H1508 V10 H1562 V2 H1584 V10 H1624 V2 H1652 V10 H1706 V2 H1728 V10 H1768 V2 H1796 V10 H1850 V2 H1872 V10 H1912 V2 H1940 V10 H1994 V2 H2016 V10 H2056 V2 H2084 V10 H2138 V2 H2160 V10 H2200 V2 H2228 V10 H2282 V2 H2304 V10 H2344 V2 H2372 V10 H2426 V2 H2448 V10 H2488 V2 H2516 V10 H2570 V2 H2592" fill="none"/>
+    <path id="wave_irq" d="M0 10 H120 V2 H130 V10 H200 V2 H210 V10 H330 V2 H340 V10 H410 V2 H420 V10 H540 V2 H550 V10 H620 V2 H630 V10 H750 V2 H760 V10 H830 V2 H840 V10 H960 V2 H970 V10 H1040 V2 H1050 V10 H1170 V2 H1180 V10 H1250 V2 H1260 V10 H1380 V2 H1390 V10 H1460 V2 H1470 V10 H1590 V2 H1600 V10 H1670 V2 H1680 V10 H1800 V2 H1810 V10 H1880 V2 H1890 V10 H2010 V2 H2020 V10 H2090 V2 H2100 V10 H2220 V2 H2230 V10 H2300 V2 H2310 V10 H2430 V2 H2440 V10 H2510 V2 H2520" fill="none"/>
+    <path id="wave_done" d="M0 10 H200 V2 H244 V10 H444 V2 H488 V10 H688 V2 H732 V10 H932 V2 H976 V10 H1176 V2 H1220 V10 H1420 V2 H1464 V10 H1664 V2 H1708 V10 H1908 V2 H1952 V10 H2152 V2 H2196 V10 H2396 V2 H2440 V10 H2640 V2 H2684" fill="none"/>
+  </defs>
+</svg>
+
+<header class="site-head">
+  <nav class="nav container" aria-label="Primary">
+    <a class="brand mono" href="#top">
+      <svg class="brand-chip" viewBox="0 0 32 32" width="22" height="22" aria-hidden="true" focusable="false">
+        <rect x="8" y="8" width="16" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" d="M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4"/>
+        <rect x="13.5" y="13.5" width="5" height="5" fill="currentColor" stroke="none"/>
+      </svg>
+      <span>A_SAJADI</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path class="i-bars" d="M3 6h18M3 12h18M3 18h18"/>
+        <path class="i-x" d="M5 5l14 14M19 5L5 19"/>
+      </svg>
+    </button>
+    <ul id="nav-list" class="nav-list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#proact">PROACT Chip</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#theses">Theses</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-btn" type="button" aria-label="Toggle color theme">
+      <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4.5"/>
+        <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7"/>
+      </svg>
+      <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+        <path d="M20.6 14.4A8.7 8.7 0 0 1 9.6 3.4a8.7 8.7 0 1 0 11 11Z"/>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ================================ HERO ================================ -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1440 780" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <!-- Electrically-sensible decorative schematic (#14): a dense little logic
+             network, richer than v1. Every multi-input gate (XOR/AND/NAND/OR/NOR/MUX)
+             has >=2 distinct input nets; INV/BUF exactly one; each DFF has D + a clk
+             wedge in and Q out. Signal flow is strictly inputs (left / off-canvas
+             ports) -> output (right); no gate output feeds back into its own input
+             (no combinational loops). Wires terminate on gate pins or viewport ports
+             (no mid-air dangles); crossing nets are plain crossovers (no dot); driven
+             pins / gate outputs carry vias. Nets are labelled in tiny mono. -->
+
+        <!-- ===== TOP CHAIN: a,b->XOR(s1) ; c,d->AND(s2) ; s1,s2->OR(s3) ;
+                    s3,clk->DFF(q) ; q,e->NAND(n1) ; n1->INV(y) ===== -->
+        <path class="trace" d="M-20 114 H233"/>
+        <path class="trace" d="M-20 126 H233"/>
+        <path class="trace" d="M-20 204 H235"/>
+        <path class="trace" d="M-20 216 H235"/>
+        <path class="trace" d="M266 120 H360 V159 H457"/>
+        <path class="trace" d="M263 210 H360 V171 H457"/>
+        <path class="trace" d="M640 -20 V174 H666"/>
+        <path class="trace" d="M483 165 H660 V158 H666"/>
+        <path class="trace" d="M694 158 H800 V114 H885"/>
+        <path class="trace" d="M840 -20 V126 H885"/>
+        <path class="trace" d="M919 120 H1069"/>
+        <path class="trace" d="M1097 120 H1460"/>
+
+        <!-- ===== BOTTOM CHAIN: f->BUF(fb) ; fb,g->NOR(n2) ; n2,h->XOR(x2) ;
+                    x2,w,sel->MUX(m1) ; m1,clk2->DFF(q2) ===== -->
+        <path class="trace" d="M-20 640 H189"/>
+        <path class="trace" d="M210 640 H360 V654 H417"/>
+        <path class="trace" d="M300 800 V666 H417"/>
+        <path class="trace" d="M449 660 H540 V654 H643"/>
+        <path class="trace" d="M560 800 V666 H643"/>
+        <path class="trace" d="M676 660 H790 V638 H890"/>
+        <path class="trace" d="M820 800 V662 H890"/>
+        <path class="trace" d="M900 800 V664"/>
+        <path class="trace" d="M910 650 H1040 V643 H1136"/>
+        <path class="trace" d="M1080 800 V659 H1136"/>
+        <path class="trace" d="M1164 643 H1460"/>
+
+        <!-- ===== RIGHT CLUSTER (behind / around the portrait):
+                    i,j->OR(r1) ; u,v->NAND(r2) ===== -->
+        <path class="trace" d="M1150 -20 V324 H1217"/>
+        <path class="trace" d="M1120 -20 V336 H1217"/>
+        <path class="trace" d="M1243 330 H1460"/>
+        <path class="trace" d="M1120 800 V464 H1235"/>
+        <path class="trace" d="M1155 800 V476 H1235"/>
+        <path class="trace" d="M1269 470 H1460"/>
+
+        <!-- animated pulses run inputs -> output along connected valid paths -->
+        <path class="pulse p1" d="M-20 114 H233 M266 120 H360 V159 H457 M483 165 H660 V158 H666 M694 158 H800 V114 H885 M919 120 H1069 M1097 120 H1460" pathLength="100"/>
+        <path class="pulse p2" d="M-20 640 H189 M210 640 H360 V654 H417 M449 660 H540 V654 H643 M676 660 H790 V638 H890 M910 650 H1040 V643 H1136 M1164 643 H1460" pathLength="100"/>
+        <path class="pulse p3" d="M1150 -20 V324 H1217 M1243 330 H1460" pathLength="100"/>
+
+        <!-- vias mark gate outputs / driven pins -->
+        <circle class="via" cx="266" cy="120" r="4"/>
+        <circle class="via" cx="263" cy="210" r="4"/>
+        <circle class="via" cx="483" cy="165" r="4"/>
+        <circle class="via" cx="694" cy="158" r="4"/>
+        <circle class="via" cx="919" cy="120" r="4"/>
+        <circle class="via" cx="1097" cy="120" r="4"/>
+        <circle class="via" cx="210" cy="640" r="4"/>
+        <circle class="via" cx="449" cy="660" r="4"/>
+        <circle class="via" cx="676" cy="660" r="4"/>
+        <circle class="via" cx="910" cy="650" r="4"/>
+        <circle class="via" cx="1164" cy="643" r="4"/>
+        <circle class="via" cx="1243" cy="330" r="4"/>
+        <circle class="via" cx="1269" cy="470" r="4"/>
+
+        <!-- gates: flat/left side = inputs, rounded/bubble/right side = output -->
+        <use href="#g-xor"  x="250"  y="120"/>
+        <use href="#g-and"  x="250"  y="210"/>
+        <use href="#g-or"   x="470"  y="165"/>
+        <use href="#g-dff"  x="680"  y="165"/>
+        <use href="#g-nand" x="900"  y="120"/>
+        <use href="#g-inv"  x="1080" y="120"/>
+        <use href="#g-buf"  x="200"  y="640"/>
+        <use href="#g-nor"  x="430"  y="660"/>
+        <use href="#g-xor"  x="660"  y="660"/>
+        <use href="#g-mux"  x="900"  y="650"/>
+        <use href="#g-dff"  x="1150" y="650"/>
+        <use href="#g-or"   x="1230" y="330"/>
+        <use href="#g-nand" x="1250" y="470"/>
+
+        <!-- tiny mono net labels -->
+        <text class="net-lbl" x="30"   y="110">a</text>
+        <text class="net-lbl" x="30"   y="139">b</text>
+        <text class="net-lbl" x="30"   y="200">c</text>
+        <text class="net-lbl" x="30"   y="229">d</text>
+        <text class="net-lbl" x="300"  y="110">s1</text>
+        <text class="net-lbl" x="300"  y="236">s2</text>
+        <text class="net-lbl" x="500"  y="154">s3</text>
+        <text class="net-lbl" x="648"  y="150">clk</text>
+        <text class="net-lbl" x="702"  y="150">q</text>
+        <text class="net-lbl" x="846"  y="116">e</text>
+        <text class="net-lbl" x="1000" y="112">n1</text>
+        <text class="net-lbl" x="1150" y="114">y</text>
+        <text class="net-lbl" x="30"   y="634">f</text>
+        <text class="net-lbl" x="272"  y="690">g</text>
+        <text class="net-lbl" x="532"  y="690">h</text>
+        <text class="net-lbl" x="690"  y="650">x2</text>
+        <text class="net-lbl" x="800"  y="694">w</text>
+        <text class="net-lbl" x="882"  y="694">sel</text>
+        <text class="net-lbl" x="1000" y="642">m1</text>
+        <text class="net-lbl" x="1160" y="318">i</text>
+        <text class="net-lbl" x="1126" y="352">j</text>
+        <text class="net-lbl" x="1094" y="694">u</text>
+        <text class="net-lbl" x="1176" y="694">v</text>
+      </svg>
+      <!-- security layer: slowly flipping binary streams (populated by JS; static without it) -->
+      <div class="binstream">
+        <div class="bin-col bc1"></div>
+        <div class="bin-col bc2"></div>
+        <div class="bin-col bc3"></div>
+        <div class="bin-col bc4"></div>
+      </div>
+      <!-- security layer: AES S-box excerpt, first 64 bytes -->
+      <div class="sbox mono">63 7c 77 7b f2 6b 6f c5<br>30 01 67 2b fe d7 ab 76<br>ca 82 c9 7d fa 59 47 f0<br>ad d4 a2 af 9c a4 72 c0<br>b7 fd 93 26 36 3f f7 cc<br>34 a5 e5 f1 71 d8 31 15<br>04 c7 23 c3 18 96 05 9a<br>07 12 80 e2 eb 27 b2 75</div>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow mono" aria-hidden="true" data-scramble>// rtl → tape-out · hardware security</p>
+        <h1>Abolfazl Sajadi</h1>
+        <p class="role">Digital Hardware Engineer&ensp;·&ensp;Hardware Security</p>
+        <p class="status-chip mono"><span class="chip-dot" aria-hidden="true"></span>TAPED OUT — GF 22FDX</p>
+        <p class="tagline">Digital hardware engineer completing a PhD at Leiden University, with hands-on experience in RTL/SoC design, RISC-V integration, FPGA prototyping, ASIC implementation, and hardware security. Experienced in taking digital systems from RTL and verification through physical implementation and tape-out.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="assets/Abolfazl_Sajadi_CV.pdf" download>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10m0 0l-4.5-4.5M12 14l4.5-4.5M4 19h16"/></svg>
+            Download CV (PDF)
+          </a>
+          <a class="btn btn-ghost" href="#contact">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+            Contact
+          </a>
+        </div>
+        <ul class="contact-row" aria-label="Profile links">
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Alphen aan den Rijn, The Netherlands</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+            <a href="mailto:a.sajadi@liacs.leidenuniv.nl" aria-label="Email a.sajadi@liacs.leidenuniv.nl">a.sajadi@liacs.leidenuniv.nl</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.9v2.6a1.9 1.9 0 0 1-2.1 1.9 18.9 18.9 0 0 1-8.2-2.9 18.6 18.6 0 0 1-5.7-5.7A18.9 18.9 0 0 1 2.1 4.6 1.9 1.9 0 0 1 4 2.5h2.6a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.7a1.9 1.9 0 0 1-.4 2L7.6 10a15.2 15.2 0 0 0 5.9 5.9l1.2-1.2a1.9 1.9 0 0 1 2-.4c.9.4 1.8.6 2.7.7a1.9 1.9 0 0 1 1.6 1.9Z"/></svg>
+            <a href="tel:+31681183983" aria-label="Call +31 6 81183983">+31 6 81183983</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5V17M7.5 7.2v.1M12 17v-4a2.4 2.4 0 0 1 4.8 0v4"/></svg>
+            <a href="https://www.linkedin.com/in/abisj" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in a new tab)">LinkedIn</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+            <a href="https://github.com/abolfazlsajadi" target="_blank" rel="noopener" aria-label="GitHub profile (opens in a new tab)">GitHub</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.3"/><path d="M8.4 10v7M8.4 6.9v.1"/><path d="M11.6 10h2.7a3.5 3.5 0 0 1 0 7h-2.7Z" stroke-linejoin="round"/></svg>
+            <a href="https://orcid.org/0000-0003-0657-7022" target="_blank" rel="noopener" aria-label="ORCID profile (opens in a new tab)">ORCID</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.5 9 12 14l9.5-5L12 4Z"/><path d="M6.3 11.7V16c0 1.6 2.6 3 5.7 3s5.7-1.4 5.7-3v-4.3"/></svg>
+            <a href="https://scholar.google.com/citations?user=6oefRlcAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile (opens in a new tab)">Google Scholar</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M5 21V10M19 21V10M9 21v-7h6v7M12 3 3 8h18l-9-5Z"/></svg>
+            <a href="https://www.universiteitleiden.nl/en/staffmembers/abolfazl-sajadi#tab-1" target="_blank" rel="noopener" aria-label="Leiden University staff page (opens in a new tab)">Leiden staff page</a>
+          </li>
+        </ul>
+      </div>
+
+      <figure class="hero-portrait">
+        <span class="corner c-tl" aria-hidden="true"></span>
+        <span class="corner c-tr" aria-hidden="true"></span>
+        <span class="corner c-bl" aria-hidden="true"></span>
+        <span class="corner c-br" aria-hidden="true"></span>
+        <img src="assets/portrait.jpg" alt="Portrait of Abolfazl Sajadi" width="800" height="800" fetchpriority="high">
+        <figcaption class="portrait-cap">
+          <span class="cap-name" data-scramble>Abolfazl &ldquo;Abish&rdquo; Sajadi</span>
+          <span class="cap-org mono" data-scramble>Leiden University (LIACS)</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================================ ABOUT ================================ -->
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M2 12h4M18 12h4"/><path d="M6 4.8 18 12 6 19.2Z"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">01 · PROFILE</p>
+          <h2 id="about-h">About</h2>
+        </div>
+        <span class="sec-signal mono">clk</span>
+        <span class="sec-rule sig-clk" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_clk"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0x637c…ab76</span>
+      </header>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm a digital hardware engineer completing my PhD at LIACS, Leiden University, working on hardware security and digital IC design in the PROACT project. I designed the full PROACT dual-core RISC-V cryptographic SoC — the RTL architecture, full-chip integration and all peripheral &amp; control logic (SPI, a configurable UART, control/status registers and a PRNG) — integrating third-party IP such as the Ibex RISC-V core and the AES, Ascon and Xoodyak cryptographic co-processors, first prototyping on Xilinx FPGAs and then taking the design to a 22&nbsp;nm ASIC: synthesis in Cadence Genus for GlobalFoundries 22FDX, functional and gate-level verification in Xcelium, and place-and-route and sign-off with the imec team, through to tape-out.</p>
+          <p>I also developed the chip's software stack — C and Python libraries and a control GUI — and its documentation, and designed a ChipWhisperer CW308 target board in Altium with an automated CPA/TVLA side-channel flow. I'm strongest in the front-end (RTL design, synthesis, functional verification), with hands-on FPGA prototyping, software and side-channel board experience.</p>
+        </div>
+        <aside class="interests-card card reveal" aria-labelledby="interests-h">
+          <p class="card-tag mono" aria-hidden="true">RESEARCH_INTERESTS</p>
+          <h3 id="interests-h" class="visually-hidden">Research interests</h3>
+          <ul class="tags">
+            <li>Hardware security (offensive &amp; defensive)</li>
+            <li>Pre-silicon side-channel leakage analysis</li>
+            <li>ASIC design &amp; cryptographic hardware</li>
+            <li>HW/SW co-design with FPGAs</li>
+            <li>Machine learning / GNNs applied to hardware security</li>
+            <li>Hardware implementation of ML algorithms</li>
+            <li>PUF-based lightweight authentication</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== CAREER & EDUCATION TIMELINE ====================== -->
+  <section class="section" id="timeline" aria-labelledby="timeline-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M2 16h4V8h6v8h6V8h4"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">02 · TIMING DIAGRAM</p>
+          <h2 id="timeline-h">Career &amp; Education</h2>
+        </div>
+        <span class="sec-signal mono">en</span>
+        <span class="sec-rule sig-en" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_en"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0xca82…47f0</span>
+      </header>
+
+      <figure class="timing-figure reveal" aria-label="Timing diagram of career and education, 2011 to 2027, in four tracks. Ph.D. at Leiden University (LIACS), August 2022 to February 2027 expected and ongoing; M.Sc. combined with a full-time research assistantship at the University of Tehran (Digital Electronic Systems, DVD-ES Lab), 2018 to 2021; B.Sc. at Mohajer Technical University of Isfahan, 2014 to 2017; Associate degree at Amirkabir Technical and Vocational University of Markazi, Arak, 2011 to 2013.">
+        <div class="timing-scroll" tabindex="0" role="group" aria-label="Career and education timing diagram, horizontally scrollable">
+          <svg class="timing" viewBox="0 0 1100 440" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+            <!-- vertical year grid -->
+            <g class="tm-grid">
+              <path d="M60 36V400M180 36V400M300 36V400M420 36V400M540 36V400M660 36V400M780 36V400M900 36V400M1020 36V400"/>
+            </g>
+
+            <!-- Row 1: Ph.D. -->
+            <text class="tm-label" x="60" y="52">PH.D. — LEIDEN UNIVERSITY (LIACS) · COMPUTER SCIENCE</text>
+            <text class="tm-date" x="1020" y="52" text-anchor="end">AUG 2022 → FEB 2027 · ONGOING</text>
+            <rect class="tm-fill" x="756" y="72" width="236" height="28"/>
+            <path class="tm-wave" d="M60 100 H756 V72 H992" fill="none"/>
+            <path class="tm-wave tm-dash" d="M992 72 H1026" fill="none"/>
+            <circle class="tm-edge" cx="756" cy="72" r="3.2"/>
+
+            <!-- Row 2: M.Sc. + Research Assistant (one combined track) -->
+            <text class="tm-label" x="60" y="144">M.SC. + RESEARCH ASSISTANT — UNIVERSITY OF TEHRAN (DVD-ES)</text>
+            <text class="tm-date" x="1020" y="144" text-anchor="end">2018 – 2021</text>
+            <rect class="tm-fill" x="480" y="164" width="180" height="28"/>
+            <path class="tm-wave" d="M60 192 H480 V164 H660 V192 H1020" fill="none"/>
+            <circle class="tm-edge" cx="480" cy="164" r="3.2"/>
+
+            <!-- Row 3: B.Sc. -->
+            <text class="tm-label" x="60" y="236">B.SC. — MOHAJER TECHNICAL UNIVERSITY (MTU), ISFAHAN</text>
+            <text class="tm-date" x="1020" y="236" text-anchor="end">2014 – 2017</text>
+            <rect class="tm-fill" x="240" y="256" width="180" height="28"/>
+            <path class="tm-wave" d="M60 284 H240 V256 H420 V284 H1020" fill="none"/>
+            <circle class="tm-edge" cx="240" cy="256" r="3.2"/>
+
+            <!-- Row 4: Associate -->
+            <text class="tm-label" x="60" y="328">ASSOCIATE — AMIRKABIR TECHNICAL &amp; VOCATIONAL UNIVERSITY, ARAK</text>
+            <text class="tm-date" x="1020" y="328" text-anchor="end">2011 – 2013</text>
+            <rect class="tm-fill" x="60" y="348" width="120" height="28"/>
+            <path class="tm-wave" d="M60 348 H180 V376 H1020" fill="none"/>
+            <circle class="tm-edge" cx="180" cy="376" r="3.2"/>
+
+            <!-- year ruler -->
+            <g class="tm-axis">
+              <path d="M60 400 H1020"/>
+              <path d="M60 400v5M120 400v5M180 400v5M240 400v5M300 400v5M360 400v5M420 400v5M480 400v5M540 400v5M600 400v5M660 400v5M720 400v5M780 400v5M840 400v5M900 400v5M960 400v5M1020 400v5"/>
+            </g>
+            <g class="tm-year">
+              <text x="60" y="420">2011</text><text x="180" y="420">2013</text><text x="300" y="420">2015</text><text x="420" y="420">2017</text><text x="540" y="420">2019</text><text x="660" y="420">2021</text><text x="780" y="420">2023</text><text x="900" y="420">2025</text><text x="1020" y="420">2027</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption class="fig-caption mono">FIG. 1 — CAREER &amp; EDUCATION TIMING DIAGRAM, 2011–2027 <span class="scroll-hint">· drag sideways to see the full diagram</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================================ EXPERIENCE ================================ -->
+  <section class="section" id="experience" aria-labelledby="experience-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><rect x="6" y="4" width="12" height="16" rx="1"/><path d="M6 15l3.2 1.8L6 18.6M2 8h4M2 16h4M18 8h4"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">03 · WORK HISTORY</p>
+          <h2 id="experience-h">Experience</h2>
+        </div>
+        <span class="sec-signal mono">rst_n</span>
+        <span class="sec-rule sig-rstn" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_rstn"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0xadd4…72c0</span>
+      </header>
+
+      <div class="timeline">
+        <article class="tl-item reveal">
+          <div class="tl-node" aria-hidden="true"></div>
+          <p class="tl-date mono">AUG 2022 – FEB 2027 · ONGOING</p>
+          <h3>Doctoral Researcher — Digital IC &amp; Hardware Security</h3>
+          <p class="tl-org">Leiden University (LIACS) · Leiden, NL</p>
+          <ul class="bullets">
+            <li>Designed the full PROACT dual-core RISC-V cryptographic SoC — RTL architecture, full-chip integration and all peripheral &amp; control logic (SPI, configurable UART, control/status registers, PRNG) — integrating the Ibex core and the AES, Ascon and Xoodyak co-processors as third-party/partner IP, from RTL to full chip.</li>
+            <li>Prototyped and validated the SoC on Xilinx Artix-7 and Zynq-7000 FPGAs using SPI/UART interfaces; developed C and Python libraries, a control GUI, and user documentation.</li>
+            <li>Synthesized the SoC for GlobalFoundries 22FDX using Cadence Genus and performed functional and SDF-annotated gate-level verification in Xcelium.</li>
+            <li>Contributed to ASIC physical implementation and MPW tape-out with the imec team, including place-and-route, sign-off, GDSII generation, and design of the 28-pin DIP package bonding diagram.</li>
+            <li>Built a ChipWhisperer CW308 target board (Altium) and automated CPA/TVLA side-channel evaluation of AES on the RISC-V core.</li>
+          </ul>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-node" aria-hidden="true"></div>
+          <p class="tl-date mono">2018 – 2021</p>
+          <h3>M.Sc. + Research Assistant — Digital Electronic Systems</h3>
+          <p class="tl-org">University of Tehran (DVD-ES Lab) · Tehran, IR</p>
+          <ul class="bullets">
+            <li>M.Sc. (GPA 18.28/20, ranked 1st) alongside full-time research at the DVD-ES Lab: designed and evaluated ML-resistant PUF authentication protocols (DC-PUF, SQ-PUF) on FPGA and implemented CNN/SVM modeling attacks in Python (published in <em>J. Network &amp; Computer Applications</em>).</li>
+          </ul>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-node" aria-hidden="true"></div>
+          <p class="tl-date mono">2020 – 2021</p>
+          <h3>Hardware Engineer</h3>
+          <p class="tl-org">Ryan iMachines</p>
+          <ul class="bullets">
+            <li>ML-algorithm design, RTL (Verilog) implementation, test and debug.</li>
+          </ul>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-node" aria-hidden="true"></div>
+          <p class="tl-date mono">2020</p>
+          <h3>Hardware Engineer (project-based)</h3>
+          <p class="tl-org">Shahab Co.</p>
+          <ul class="bullets">
+            <li>Home Meter Monitoring Device: ESP32 + AVR (ATmega8) firmware and a custom PCB designed in Altium — <a href="#projects">see project card</a>.</li>
+          </ul>
+        </article>
+
+        <article class="tl-item tl-earlier reveal">
+          <div class="tl-node" aria-hidden="true"></div>
+          <p class="tl-date mono">EARLIER</p>
+          <p class="tl-compact">Private tutor, VHDL &amp; FPGA — OstadSalam.ir (2020–21)&ensp;·&ensp;Web designer — ETC Co. (2019), four commercial WordPress sites</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- security divider: CPA power trace -->
+  <div class="cpa-divider" aria-hidden="true">
+    <div class="container">
+      <svg viewBox="0 0 1200 90" preserveAspectRatio="none" focusable="false">
+        <path class="cpa-trace" d="M0 55.7 L6 56.7 L12 57.3 L18 50.0 L24 53.7 L30 53.1 L36 54.8 L42 56.7 L48 53.1 L54 54.3 L60 51.7 L66 52.2 L72 49.9 L78 53.4 L84 56.2 L90 56.5 L96 51.4 L102 57.9 L108 54.1 L114 55.5 L120 62.0 L126 55.3 L132 63.1 L138 54.6 L144 54.5 L150 60.3 L156 54.7 L162 54.3 L168 60.3 L174 55.1 L180 61.0 L186 53.6 L192 56.5 L198 54.0 L204 63.5 L210 60.7 L216 57.1 L222 56.4 L228 59.6 L234 51.5 L240 50.9 L246 55.7 L252 56.9 L258 51.6 L264 54.5 L270 52.5 L276 54.7 L282 56.2 L288 60.2 L294 59.0 L300 55.5 L306 52.3 L312 54.8 L318 51.1 L324 52.9 L330 49.5 L336 52.2 L342 56.3 L348 59.1 L354 60.9 L360 62.2 L366 54.8 L372 55.1 L378 56.5 L384 62.7 L390 56.7 L396 61.4 L402 53.3 L408 55.2 L414 54.1 L420 55.6 L426 57.8 L432 54.0 L438 53.4 L444 60.9 L450 59.0 L456 55.8 L462 55.7 L468 57.5 L474 56.0 L480 49.8 L486 55.8 L492 55.9 L498 50.9 L504 55.1 L510 49.3 L516 55.7 L522 50.3 L528 56.3 L534 51.6 L540 53.0 L546 53.0 L552 57.8 L558 57.8 L564 58.8 L570 57.1 L576 52.4 L582 58.9 L588 58.0 L594 55.7 L600 60.9 L606 60.1 L612 61.8 L618 57.7 L624 63.2 L630 54.1 L636 57.4 L642 55.6 L648 56.5 L654 56.5 L660 51.6 L666 52.4 L672 53.4 L678 61.7 L684 56.5 L690 53.2 L696 56.3 L702 57.2 L708 55.1 L714 59.0 L720 52.9 L726 53.1 L732 63.7 L738 64.0 L744 63.8 L750 61.3 L756 50.6 L762 39.3 L768 28.1 L774 22.6 L780 19.3 L786 17.7 L792 32.0 L798 41.5 L804 49.6 L810 61.9 L816 63.6 L822 67.6 L828 60.0 L834 57.8 L840 60.8 L846 58.4 L852 58.1 L858 62.2 L864 62.9 L870 59.8 L876 63.3 L882 58.3 L888 53.0 L894 53.3 L900 60.5 L906 52.5 L912 53.6 L918 53.9 L924 61.1 L930 54.1 L936 60.0 L942 53.8 L948 58.3 L954 57.2 L960 58.2 L966 50.3 L972 55.9 L978 48.8 L984 52.1 L990 55.8 L996 51.2 L1002 53.2 L1008 59.2 L1014 52.1 L1020 58.3 L1026 61.2 L1032 53.9 L1038 54.2 L1044 57.3 L1050 58.9 L1056 55.2 L1062 54.6 L1068 53.7 L1074 56.3 L1080 56.2 L1086 55.6 L1092 61.8 L1098 62.6 L1104 59.9 L1110 57.2 L1116 56.3 L1122 55.1 L1128 58.4 L1134 54.7 L1140 59.9 L1146 56.5 L1152 59.4 L1158 51.7 L1164 50.3 L1170 54.0 L1176 53.5 L1182 57.5 L1188 53.2 L1194 60.0 L1200 56.5"/>
+        <path class="cpa-peak-line" d="M786 8 V82"/>
+        <path class="cpa-peak" d="M726 53.1 L732 63.7 L738 64.0 L744 63.8 L750 61.3 L756 50.6 L762 39.3 L768 28.1 L774 22.6 L780 19.3 L786 17.7 L792 32.0 L798 41.5 L804 49.6 L810 61.9 L816 63.6 L822 67.6 L828 60.0 L834 57.8 L840 60.8"/>
+                <rect class="cpa-sweep" x="0" y="6" width="2" height="78"/>
+      </svg>
+      <span class="cpa-label mono">CPA · ρ PEAK</span>
+    </div>
+  </div>
+
+  <!-- ================================ PROACT CHIP ================================ -->
+  <section class="section section-flag" id="proact" aria-labelledby="proact-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M10 7V3M14 7V3M10 21v-4M14 21v-4M7 10H3M7 14H3M21 10h-4M21 14h-4"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">04 · FLAGSHIP SILICON</p>
+          <h2 id="proact-h">The PROACT Chip</h2>
+        </div>
+        <span class="sec-signal mono">req</span>
+        <span class="sec-rule sig-req" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_req"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0xb7fd…f7cc</span>
+      </header>
+
+      <div class="proact-grid">
+        <div class="proact-text reveal">
+          <p class="lede">A hardware-security research SoC taken from RTL to a fabricated 22&nbsp;nm ASIC — dual 32-bit RISC-V architecture: a controller core plus an Ibex software-executor core, with AES, Ascon and Xoodyak crypto co-processors.</p>
+
+          <div class="stat-tiles" role="list" aria-label="Chip facts">
+            <div class="stat" role="listitem"><span class="stat-v mono">2.009 × 2.055 mm²</span><span class="stat-k">die, incl. scribe</span></div>
+            <div class="stat" role="listitem"><span class="stat-v mono">GF 22FDX</span><span class="stat-k">22 nm process</span></div>
+            <div class="stat" role="listitem"><span class="stat-v mono">Europractice MPW</span><span class="stat-k">50 packaged units</span></div>
+            <div class="stat stat-live" role="listitem"><span class="stat-v mono">Taped out</span><span class="stat-k">fabrication in progress</span></div>
+          </div>
+
+          <h3 class="mono sub-label">// my role</h3>
+          <ul class="bullets">
+            <li><strong>Full-chip design &amp; integration:</strong> RTL architecture, full-chip integration and all peripheral &amp; control logic (SPI bridge, configurable UART, control/status registers, PRNG) — integrating the Ibex core and the AES, Ascon and Xoodyak co-processors as third-party IP.</li>
+            <li><strong>FPGA prototyping:</strong> ZYBO and PYNQ-Z2 boards.</li>
+            <li><strong>Software stack:</strong> C/Python libraries, control GUI, and documentation.</li>
+          </ul>
+
+          <details class="proact-details" open data-collapse>
+            <summary><span class="mono">// asic flow &amp; side-channel platform</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <ul class="bullets">
+              <li>Synthesis in Cadence Genus for GlobalFoundries 22FDX; functional and SDF-annotated gate-level verification in Xcelium.</li>
+              <li>Place-and-route, sign-off and GDSII with the imec team; 28-pin ceramic DIP bonding diagram.</li>
+              <li>Custom ChipWhisperer CW308 target board (Altium, 4-layer, 0.01&nbsp;Ω shunt) with an automated CPA/TVLA evaluation flow.</li>
+            </ul>
+          </details>
+        </div>
+
+        <figure class="floorplan reveal" aria-labelledby="fp-cap">
+          <svg class="fp" viewBox="0 0 420 430" aria-hidden="true" focusable="false">
+            <!-- die outline + seal ring -->
+            <rect class="die" x="3" y="3" width="414" height="424"/>
+            <rect class="seal" x="9" y="9" width="402" height="412"/>
+            <!-- pad ring: 7 pads per side, 28-pin -->
+            <g class="pads">
+              <rect x="53" y="14" width="26" height="16"/><rect x="101" y="14" width="26" height="16"/><rect x="149" y="14" width="26" height="16"/><rect x="197" y="14" width="26" height="16"/><rect x="245" y="14" width="26" height="16"/><rect x="293" y="14" width="26" height="16"/><rect x="341" y="14" width="26" height="16"/>
+              <rect x="53" y="400" width="26" height="16"/><rect x="101" y="400" width="26" height="16"/><rect x="149" y="400" width="26" height="16"/><rect x="197" y="400" width="26" height="16"/><rect x="245" y="400" width="26" height="16"/><rect x="293" y="400" width="26" height="16"/><rect x="341" y="400" width="26" height="16"/>
+              <rect x="14" y="58" width="16" height="26"/><rect x="14" y="106" width="16" height="26"/><rect x="14" y="154" width="16" height="26"/><rect x="14" y="202" width="16" height="26"/><rect x="14" y="250" width="16" height="26"/><rect x="14" y="298" width="16" height="26"/><rect x="14" y="346" width="16" height="26"/>
+              <rect x="390" y="58" width="16" height="26"/><rect x="390" y="106" width="16" height="26"/><rect x="390" y="154" width="16" height="26"/><rect x="390" y="202" width="16" height="26"/><rect x="390" y="250" width="16" height="26"/><rect x="390" y="298" width="16" height="26"/><rect x="390" y="346" width="16" height="26"/>
+            </g>
+            <!-- core area with standard-cell grid texture -->
+            <rect class="core" x="54" y="52" width="312" height="326"/>
+            <rect x="54" y="52" width="312" height="326" fill="url(#cellgrid)"/>
+            <!-- base routing (Manhattan) -->
+            <g class="routes">
+              <path d="M204 90h12M204 100h12M204 110h12"/>
+              <path d="M100 168v18"/>
+              <path d="M300 168v18"/>
+              <path d="M108 280v18"/>
+              <path d="M210 280v18"/>
+              <path d="M250 168v8h-90v112h30v10"/>
+              <path d="M30 215h32"/>
+              <path d="M390 215h-30"/>
+              <path d="M162 30v32"/>
+              <path d="M258 30v16h22v16"/>
+              <path d="M114 368v32"/>
+              <path d="M210 368v32"/>
+              <path d="M306 368v32"/>
+            </g>
+            <!-- blocks -->
+            <g class="blocks">
+              <g class="blk blk-core">
+                <title>RISC-V controller core — integrated at full-chip level</title>
+                <rect x="62" y="62" width="142" height="106" fill="url(#hatch-core)"/>
+                <rect class="edge" x="62" y="62" width="142" height="106"/>
+                <text x="133" y="112" class="lbl lbl-core">CTRL-RV</text>
+                <text x="133" y="127" class="fsub">RISC-V CONTROLLER</text>
+              </g>
+              <g class="blk blk-core">
+                <title>Ibex software-executor core — integrated at full-chip level</title>
+                <rect x="216" y="62" width="142" height="106" fill="url(#hatch-core)"/>
+                <rect class="edge" x="216" y="62" width="142" height="106"/>
+                <text x="287" y="112" class="lbl lbl-core">IBEX SW-RV</text>
+                <text x="287" y="127" class="fsub">SOFTWARE EXECUTOR</text>
+              </g>
+              <g class="blk blk-crypto">
+                <title>AES co-processor — integrated, not designed by me</title>
+                <rect x="62" y="186" width="94" height="94" fill="url(#hatch-crypto)"/>
+                <rect class="edge" x="62" y="186" width="94" height="94"/>
+                <text x="109" y="237" class="lbl lbl-crypto">AES</text>
+              </g>
+              <g class="blk blk-crypto">
+                <title>Ascon co-processor — integrated, not designed by me</title>
+                <rect x="164" y="186" width="94" height="94" fill="url(#hatch-crypto)"/>
+                <rect class="edge" x="164" y="186" width="94" height="94"/>
+                <text x="211" y="237" class="lbl lbl-crypto">ASCON</text>
+              </g>
+              <g class="blk blk-crypto">
+                <title>Xoodyak co-processor — integrated, not designed by me</title>
+                <rect x="266" y="186" width="94" height="94" fill="url(#hatch-crypto)"/>
+                <rect class="edge" x="266" y="186" width="94" height="94"/>
+                <text x="313" y="237" class="lbl lbl-crypto">XOODYAK</text>
+              </g>
+              <!-- peripherals strip: the amber layer (his RTL) -->
+              <g class="blk blk-amber">
+                <title>Peripheral RTL I designed: UART, SPI, CSR, PRNG</title>
+                <rect class="edge strip" x="62" y="298" width="298" height="70"/>
+                <text x="211" y="310" class="fsub fsub-amber">PERIPHERALS</text>
+                <g>
+                  <rect x="70" y="316" width="86" height="44" fill="url(#hatch-amber)"/>
+                  <rect class="edge" x="70" y="316" width="86" height="44"/>
+                  <text x="113" y="342" class="lbl lbl-amber">UART</text>
+                  <rect x="166" y="316" width="86" height="44" fill="url(#hatch-amber)"/>
+                  <rect class="edge" x="166" y="316" width="86" height="44"/>
+                  <text x="209" y="342" class="lbl lbl-amber">SPI</text>
+                  <rect x="262" y="316" width="90" height="44" fill="url(#hatch-amber)"/>
+                  <rect class="edge" x="262" y="316" width="90" height="44"/>
+                  <text x="307" y="342" class="lbl lbl-amber">CSR·PRNG</text>
+                </g>
+              </g>
+            </g>
+            <!-- vias at route corners -->
+            <g class="vias">
+              <rect x="247" y="173" width="6" height="6"/>
+              <rect x="157" y="173" width="6" height="6"/>
+              <rect x="157" y="285" width="6" height="6"/>
+              <rect x="187" y="285" width="6" height="6"/>
+              <rect x="255" y="43" width="6" height="6"/>
+              <rect x="277" y="43" width="6" height="6"/>
+            </g>
+            <!-- animated signal pulses -->
+            <g class="fp-pulses">
+              <path class="fp-pulse d1" pathLength="100" d="M250 168v8h-90v112h30v10"/>
+              <path class="fp-pulse d2" pathLength="100" d="M258 30v16h22v16"/>
+              <path class="fp-pulse d3" pathLength="100" d="M30 215h32"/>
+              <path class="fp-pulse d4" pathLength="100" d="M100 168v18"/>
+              <path class="fp-pulse d5" pathLength="100" d="M210 368v32"/>
+            </g>
+            <!-- corner annotations -->
+            <text x="16" y="46" class="fp-corner">PROACT</text>
+            <text x="404" y="392" class="fp-corner fp-corner-r">GF 22FDX</text>
+          </svg>
+          <figcaption id="fp-cap">
+            Stylized floorplan of the PROACT test chip — 2.009&nbsp;×&nbsp;2.055&nbsp;mm² die in GlobalFoundries 22FDX. I designed the full SoC — the RTL architecture, full-chip integration and all peripheral &amp; control logic (SPI, UART, CSR, PRNG, <span class="cap-amber">amber</span>) — integrating third-party IP such as the Ibex RISC-V core and the AES, Ascon and Xoodyak cryptographic co-processors (<span class="cap-grey">grey</span>), from RTL through FPGA prototyping to tape-out.
+          </figcaption>
+          <ul class="fp-legend">
+            <li><span class="fp-key fp-key-amber" aria-hidden="true"></span>Peripheral &amp; control RTL I designed — SPI, UART, CSR, PRNG</li>
+            <li><span class="fp-key fp-key-grey" aria-hidden="true"></span>Integrated IP — Ibex RISC-V core, AES/Ascon/Xoodyak co-processors</li>
+          </ul>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ PROJECTS ================================ -->
+  <section class="section" id="projects" aria-labelledby="projects-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M2 8h4M2 16h4M18 12h4"/><path d="M6 5h5.5a7 7 0 0 1 0 14H6Z"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">05 · IP BLOCKS</p>
+          <h2 id="projects-h">Selected Projects</h2>
+        </div>
+        <span class="sec-signal mono">ack</span>
+        <span class="sec-rule sig-ack" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_ack"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0x34a5…3115</span>
+      </header>
+
+      <div class="cards-grid">
+        <article class="card reveal">
+          <p class="card-tag mono"><span aria-hidden="true">BLK_01 · </span>PYTHON / PYTORCH GEOMETRIC</p>
+          <h3>FLASH-Trace — GNN pre-silicon power-trace generation</h3>
+          <p>A spatiotemporal Graph Neural Network (GCN + dilated TCN) that predicts gate-level power traces up to 9× faster than Cadence Joules, accurately enough for full AES-128 key recovery by CPA. First-author paper under submission to IACR TCHES.</p>
+        </article>
+        <article class="card reveal">
+          <p class="card-tag mono"><span aria-hidden="true">BLK_02 · </span>OPEN-SOURCE / ACM CF'26</p>
+          <h3>ASSESS — pre-silicon side-channel leakage analysis</h3>
+          <p>A cycle-accurate methodology that localizes gate-level side-channel leakage from toggle activity, fast enough for routine checks during iterative ASIC design; benchmarked against RTL-PAT, PATCH and ACA on RISC-V/AES designs.</p>
+        </article>
+        <article class="card reveal">
+          <p class="card-tag mono"><span aria-hidden="true">BLK_03 · </span>VIVADO HLS / B.SC. THESIS</p>
+          <h3>Real-time object detection &amp; tracking on Zynq-7000</h3>
+          <p>Real-time object detection and tracking on a ZYBO Zynq-7000 — HDMI video in, colour-range filtering, and distance estimation from object size, with simultaneous LED-matrix and VGA output plus UART telemetry. Verified in MATLAB/OpenCV, then synthesized to hardware with HLS&nbsp;+&nbsp;Vivado.</p>
+          <img class="card-img" src="assets/projects/zynq-object-detection.png" alt="Real-time object detection &amp; tracking system on a ZYBO Zynq-7000: camera and HDMI input, color-based detection, LED-matrix and VGA output" width="1024" height="320" loading="lazy">
+          <p class="card-link-row"><a href="thesis-bsc.html">View B.Sc. thesis<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="thesis-bsc.html#demos" aria-label="Watch demo videos on the B.Sc. thesis page"><span aria-hidden="true">▷</span>&nbsp;demos</a></p>
+        </article>
+        <article class="card reveal">
+          <p class="card-tag mono"><span aria-hidden="true">BLK_04 · </span>RTL / QUARTUS / CYCLONE II</p>
+          <h3>CNN accelerator on FPGA</h3>
+          <p>RTL implementation of a tiny convolutional-network accelerator (MNIST), validated against a Keras reference model and brought up on an Altera Cyclone II board.</p>
+        </article>
+        <article class="card reveal">
+          <p class="card-tag mono"><span aria-hidden="true">BLK_05 · </span>ESP32 / AVR / ALTIUM · 2020</p>
+          <h3>Home meter monitoring device</h3>
+          <p>Design &amp; implementation of a Home Meter Monitoring Device — project-based (Arduino, AVR, PCB). Implemented on ESP32 and AVR (ATmega8) microcontrollers, with a custom PCB designed in Altium Designer (2020). Delivered for Shahab&nbsp;Co.</p>
+          <img class="card-img" src="assets/projects/home-meter-boards.jpg" alt="Three custom ESP32-CAM-based monitoring PCBs designed in Altium" width="600" height="224" loading="lazy">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ PUBLICATIONS ================================ -->
+  <section class="section" id="publications" aria-labelledby="publications-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M2 12h3.5M19.5 12H22"/><path d="M4.5 5c3 4.5 3 9.5 0 14"/><path d="M7.5 5c5 0 8.6 2.8 10.8 7-2.2 4.2-5.8 7-10.8 7 3-4.5 3-9.5 0-14Z"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">06 · PAPERS</p>
+          <h2 id="publications-h">Publications</h2>
+        </div>
+        <span class="sec-signal mono">data[7:0]</span>
+        <span class="sec-rule sig-data" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_data"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0x04c7…059a</span>
+      </header>
+
+      <ol class="pub-list">
+        <li class="reveal">
+          <article class="pub-card">
+            <p class="pub-meta"><span class="pub-badge mono">JOURNAL</span><span class="pub-year mono">2023</span></p>
+            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1016/j.jnca.2023.103693" target="_blank" rel="noopener">DC-PUF: ML-Resistant PUF-Based Authentication for Resource-Constrained IoT<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors"><strong>A. Sajadi</strong>, A. Shabani, B. Alizadeh</p>
+            <p class="pub-venue"><em>J. Network &amp; Computer Applications</em>, vol. 217, 2023 · <span class="doi mono">DOI 10.1016/j.jnca.2023.103693</span></p>
+            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </article>
+        </li>
+        <li class="reveal">
+          <article class="pub-card">
+            <p class="pub-meta"><span class="pub-badge mono">JOURNAL</span></p>
+            <h3 class="pub-title"><a class="pub-link" href="http://ijece.org/Article/34099" target="_blank" rel="noopener">SQ-PUF: A Resistant PUF-Based Authentication Protocol against Machine-Learning Attacks<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors"><strong>A. Sajadi</strong>, B. Alizadeh</p>
+            <p class="pub-venue"><em>Iranian Journal of Electrical and Computer Engineering</em></p>
+            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </article>
+        </li>
+        <li class="reveal">
+          <article class="pub-card">
+            <p class="pub-meta"><span class="pub-badge mono">CONFERENCE</span><span class="pub-year mono">2026</span></p>
+            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1145/3801488.3807896" target="_blank" rel="noopener">Systematic Comparison and Improvement of Pre-silicon Leakage Analysis Tools<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
+            <p class="pub-venue"><em>ACM Computing Frontiers (CF Companion '26)</em>, 2026 · <span class="doi mono">DOI 10.1145/3801488.3807896</span></p>
+            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </article>
+        </li>
+        <li class="reveal">
+          <article class="pub-card">
+            <p class="pub-meta"><span class="pub-badge mono">CONFERENCE</span><span class="pub-year mono">2024</span></p>
+            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1109/NorCAS64408.2024.10752477" target="_blank" rel="noopener">A Systematic Comparison of Side-channel Countermeasures for RISC-V-based SoCs<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
+            <p class="pub-venue"><em>IEEE NorCAS</em>, 2024 · <span class="doi mono">DOI 10.1109/NorCAS64408.2024.10752477</span></p>
+            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </article>
+        </li>
+        <li class="reveal">
+          <article class="pub-card pub-static">
+            <p class="pub-meta"><span class="pub-badge pub-badge-review mono">UNDER SUBMISSION</span></p>
+            <h3 class="pub-title">FLASH-Trace: Fast &amp; Learning-based Pre-Silicon Power Trace Generation with GNNs</h3>
+            <p class="pub-authors"><strong>A. Sajadi</strong>, S. Shiri, N. Zidarič, T. Stefanov, N. Mentens</p>
+            <p class="pub-venue"><em>IACR TCHES</em> — in review</p>
+          </article>
+        </li>
+        <li class="reveal">
+          <article class="pub-card">
+            <p class="pub-meta"><span class="pub-badge mono">CONFERENCE</span><span class="pub-year mono">2024</span></p>
+            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1007/978-3-031-55673-9_18" target="_blank" rel="noopener">PROACT — Physical Attack Resistance of Cryptographic Algorithms and Circuits with Reduced Time to Market<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors">A. Adhikary <em>et al.</em> (incl. <strong>A. Sajadi</strong>)</p>
+            <p class="pub-venue"><em>Applied Reconfigurable Computing (ARC), LNCS</em>, Springer, 2024 · <span class="doi mono">DOI 10.1007/978-3-031-55673-9_18</span></p>
+            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </article>
+        </li>
+        <li class="reveal">
+          <article class="pub-card">
+            <p class="pub-meta"><span class="pub-badge mono">CONFERENCE</span><span class="pub-year mono">2023</span></p>
+            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1109/ETS56758.2023.10174099" target="_blank" rel="noopener">A Survey of Developments in Testability, Safety and Security of RISC-V Processors<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors">J. Anders <em>et al.</em> (incl. <strong>A. Sajadi</strong>)</p>
+            <p class="pub-venue"><em>IEEE ETS</em>, 2023 · <span class="doi mono">DOI 10.1109/ETS56758.2023.10174099</span></p>
+            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </article>
+        </li>
+        <li class="reveal">
+          <article class="pub-card">
+            <p class="pub-meta"><span class="pub-badge mono">POSTER</span><span class="pub-year mono">2026</span></p>
+            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1145/3801487.3805609" target="_blank" rel="noopener">Security and Cost Trade-offs of Side-Channel Countermeasures for AES Software on RISC-V SoCs<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
+            <p class="pub-venue"><em>ACM CF '26</em>, 2026 · <span class="doi mono">DOI 10.1145/3801487.3805609</span></p>
+            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </article>
+        </li>
+      </ol>
+      <p class="pub-note mono">// full list on <a href="https://scholar.google.com/citations?user=6oefRlcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+    </div>
+  </section>
+
+  <!-- ================================ EDUCATION ================================ -->
+  <section class="section" id="education" aria-labelledby="education-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M7 4.5l10 3.4v8.2L7 19.5Z"/><path d="M2 8.5h5M2 15.5h5M17 12h5"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">07 · DEGREES</p>
+          <h2 id="education-h">Education</h2>
+        </div>
+        <span class="sec-signal mono">valid</span>
+        <span class="sec-rule sig-valid" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_valid"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0xc9a4…72f5</span>
+      </header>
+
+      <div class="edu-list">
+        <article class="edu-item reveal">
+          <p class="tl-date mono">AUG 2022 – FEB 2027 · ONGOING</p>
+          <h3>Ph.D. in Computer Science</h3>
+          <p class="tl-org">Leiden University (LIACS), NL</p>
+          <p>Hardware security &amp; digital IC design (PROACT). Dissertation: pre/post-silicon side-channel leakage evaluation in lightweight cryptographic circuits.</p>
+          <p class="edu-link"><a href="thesis-phd.html">Thesis details →</a></p>
+        </article>
+        <article class="edu-item reveal">
+          <p class="tl-date mono">2018 – 2021 · GPA 18.28/20</p>
+          <h3>M.Sc. in Electrical Engineering — Digital Electronic Systems</h3>
+          <p class="tl-org">University of Tehran · <span class="rank">Ranked 1st in class</span></p>
+          <p>Thesis: ML-based modeling attacks on Physical Unclonable Functions (PUFs). Completed alongside a full-time research assistantship at the DVD-ES Lab.</p>
+          <p class="edu-link"><a href="thesis-msc.html">Thesis details →</a></p>
+        </article>
+        <article class="edu-item reveal">
+          <p class="tl-date mono">2014 – 2017 · GPA 16.87/20</p>
+          <h3>B.Sc. in Electrical Engineering — Electronic Technology</h3>
+          <p class="tl-org">Mohajer Technical University (MTU), Isfahan · <span class="rank">Ranked 1st in the class of 2014</span></p>
+          <p>Thesis: real-time object detection &amp; tracking on a Zynq-7000 SoC.</p>
+          <p class="edu-link"><a href="thesis-bsc.html">Thesis details →</a></p>
+        </article>
+        <article class="edu-item reveal">
+          <p class="tl-date mono">2011 – 2013 · FULL SCHOLARSHIP</p>
+          <h3>Associate Degree in Electronics</h3>
+          <p class="tl-org">Amirkabir Technical &amp; Vocational University of Markazi, Arak</p>
+          <p>Thesis: three-phase pure sine inverter — analog design with adjustable frequency, phase and amplitude.</p>
+          <p class="edu-link"><a href="thesis-assoc.html">Thesis details →</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ THESES ================================ -->
+  <section class="section" id="theses" aria-labelledby="theses-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9.3h16M4 14.6h16M9.3 4v16"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">08 · RESEARCH ARCHIVE</p>
+          <h2 id="theses-h">Theses</h2>
+        </div>
+        <span class="sec-signal mono">addr[15:0]</span>
+        <span class="sec-rule sig-addr" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_addr"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0x0712…b275</span>
+      </header>
+
+      <div class="theses-grid">
+        <a class="thesis-card card reveal" href="thesis-phd.html">
+          <p class="thesis-meta mono"><span class="thesis-badge">PH.D.</span><span class="thesis-badge thesis-badge-live">ONGOING</span></p>
+          <h3>Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits</h3>
+          <p class="thesis-org">Leiden University (LIACS) · 2022 – 2027 (expected)</p>
+          <p class="thesis-sum">Pre- and post-silicon side-channel leakage evaluation across the PROACT SoC, ASSESS and FLASH-Trace.</p>
+          <span class="thesis-more mono" aria-hidden="true">read more →</span>
+        </a>
+        <a class="thesis-card card reveal" href="thesis-msc.html">
+          <p class="thesis-meta mono"><span class="thesis-badge">M.SC.</span><span class="thesis-year">2021 · Grade: Excellent</span></p>
+          <h3>Implementation of Machine-Learning-based Attacks on PUF</h3>
+          <p class="thesis-org">University of Tehran</p>
+          <p class="thesis-sum">ML modeling attacks on RPUF and OBPUF, and SQ-PUF — a secure, scalable, ML-attack-resistant architecture.</p>
+          <span class="thesis-more mono" aria-hidden="true">read more →</span>
+        </a>
+        <a class="thesis-card card reveal" href="thesis-bsc.html">
+          <p class="thesis-meta mono"><span class="thesis-badge">B.SC.</span><span class="thesis-year">2016 · 19.75/20</span></p>
+          <h3>Detection and Tracking of Moving Objects on the ZYNQ Platform</h3>
+          <p class="thesis-org">Mohajer Technical University of Isfahan</p>
+          <p class="thesis-sum">Real-time HDMI-in object detection and tracking on Zynq-7000, from MATLAB and OpenCV to HLS on silicon.</p>
+          <span class="thesis-more mono" aria-hidden="true">read more →</span>
+        </a>
+        <a class="thesis-card card reveal" href="thesis-assoc.html">
+          <p class="thesis-meta mono"><span class="thesis-badge">ASSOCIATE</span><span class="thesis-year">2013</span></p>
+          <h3>Three-phase Pure Sine Inverter</h3>
+          <p class="thesis-org">Amirkabir Technical &amp; Vocational University, Arak</p>
+          <p class="thesis-sum">Analog three-phase pure-sine inverter with adjustable frequency, phase and amplitude at 220&nbsp;V output.</p>
+          <span class="thesis-more mono" aria-hidden="true">read more →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ HONORS & AWARDS ================================ -->
+  <section class="section" id="honors" aria-labelledby="honors-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M6 4v16l14-8Z"/><path d="M2 8h4M2 16h4M9.2 10.2v3.6M7.4 12h3.6"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">09 · AWARDS</p>
+          <h2 id="honors-h">Honors &amp; Awards</h2>
+        </div>
+        <span class="sec-signal mono">ready</span>
+        <span class="sec-rule sig-ready" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_ready"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0x18f2…6bc5</span>
+      </header>
+
+      <ul class="honors-grid">
+        <li class="honor reveal"><span class="honor-year mono">2020</span><p>Ranked 1st in class (Digital Electronic Systems, cumulative GPA) · University of Tehran</p></li>
+        <li class="honor reveal"><span class="honor-year mono">2018</span><p>Ranked 102nd of 30,000+ · Iran nationwide M.Sc. entrance exam (electronics)</p></li>
+        <li class="honor reveal"><span class="honor-year mono">2017</span><p>Ranked 1st in the class of 2014 (cumulative GPA) · Mohajer Technical University</p></li>
+        <li class="honor reveal"><span class="honor-year mono">2014</span><p>Top 1% · nationwide Associate-to-Bachelor entrance exam (TVU)</p></li>
+        <li class="honor reveal"><span class="honor-year mono">2013</span><p>1st place, provincial stage · 14th National Skills Competition (WorldSkills, electronics)</p></li>
+        <li class="honor reveal"><span class="honor-year mono">2012</span><p>3rd place, provincial stage · National Scientific-Practical Competition (electronics)</p></li>
+        <li class="honor reveal"><span class="honor-year mono">2010</span><p>Diligent Student Award · Bozorgmehr Technical &amp; Vocational School</p></li>
+      </ul>
+
+      <p class="langs reveal"><span class="mono langs-label">LANGUAGES</span> Persian (native) · English (professional working) · Dutch (A2)</p>
+    </div>
+  </section>
+
+  <!-- ================================ CERTIFICATIONS ================================ -->
+  <section class="section" id="certifications" aria-labelledby="certifications-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M12 2.5 20 7v10l-8 4.5L4 17V7Z"/><path d="m8.5 12.2 2.5 2.5 4.5-5"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">10 · CREDENTIALS</p>
+          <h2 id="certifications-h">Certifications &amp; Badges</h2>
+        </div>
+        <span class="sec-signal mono">cs_n</span>
+        <span class="sec-rule sig-csn" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_csn"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0x9c58…e1a7</span>
+      </header>
+
+      <div class="cert-grid">
+        <a class="cert-card card reveal" href="https://www.credly.com/badges/ac6b9ac8-ce47-4e42-8912-37b896f187d3" target="_blank" rel="noopener" aria-label="Genus Physical Synthesis Flow badge — verify on Credly (opens in a new tab)">
+          <img src="assets/badges/genus-physical-synthesis.png" alt="" width="600" height="600" loading="lazy">
+          <h3>Genus Physical Synthesis Flow v23.1</h3>
+          <p class="cert-org">Cadence · 2024</p>
+          <span class="cert-verify mono">verify on credly ↗</span>
+        </a>
+        <a class="cert-card card reveal" href="https://www.credly.com/badges/bb3cb661-56ea-48fd-9637-14831150f503" target="_blank" rel="noopener" aria-label="Artificial Intelligence and Machine Learning Fundamentals badge — verify on Credly (opens in a new tab)">
+          <img src="assets/badges/ai-ml-fundamentals.png" alt="" width="600" height="600" loading="lazy">
+          <h3>Artificial Intelligence &amp; Machine Learning Fundamentals v1.0</h3>
+          <p class="cert-org">Cadence · 2025</p>
+          <span class="cert-verify mono">verify on credly ↗</span>
+        </a>
+        <a class="cert-card card reveal" href="https://www.credly.com/badges/40197bc5-dc26-4126-b547-509780ff56c4" target="_blank" rel="noopener" aria-label="Semiconductor 101 badge — verify on Credly (opens in a new tab)">
+          <img src="assets/badges/semiconductor-101.png" alt="" width="600" height="600" loading="lazy">
+          <h3>Semiconductor 101 v1.0</h3>
+          <p class="cert-org">Cadence · 2024</p>
+          <span class="cert-verify mono">verify on credly ↗</span>
+        </a>
+        <div class="cert-card cert-local card reveal">
+          <span class="cert-seal" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="56" height="56" focusable="false"><path d="M24 4 41 13.5v19L24 42 7 32.5v-19Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 24 5 5 10-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3><a class="cert-dl" href="assets/certs/Cadence_Tcl_Scripting_for_EDA_v8.6.pdf" target="_blank" rel="noopener" download>Tcl Scripting for EDA v8.6<svg class="cert-dl-ic" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10m0 0-4-4m4 4 4-4M5 20h14"/></svg></a></h3>
+          <p class="cert-org">Cadence · 2025</p>
+          <span class="cert-verify mono">download certificate (pdf) ↓</span>
+        </div>
+        <div class="cert-card cert-local card reveal">
+          <span class="cert-seal" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="56" height="56" focusable="false"><path d="M24 4 41 13.5v19L24 42 7 32.5v-19Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 24 5 5 10-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3><a class="cert-dl" href="assets/certs/Cadence_RTL-to-GDSII_Flow_v6.pdf" target="_blank" rel="noopener" download>Cadence RTL-to-GDSII Flow v6.0<svg class="cert-dl-ic" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10m0 0-4-4m4 4 4-4M5 20h14"/></svg></a></h3>
+          <p class="cert-org">Cadence · 2025</p>
+          <span class="cert-verify mono">download certificate (pdf) ↓</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ SKILLS ================================ -->
+  <section class="section" id="skills" aria-labelledby="skills-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M2 12h6M8 7v10M11 7v10M11 8.5h7V3M11 15.5h7V21"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">11 · CAPABILITIES</p>
+          <h2 id="skills-h">Technical Skills</h2>
+        </div>
+        <span class="sec-signal mono">wr_en</span>
+        <span class="sec-rule sig-wren" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_wren"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0x2b76…d7fe</span>
+      </header>
+
+      <dl class="skills">
+        <div class="skill-row reveal">
+          <dt class="mono">HARDWARE LANGUAGES</dt>
+          <dd><ul class="tags"><li>VHDL</li><li>Verilog</li><li>SystemVerilog</li><li>High-Level Synthesis (HLS)</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">PROGRAMMING</dt>
+          <dd><ul class="tags"><li>Python</li><li>C/C++</li><li>Tcl (EDA scripting)</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">ASIC FRONT-END</dt>
+          <dd><ul class="tags"><li>RTL design</li><li>RISC-V (Ibex) integration</li><li>Logic synthesis</li><li>SDC constraints</li><li>STA</li><li>Gate-level simulation</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">BACK-END</dt>
+          <dd><ul class="tags"><li>Place-and-route</li><li>Sign-off</li><li>GDSII</li><li>Bonding diagram (GF 22FDX)</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">VERIFICATION</dt>
+          <dd><ul class="tags"><li>RTL testbenches</li><li>Functional simulation</li><li>SDF-annotated gate-level simulation</li><li>FPGA validation</li><li>Hardware debugging</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">FPGA &amp; EMBEDDED</dt>
+          <dd><ul class="tags"><li>Xilinx FPGAs</li><li>Vivado &amp; Vivado HLS</li><li>Catapult HLS</li><li>SPI/UART</li><li>ESP32</li><li>AVR</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">HARDWARE SECURITY</dt>
+          <dd><ul class="tags"><li>CPA</li><li>DPA</li><li>TVLA</li><li>SNR/NICV</li><li>ChipWhisperer</li><li>Pre-silicon leakage analysis</li><li>PUFs</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">DESIGN METHODS</dt>
+          <dd><ul class="tags"><li>HW/SW co-design</li><li>Continuous integration (CI)</li><li>Design-for-test (DfT)</li><li>Fault-tolerant design</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">ML &amp; EDA</dt>
+          <dd><ul class="tags"><li>Cadence (Genus, Joules, Xcelium)</li><li>Altium</li><li>MATLAB</li><li>PyTorch</li><li>PyTorch Geometric</li><li>scikit-learn</li><li>Keras</li></ul></dd>
+        </div>
+        <div class="skill-row reveal">
+          <dt class="mono">PARALLEL COMPUTING</dt>
+          <dd><ul class="tags"><li>CUDA</li><li>OpenMP</li><li>POSIX threads</li><li>SIMD</li></ul></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================================ TEACHING ================================ -->
+  <section class="section" id="teaching" aria-labelledby="teaching-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><path d="M2 12h8M10 5v14M10 5h12M10 12h12M10 19h12"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">12 · KNOWLEDGE FAN-OUT</p>
+          <h2 id="teaching-h">Teaching, Supervision &amp; Activities</h2>
+        </div>
+        <span class="sec-signal mono">irq</span>
+        <span class="sec-rule sig-irq" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_irq"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0x5f36…93fd</span>
+      </header>
+
+      <div class="teach-accordion reveal">
+        <details class="teach-item" open>
+          <summary>
+            <span class="teach-sum mono">Teaching</span>
+            <span class="teach-ind" aria-hidden="true"></span>
+          </summary>
+          <ul class="teach-sub bullets">
+            <li><strong>Teaching Assistant</strong>, <em>System &amp; Software Security</em>, Leiden University (2022–present).</li>
+            <li>Earlier TA experience at the University of Tehran (2019–2022), including <strong>Chief TA</strong> for Core-based Embedded System Design and earlier TA courses.</li>
+          </ul>
+        </details>
+        <details class="teach-item" data-collapse>
+          <summary>
+            <span class="teach-sum mono">Student supervision</span>
+            <span class="teach-ind" aria-hidden="true"></span>
+          </summary>
+          <ul class="teach-sub bullets">
+            <li><strong>Co-supervised 6+ B.Sc. theses</strong> on AES/RISC-V side-channel analysis and chip-prototype leakage assessment. Completed:
+              <ul class="bullets">
+                <li>Imke van Ooijen — <em>“Optimizing AES for RISC-V Cores”</em> (2024)</li>
+                <li>Niels de Wit — <em>“Power Leakage of AES Implementations”</em> (2024)</li>
+                <li>Lennart van Drunick — <em>“On the Vulnerabilities of FPGAs to Power Hammering Circuits”</em> (2026)</li>
+                <li>Nathanael Mohanu — <em>“Side-Channel Analysis of the PROACT Chip Prototype”</em> (2026)</li>
+                <li>and further B.Sc. theses in progress.</li>
+              </ul>
+            </li>
+          </ul>
+        </details>
+        <details class="teach-item" data-collapse>
+          <summary>
+            <span class="teach-sum mono">Academic service</span>
+            <span class="teach-ind" aria-hidden="true"></span>
+          </summary>
+          <ul class="teach-sub bullets">
+            <li><strong>Reviewer</strong>, IEEE Transactions on Computer-Aided Design (TCAD).</li>
+          </ul>
+        </details>
+        <details class="teach-item" data-collapse>
+          <summary>
+            <span class="teach-sum mono">Summer &amp; training schools</span>
+            <span class="teach-ind" aria-hidden="true"></span>
+          </summary>
+          <ul class="teach-sub bullets">
+            <li>CPS Summer School 2023 (Sardinia).</li>
+            <li>Real-World Crypto &amp; Privacy 2023 (Croatia).</li>
+            <li>PROACT Hardware-Security Training Schools (2023, 2025).</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- security divider: CPA power trace (second sweep) -->
+  <div class="cpa-divider cpa-quiet" aria-hidden="true">
+    <div class="container">
+      <svg viewBox="0 0 1200 90" preserveAspectRatio="none" focusable="false">
+        <path class="cpa-trace" d="M0 55.7 L6 56.7 L12 57.3 L18 50.0 L24 53.7 L30 53.1 L36 54.8 L42 56.7 L48 53.1 L54 54.3 L60 51.7 L66 52.2 L72 49.9 L78 53.4 L84 56.2 L90 56.5 L96 51.4 L102 57.9 L108 54.1 L114 55.5 L120 62.0 L126 55.3 L132 63.1 L138 54.6 L144 54.5 L150 60.3 L156 54.7 L162 54.3 L168 60.3 L174 55.1 L180 61.0 L186 53.6 L192 56.5 L198 54.0 L204 63.5 L210 60.7 L216 57.1 L222 56.4 L228 59.6 L234 51.5 L240 50.9 L246 55.7 L252 56.9 L258 51.6 L264 54.5 L270 52.5 L276 54.7 L282 56.2 L288 60.2 L294 59.0 L300 55.5 L306 52.3 L312 54.8 L318 51.1 L324 52.9 L330 49.5 L336 52.2 L342 56.3 L348 59.1 L354 60.9 L360 62.2 L366 54.8 L372 55.1 L378 56.5 L384 62.7 L390 56.7 L396 61.4 L402 53.3 L408 55.2 L414 54.1 L420 55.6 L426 57.8 L432 54.0 L438 53.4 L444 60.9 L450 59.0 L456 55.8 L462 55.7 L468 57.5 L474 56.0 L480 49.8 L486 55.8 L492 55.9 L498 50.9 L504 55.1 L510 49.3 L516 55.7 L522 50.3 L528 56.3 L534 51.6 L540 53.0 L546 53.0 L552 57.8 L558 57.8 L564 58.8 L570 57.1 L576 52.4 L582 58.9 L588 58.0 L594 55.7 L600 60.9 L606 60.1 L612 61.8 L618 57.7 L624 63.2 L630 54.1 L636 57.4 L642 55.6 L648 56.5 L654 56.5 L660 51.6 L666 52.4 L672 53.4 L678 61.7 L684 56.5 L690 53.2 L696 56.3 L702 57.2 L708 55.1 L714 59.0 L720 52.9 L726 53.1 L732 63.7 L738 64.0 L744 63.8 L750 61.3 L756 50.6 L762 39.3 L768 28.1 L774 22.6 L780 19.3 L786 17.7 L792 32.0 L798 41.5 L804 49.6 L810 61.9 L816 63.6 L822 67.6 L828 60.0 L834 57.8 L840 60.8 L846 58.4 L852 58.1 L858 62.2 L864 62.9 L870 59.8 L876 63.3 L882 58.3 L888 53.0 L894 53.3 L900 60.5 L906 52.5 L912 53.6 L918 53.9 L924 61.1 L930 54.1 L936 60.0 L942 53.8 L948 58.3 L954 57.2 L960 58.2 L966 50.3 L972 55.9 L978 48.8 L984 52.1 L990 55.8 L996 51.2 L1002 53.2 L1008 59.2 L1014 52.1 L1020 58.3 L1026 61.2 L1032 53.9 L1038 54.2 L1044 57.3 L1050 58.9 L1056 55.2 L1062 54.6 L1068 53.7 L1074 56.3 L1080 56.2 L1086 55.6 L1092 61.8 L1098 62.6 L1104 59.9 L1110 57.2 L1116 56.3 L1122 55.1 L1128 58.4 L1134 54.7 L1140 59.9 L1146 56.5 L1152 59.4 L1158 51.7 L1164 50.3 L1170 54.0 L1176 53.5 L1182 57.5 L1188 53.2 L1194 60.0 L1200 56.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ================================ CONTACT ================================ -->
+  <section class="section" id="contact" aria-labelledby="contact-h">
+    <div class="container">
+      <header class="sec-head">
+        <span class="sec-gate" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><g class="i-stroke"><rect x="4.5" y="4.5" width="15" height="15" rx="1"/><circle cx="12" cy="12" r="3.5"/></g></svg>
+        </span>
+        <div class="sec-title">
+          <p class="sec-eyebrow mono" aria-hidden="true">13 · PAD RING</p>
+          <h2 id="contact-h">Contact</h2>
+        </div>
+        <span class="sec-signal mono">done</span>
+        <span class="sec-rule sig-done" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_done"/></svg></span>
+        <span class="sec-sig mono" aria-hidden="true">sig 0xe2eb…2775</span>
+      </header>
+
+      <p class="contact-lede reveal">Open to roles in RTL/SoC design, HW/SW co-design, FPGA prototyping, ASIC physical design, or cryptographic hardware.</p>
+
+      <div class="contact-grid reveal">
+        <a class="ccard" href="mailto:a.sajadi@liacs.leidenuniv.nl">
+          <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+          <span class="cc-k mono">EMAIL</span>
+          <span class="cc-v">a.sajadi@liacs.leidenuniv.nl</span>
+        </a>
+        <a class="ccard" href="tel:+31681183983">
+          <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.9v2.6a1.9 1.9 0 0 1-2.1 1.9 18.9 18.9 0 0 1-8.2-2.9 18.6 18.6 0 0 1-5.7-5.7A18.9 18.9 0 0 1 2.1 4.6 1.9 1.9 0 0 1 4 2.5h2.6a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.7a1.9 1.9 0 0 1-.4 2L7.6 10a15.2 15.2 0 0 0 5.9 5.9l1.2-1.2a1.9 1.9 0 0 1 2-.4c.9.4 1.8.6 2.7.7a1.9 1.9 0 0 1 1.6 1.9Z"/></svg>
+          <span class="cc-k mono">PHONE</span>
+          <span class="cc-v">+31 6 81183983</span>
+        </a>
+        <a class="ccard" href="https://www.linkedin.com/in/abisj" target="_blank" rel="noopener">
+          <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5V17M7.5 7.2v.1M12 17v-4a2.4 2.4 0 0 1 4.8 0v4"/></svg>
+          <span class="cc-k mono">LINKEDIN</span>
+          <span class="cc-v">linkedin.com/in/abisj</span>
+        </a>
+        <a class="ccard" href="https://github.com/abolfazlsajadi" target="_blank" rel="noopener">
+          <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+          <span class="cc-k mono">GITHUB</span>
+          <span class="cc-v">github.com/abolfazlsajadi</span>
+        </a>
+        <a class="ccard" href="https://orcid.org/0000-0003-0657-7022" target="_blank" rel="noopener">
+          <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.3"/><path d="M8.4 10v7M8.4 6.9v.1"/><path d="M11.6 10h2.7a3.5 3.5 0 0 1 0 7h-2.7Z" stroke-linejoin="round"/></svg>
+          <span class="cc-k mono">ORCID</span>
+          <span class="cc-v">0000-0003-0657-7022</span>
+        </a>
+        <a class="ccard" href="https://scholar.google.com/citations?user=6oefRlcAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.5 9 12 14l9.5-5L12 4Z"/><path d="M6.3 11.7V16c0 1.6 2.6 3 5.7 3s5.7-1.4 5.7-3v-4.3"/></svg>
+          <span class="cc-k mono">GOOGLE SCHOLAR</span>
+          <span class="cc-v">Profile</span>
+        </a>
+        <a class="ccard" href="https://www.universiteitleiden.nl/en/staffmembers/abolfazl-sajadi#tab-1" target="_blank" rel="noopener">
+          <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M5 21V10M19 21V10M9 21v-7h6v7M12 3 3 8h18l-9-5Z"/></svg>
+          <span class="cc-k mono">LEIDEN UNIVERSITY</span>
+          <span class="cc-v">Staff page</span>
+        </a>
+        <a class="ccard ccard-cv" href="assets/Abolfazl_Sajadi_CV.pdf" download>
+          <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10m0 0l-4.5-4.5M12 14l4.5-4.5M4 19h16"/></svg>
+          <span class="cc-k mono">DOWNLOAD</span>
+          <span class="cc-v">CV (PDF, 2 pages)</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <svg class="foot-wave" aria-hidden="true" focusable="false" height="12"><rect width="100%" height="12" fill="url(#sqwave)"/></svg>
+  <div class="container foot-row">
+    <p class="mono">© 2026 Abolfazl Sajadi · <span class="foot-domain">abolfazlsajadi.com</span></p>
+    <ul class="foot-links" aria-label="Profile links">
+      <li><a href="mailto:a.sajadi@liacs.leidenuniv.nl" aria-label="Email">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+      </a></li>
+      <li><a href="https://www.linkedin.com/in/abisj" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5V17M7.5 7.2v.1M12 17v-4a2.4 2.4 0 0 1 4.8 0v4"/></svg>
+      </a></li>
+      <li><a href="https://github.com/abolfazlsajadi" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+      </a></li>
+      <li><a href="https://scholar.google.com/citations?user=6oefRlcAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar (opens in a new tab)">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.5 9 12 14l9.5-5L12 4Z"/><path d="M6.3 11.7V16c0 1.6 2.6 3 5.7 3s5.7-1.4 5.7-3v-4.3"/></svg>
+      </a></li>
+    </ul>
+    <p class="mono foot-updated">last updated: JUL 2026</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
