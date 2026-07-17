@@ -821,19 +821,12 @@ html.js .sec-rule.live .sec-wave use {
   filter: drop-shadow(0 0 5px var(--glow));
   animation: signal 9s linear infinite;
 }
-/* fast, staggered travelling pulses (~3-6s) so several signals are always in
-   motion; negative delays spread them out along the nets */
-.pulse.p1  { animation-duration: 5s;   animation-delay: 0s; }
-.pulse.p2  { animation-duration: 4.2s; animation-delay: -2.4s; }
-.pulse.p3  { animation-duration: 5.5s; animation-delay: -1s; }
-.pulse.p4  { animation-duration: 4.6s; animation-delay: -3.2s; }
-.pulse.p5  { animation-duration: 4s;   animation-delay: -0.6s; }
-.pulse.p6  { animation-duration: 5s;   animation-delay: -1.8s; }
-.pulse.p7  { animation-duration: 3.6s; animation-delay: -3.4s; }
-.pulse.p8  { animation-duration: 3.4s; animation-delay: -1.1s; }
-.pulse.p9  { animation-duration: 6s;   animation-delay: -2s; }
-.pulse.p10 { animation-duration: 5.2s; animation-delay: -4.3s; }
-.pulse.p11 { animation-duration: 5.8s; animation-delay: -3.6s; }
+/* three calm, slow travelling pulses (restored from variant v1), staggered by
+   negative delays; p5 keeps the mobile strips' third pulse calm too. */
+.pulse.p1 { animation-duration: 9s;  animation-delay: 0s; }
+.pulse.p2 { animation-duration: 12s; animation-delay: -4s; }
+.pulse.p3 { animation-duration: 7s;  animation-delay: -2.5s; }
+.pulse.p5 { animation-duration: 11s; animation-delay: -6s; }
 
 @keyframes signal {
   from { stroke-dashoffset: 100; }

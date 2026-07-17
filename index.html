@@ -171,69 +171,48 @@
   <!-- ================================ HERO ================================ -->
   <section class="hero" aria-label="Introduction">
     <div class="hero-bg" aria-hidden="true">
-      <svg class="hero-sch hero-sch-desk" viewBox="0 0 1600 800" preserveAspectRatio="xMidYMin slice" focusable="false">
-<!-- sparse feed-forward hero schematic (desktop): top pipeline + bottom-right pipeline, center left empty for body text -->
-<path class="trace" d="M0 72H205V66H218"/>
-<path class="trace" d="M205 44V78H218"/>
-<path class="trace" d="M0 44H925V665H985V659H995"/>
-<path class="trace" d="M925 665V741H985H993"/>
-<path class="trace" d="M250.5 72H535V66H545"/>
-<path class="trace" d="M0 118H543V78H545"/>
-<path class="trace" d="M543 118H729"/>
-<path class="trace" d="M579.4 72H875V66H885"/>
-<path class="trace" d="M756.7 118H883V78H885"/>
-<path class="trace" d="M883 118H945V729H985H993"/>
-<path class="trace" d="M945 118H1113V78H1115"/>
-<path class="trace" d="M1113 118H1383V78H1383"/>
-<path class="trace" d="M1383 118H1389"/>
-<path class="trace" d="M913 72H965H1105V66H1115"/>
-<path class="trace" d="M965 72V671H985H995"/>
-<path class="trace" d="M1143 72H1373V66H1383"/>
-<path class="trace" d="M1421.9 72H1600"/>
-<path class="trace" d="M1410 118H1600"/>
-<path class="trace" d="M1029.4 665H1220V691H1230"/>
-<path class="trace" d="M1025.5 735H1220V709H1230"/>
-<path class="trace" d="M1250 700H1600"/>
-<circle class="via" cx="0" cy="44" r="3.4"/>
-<circle class="via" cx="0" cy="72" r="3.4"/>
-<circle class="via" cx="0" cy="118" r="3.4"/>
-<circle class="jdot" cx="205" cy="44" r="3.2"/>
-<circle class="jdot" cx="925" cy="665" r="3.2"/>
-<circle class="jdot" cx="543" cy="118" r="3.2"/>
-<circle class="jdot" cx="883" cy="118" r="3.2"/>
-<circle class="jdot" cx="945" cy="118" r="3.2"/>
-<circle class="jdot" cx="1113" cy="118" r="3.2"/>
-<circle class="jdot" cx="1383" cy="118" r="3.2"/>
-<circle class="jdot" cx="965" cy="72" r="3.2"/>
-<use href="#g-xor" x="235" y="72"/>
-<use href="#g-nand" x="560" y="72"/>
-<use href="#g-or" x="900" y="72"/>
-<use href="#g-and" x="1130" y="72"/>
-<use href="#g-xnor" x="1400" y="72"/>
-<use href="#g-inv" x="740" y="118"/>
-<use href="#g-buf" x="1400" y="118"/>
-<use href="#g-nor" x="1010" y="665"/>
-<use href="#g-xor" x="1010" y="735"/>
-<use href="#g-mux" x="1240" y="700"/>
-<text class="net-lbl" x="26" y="40">en</text>
-<text class="net-lbl" x="26" y="88">clk</text>
-<text class="net-lbl" x="26" y="114">rst_n</text>
-<text class="net-lbl" x="392" y="68">req</text>
-<text class="net-lbl" x="836" y="114">ack</text>
-<text class="net-lbl" x="1500" y="66">valid</text>
-<text class="net-lbl" x="1502" y="112">irq</text>
-<text class="net-lbl" x="1498" y="694">done</text>
-<path class="pulse p1" d="M0 72H205V66H218L250.5 72H535V66H545L579.4 72H875V66H885L913 72H965H1105V66H1115L1143 72H1373V66H1383L1421.9 72H1600" pathLength="100"/>
-<path class="pulse p2" d="M0 72H205V66H218L250.5 72H535V66H545L579.4 72H875V66H885L913 72H965H1105V66H1115L1143 72H1373V66H1383L1421.9 72H1600" pathLength="100"/>
-<path class="pulse p3" d="M0 44H925V665H985V659H995L1029.4 665H1220V691H1230L1250 700H1600" pathLength="100"/>
-<path class="pulse p4" d="M0 44H925V665H985V659H995L1029.4 665H1220V691H1230L1250 700H1600" pathLength="100"/>
-<path class="pulse p5" d="M925 665V741H985H993L1025.5 735H1220V709H1230L1250 700H1600" pathLength="100"/>
-<path class="pulse p6" d="M0 118H543H729H756.7H1383H1389H1410H1600" pathLength="100"/>
-<path class="pulse p7" d="M0 118H543H729H756.7H1383H1389H1410H1600" pathLength="100"/>
-<path class="pulse p8" d="M883 118H1113V78H1115L1143 72H1373V66H1383L1421.9 72H1600" pathLength="100"/>
-<path class="pulse p9" d="M0 118H543V78H545L579.4 72H875V66H885L913 72H965V671H985H995L1029.4 665H1220V691H1230L1250 700H1600" pathLength="100"/>
-<path class="pulse p10" d="M0 118H543V78H545L579.4 72H875V66H885L913 72H965V671H985H995L1029.4 665H1220V691H1230L1250 700H1600" pathLength="100"/>
-<path class="pulse p11" d="M0 72H205V66H218L250.5 72H535V66H545L579.4 72H875V66H885L913 72H965H1105V66H1115L1143 72H1373V66H1383L1421.9 72H1600" pathLength="100"/>
+      <svg class="hero-sch hero-sch-desk" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" focusable="false">
+<!-- calm feed-forward hero schematic (desktop): one gate per area, airy like variant v1; every multi-input gate wired with two distinct inputs -->
+<!-- nets (Manhattan routing) -->
+<path class="trace" d="M0 90H240V150H520V83H900V164H1033"/>
+<path class="trace" d="M240 90V-20"/>
+<path class="trace" d="M0 112H692V99H706"/>
+<path class="trace" d="M1066 170H1180V60H1460"/>
+<path class="trace" d="M980 -20V176H1033"/>
+<path class="trace" d="M1100 170V424H1125"/>
+<path class="trace" d="M1050 640V436H1125"/>
+<path class="trace" d="M1153 430H1460"/>
+<path class="trace" d="M0 654H105"/>
+<path class="trace" d="M0 666H105"/>
+<path class="trace" d="M133 660H700V640H1090V700H1460"/>
+<!-- edge pads -->
+<circle class="via" cx="0" cy="90" r="3.4"/>
+<circle class="via" cx="0" cy="112" r="3.4"/>
+<circle class="via" cx="0" cy="654" r="3.4"/>
+<circle class="via" cx="0" cy="666" r="3.4"/>
+<!-- junction dots (wires that branch/join) -->
+<circle class="jdot" cx="240" cy="90" r="3.2"/>
+<circle class="jdot" cx="1100" cy="170" r="3.2"/>
+<circle class="jdot" cx="1050" cy="640" r="3.2"/>
+<!-- gates: one per area, at variant v1 positions -->
+<use href="#g-inv" x="380" y="150"/>
+<use href="#g-dff" x="720" y="90"/>
+<use href="#g-xor" x="1050" y="170"/>
+<use href="#g-and" x="120" y="660"/>
+<use href="#g-inv" x="900" y="640"/>
+<use href="#g-and" x="1140" y="430"/>
+<!-- subtle net labels (a few of the main nets) -->
+<text class="net-lbl" x="24" y="86">en</text>
+<text class="net-lbl" x="24" y="108">clk</text>
+<text class="net-lbl" x="24" y="650">req</text>
+<text class="net-lbl" x="24" y="682">ack</text>
+<text class="net-lbl" x="990" y="150">irq</text>
+<text class="net-lbl" x="1120" y="164">valid</text>
+<text class="net-lbl" x="1360" y="690">done</text>
+<!-- three calm signal pulses (slow durations 9s/12s/7s set in styles.css) -->
+<path class="pulse p1" d="M0 90H240V150H520V83H900V164H1033" pathLength="100"/>
+<path class="pulse p2" d="M133 660H700V640H1090V700H1460" pathLength="100"/>
+<path class="pulse p3" d="M1066 170H1180V60H1460" pathLength="100"/>
       </svg>
       <svg class="hero-sch hero-sch-mob hero-sch-mob-top" viewBox="0 0 400 210" preserveAspectRatio="xMidYMid meet" focusable="false">
         <!-- mobile TOP strip: 2-stage feed-forward crossbar (clk,rst_n -> valid,irq) -->
