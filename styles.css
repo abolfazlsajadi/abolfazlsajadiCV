@@ -821,12 +821,15 @@ html.js .sec-rule.live .sec-wave use {
   filter: drop-shadow(0 0 5px var(--glow));
   animation: signal 9s linear infinite;
 }
-/* three calm, slow travelling pulses (restored from variant v1), staggered by
-   negative delays; p5 keeps the mobile strips' third pulse calm too. */
+/* calm, slow travelling pulses (7-13s, v1 pace), staggered by negative delays
+   so every gate sees a signal without the scene ever getting busy; p5 keeps
+   the mobile strips' third pulse calm too. */
 .pulse.p1 { animation-duration: 9s;  animation-delay: 0s; }
 .pulse.p2 { animation-duration: 12s; animation-delay: -4s; }
 .pulse.p3 { animation-duration: 7s;  animation-delay: -2.5s; }
+.pulse.p4 { animation-duration: 10s; animation-delay: -7s; }
 .pulse.p5 { animation-duration: 11s; animation-delay: -6s; }
+.pulse.p6 { animation-duration: 13s; animation-delay: -5.5s; }
 
 @keyframes signal {
   from { stroke-dashoffset: 100; }

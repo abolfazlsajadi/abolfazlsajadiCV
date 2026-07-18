@@ -180,20 +180,27 @@
 <path class="trace" d="M1066 170H1180V60H1460"/>
 <path class="trace" d="M980 -20V176H1033"/>
 <path class="trace" d="M1100 170V424H1125"/>
-<path class="trace" d="M1050 640V436H1125"/>
 <path class="trace" d="M1153 430H1460"/>
 <path class="trace" d="M0 654H105"/>
 <path class="trace" d="M0 666H105"/>
 <path class="trace" d="M133 660H700V640H1090V700H1460"/>
+<!-- left mid-band cluster (visible at ultra-wide, where slice-crop hides the
+     top/bottom rows): XOR in the left margin -> INV on the y470 whitespace
+     lane -> second input of the mid-right AND (left-to-right, no crossings) -->
+<path class="trace" d="M0 290H101"/>
+<path class="trace" d="M0 302H101"/>
+<path class="trace" d="M134 296H152V470H244"/>
+<path class="trace" d="M272 470H1030V436H1125"/>
 <!-- edge pads -->
 <circle class="via" cx="0" cy="90" r="3.4"/>
 <circle class="via" cx="0" cy="112" r="3.4"/>
 <circle class="via" cx="0" cy="654" r="3.4"/>
 <circle class="via" cx="0" cy="666" r="3.4"/>
+<circle class="via" cx="0" cy="290" r="3.4"/>
+<circle class="via" cx="0" cy="302" r="3.4"/>
 <!-- junction dots (wires that branch/join) -->
 <circle class="jdot" cx="240" cy="90" r="3.2"/>
 <circle class="jdot" cx="1100" cy="170" r="3.2"/>
-<circle class="jdot" cx="1050" cy="640" r="3.2"/>
 <!-- gates: one per area, at variant v1 positions -->
 <use href="#g-inv" x="380" y="150"/>
 <use href="#g-dff" x="720" y="90"/>
@@ -201,6 +208,8 @@
 <use href="#g-and" x="120" y="660"/>
 <use href="#g-inv" x="900" y="640"/>
 <use href="#g-and" x="1140" y="430"/>
+<use href="#g-xor" x="118" y="296"/>
+<use href="#g-inv" x="255" y="470"/>
 <!-- subtle net labels (a few of the main nets) -->
 <text class="net-lbl" x="24" y="86">en</text>
 <text class="net-lbl" x="24" y="108">clk</text>
@@ -209,10 +218,16 @@
 <text class="net-lbl" x="990" y="150">irq</text>
 <text class="net-lbl" x="1120" y="164">valid</text>
 <text class="net-lbl" x="1360" y="690">done</text>
-<!-- three calm signal pulses (slow durations 9s/12s/7s set in styles.css) -->
+<text class="net-lbl" x="22" y="286">rst_n</text>
+<text class="net-lbl" x="20" y="318">data[7:0]</text>
+<!-- five calm signal pulses (slow durations 7-13s set in styles.css); every
+     gate lies on at least one pulse path: p1 INV+DFF+XOR(top), p2 AND+INV
+     (bottom), p3 XOR out, p4 mid AND, p6 left XOR+INV -->
 <path class="pulse p1" d="M0 90H240V150H520V83H900V164H1033" pathLength="100"/>
-<path class="pulse p2" d="M133 660H700V640H1090V700H1460" pathLength="100"/>
+<path class="pulse p2" d="M0 654H105L133 660H700V640H1090V700H1460" pathLength="100"/>
 <path class="pulse p3" d="M1066 170H1180V60H1460" pathLength="100"/>
+<path class="pulse p4" d="M1100 170V424H1125L1153 430H1460" pathLength="100"/>
+<path class="pulse p6" d="M0 290H101L134 296H152V470H244L272 470H1030V436H1125" pathLength="100"/>
       </svg>
       <svg class="hero-sch hero-sch-mob hero-sch-mob-top" viewBox="0 0 400 210" preserveAspectRatio="xMidYMid meet" focusable="false">
         <!-- mobile TOP strip: 2-stage feed-forward crossbar (clk,rst_n -> valid,irq) -->
