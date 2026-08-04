@@ -788,11 +788,13 @@ html.js .sec-rule.live .sec-wave use {
     width: 100%;
     height: clamp(150px, 42vw, 230px);
   }
-  /* the top strip is sized so its drawing (fixed 400:210 ratio, vertically
-     centered by `meet`) lands BEHIND the portrait, wires passing under the
-     photo like the desktop schematic — not as a separate band above it */
+  /* both strips are sized so their drawings (fixed 400:210 ratio, vertically
+     centered by `meet`) land BEHIND the content — top behind the portrait,
+     bottom behind the buttons/contact links — background art like desktop */
   .hero-sch-mob-top { top: 0; height: min(97vw, 420px); }
-  .hero-sch-mob-bot { bottom: 0; }
+  /* the bottom strip runs behind the buttons/contact links: subdued like the
+     desktop mask does under text, so the links stay comfortably readable */
+  .hero-sch-mob-bot { bottom: 0; height: min(115vw, 500px); opacity: 0.5; }
 }
 /* light theme was the worst offender: #9fb0bf on a light page disappears on phones */
 @media (max-width: 880px) {
@@ -1016,10 +1018,10 @@ html.js .sec-rule.live .sec-wave use {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 2.75rem;
-    /* reserve room below the copy so the bottom schematic strip (pinned to the
-       hero bottom) sits in the lower margin, clear of the contact links */
+    /* the schematic is a true background (like desktop): no reserved band —
+       the bottom strip's wires pass BEHIND the buttons and contact links */
     padding-top: clamp(2.5rem, 7vw, 3.5rem);
-    padding-bottom: clamp(172px, 46vw, 248px);
+    padding-bottom: clamp(2rem, 6vw, 3rem);
   }
   .hero-portrait { grid-row: 1; width: min(240px, 62vw); }
   /* the H1 + role line repeat the caption's name/affiliation two lines lower —
