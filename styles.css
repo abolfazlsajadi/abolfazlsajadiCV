@@ -803,7 +803,8 @@ html.js .sec-rule.live .sec-wave use {
   /* frosted glass behind the name + role (same treatment as the thesis heroes):
      the circuit passes behind blurred glass, so the title reads at any overlap.
      Negative margin cancels the padding so the text stays optically flush left. */
-  .hero-title-glass {
+  .hero-title-glass,
+  .hero-copy .tagline {
     display: inline-block;
     padding: 0.55rem 0.9rem 0.7rem;
     margin: 0 0 0.35rem calc(-0.9rem - 1px);
@@ -813,8 +814,9 @@ html.js .sec-rule.live .sec-wave use {
     -webkit-backdrop-filter: blur(8px) saturate(1.1);
     backdrop-filter: blur(8px) saturate(1.1);
   }
+  .hero-copy .tagline { padding-top: 0.7rem; margin-bottom: 0.9rem; }
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .hero-title-glass { background: var(--bg-2); }
+    .hero-title-glass, .hero-copy .tagline { background: var(--bg-2); }
   }
   /* sized against the viewport so "Digital Hardware Engineer · Hardware
      Security" stays on ONE line on phones (wraps only below ~340px) */
