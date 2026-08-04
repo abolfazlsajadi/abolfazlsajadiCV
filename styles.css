@@ -816,7 +816,9 @@ html.js .sec-rule.live .sec-wave use {
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .hero-title-glass { background: var(--bg-2); }
   }
-  .hero-title-glass .role { margin-bottom: 0; font-size: 1rem; }
+  /* sized against the viewport so "Digital Hardware Engineer · Hardware
+     Security" stays on ONE line on phones (wraps only below ~340px) */
+  .hero-title-glass .role { margin-bottom: 0; font-size: min(0.95rem, 2.9vw); }
 }
 /* light theme was the worst offender: #9fb0bf on a light page disappears on phones */
 @media (max-width: 880px) {
