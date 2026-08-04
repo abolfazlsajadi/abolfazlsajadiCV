@@ -816,10 +816,7 @@ html.js .sec-rule.live .sec-wave use {
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .hero-title-glass { background: var(--bg-2); }
   }
-  .hero-title-glass .role { margin-bottom: 0; }
-  /* the TAPED OUT chip is redundant mid-hero on phones (the eyebrow already
-     says tape-out) and collided with the background circuit — drop it */
-  .hero .status-chip { display: none; }
+  .hero-title-glass .role { margin-bottom: 0; font-size: 1rem; }
 }
 /* light theme was the worst offender: #9fb0bf on a light page disappears on phones */
 @media (max-width: 880px) {
@@ -962,6 +959,9 @@ html.js .sec-rule.live .sec-wave use {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  /* extra top clearance keeps the buttons out of the schematic's y=470
+     whitespace-lane wire at wide viewports */
+  margin-top: 1.9rem;
   margin-bottom: 1.75rem;
 }
 
