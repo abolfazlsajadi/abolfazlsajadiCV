@@ -1906,18 +1906,11 @@ html.js-anim .reveal.in {
 }
 .hero-glass .page-sub { margin-bottom: 0; }
 
-/* thesis subpages: centered section composition — the header stacks as a
-   centered emblem (icon, title, signal, waveform, CSR tag) over centered prose;
-   structured content (lists, tables, fact sheets) stays left-aligned inside */
-.subpage .sec-head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.5rem;
-}
-.subpage .sec-rule { width: min(360px, 70%); }
+/* thesis subpages: headers + signal separators stay LEFT-aligned exactly like
+   the main page; only the running prose is centered (user preference).
+   Structured content (lists, tables, fact sheets, cards) stays left too. */
 .subpage .section { text-align: center; }
+.subpage .sec-head { text-align: left; }
 .subpage .section :is(ul, ol, dl, table, pre, figure, .spec, .note-live, .pub-card, .ccard) {
   text-align: left;
 }
