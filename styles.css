@@ -810,9 +810,11 @@ html.js .sec-rule.live .sec-wave use {
     margin: 0 0 0.35rem calc(-0.9rem - 1px);
     border: 1px solid var(--line);
     border-radius: 10px;
-    background: color-mix(in srgb, var(--bg) 55%, transparent);
-    -webkit-backdrop-filter: blur(8px) saturate(1.1);
-    backdrop-filter: blur(8px) saturate(1.1);
+    /* near-clear glass (user: "like 5%, see behind") — the blur alone keeps
+       the text readable while the circuit shows through */
+    background: color-mix(in srgb, var(--bg) 5%, transparent);
+    -webkit-backdrop-filter: blur(10px) saturate(1.1);
+    backdrop-filter: blur(10px) saturate(1.1);
   }
   .hero-copy .tagline { padding-top: 0.7rem; margin-bottom: 0.9rem; }
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
