@@ -800,6 +800,26 @@ html.js .sec-rule.live .sec-wave use {
     height: min(55vw, 240px);
     opacity: 0.55;
   }
+  /* frosted glass behind the name + role (same treatment as the thesis heroes):
+     the circuit passes behind blurred glass, so the title reads at any overlap.
+     Negative margin cancels the padding so the text stays optically flush left. */
+  .hero-title-glass {
+    display: inline-block;
+    padding: 0.55rem 0.9rem 0.7rem;
+    margin: 0 0 0.35rem calc(-0.9rem - 1px);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--bg) 55%, transparent);
+    -webkit-backdrop-filter: blur(8px) saturate(1.1);
+    backdrop-filter: blur(8px) saturate(1.1);
+  }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .hero-title-glass { background: var(--bg-2); }
+  }
+  .hero-title-glass .role { margin-bottom: 0; }
+  /* the TAPED OUT chip is redundant mid-hero on phones (the eyebrow already
+     says tape-out) and collided with the background circuit — drop it */
+  .hero .status-chip { display: none; }
 }
 /* light theme was the worst offender: #9fb0bf on a light page disappears on phones */
 @media (max-width: 880px) {
