@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%233ce8a8' stroke-width='2'/%3E%3Cpath stroke='%233ce8a8' stroke-width='2' stroke-linecap='round' d='M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4'/%3E%3Crect x='13.5' y='13.5' width='5' height='5' fill='%233ce8a8'/%3E%3C/svg%3E">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=48c1">
 <style>
   /* ---- page-local: animated FIG. 1 three-phase sine sweep (decorative) ----
      Three equal-amplitude, equal-frequency sines 120° apart, continuously
@@ -60,7 +60,7 @@
 }
 </script>
 </head>
-<body id="top">
+<body id="top" class="subpage">
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -82,6 +82,11 @@
       <path class="gate-arc" d="M-14 5 L-8 9 L-14 13" fill="none"/>
     </g>
     <path id="clkwave" d="M0 10 H10 V2 H27 V10 H46 H56 V2 H73 V10 H92 H102 V2 H119 V10 H138 H148 V2 H165 V10 H184 H194 V2 H211 V10 H230 H240 V2 H257 V10 H276 H286 V2 H303 V10 H322 H332 V2 H349 V10 H368 H378 V2 H395 V10 H414 H424 V2 H441 V10 H460 H470 V2 H487 V10 H506 H516 V2 H533 V10 H552 H562 V2 H579 V10 H598 H608 V2 H625 V10 H644 H654 V2 H671 V10 H690 H700 V2 H717 V10 H736 H746 V2 H763 V10 H782 H792 V2 H809 V10 H828 H838 V2 H855 V10 H874 H884 V2 H901 V10 H920 H930 V2 H947 V10 H966 H976 V2 H993 V10 H1012 H1022 V2 H1039 V10 H1058 H1068 V2 H1085 V10 H1104 H1114 V2 H1131 V10 H1150 H1160 V2 H1177 V10 H1196 H1206 V2 H1223 V10 H1242 H1252 V2 H1269 V10 H1288 H1298 V2 H1315 V10 H1334 H1344 V2 H1361 V10 H1380 H1390 V2 H1407 V10 H1426 H1436 V2 H1453 V10 H1472 H1482 V2 H1499 V10 H1518 H1528 V2 H1545 V10 H1564 H1574 V2 H1591 V10 H1610 H1620 V2 H1637 V10 H1656 H1666 V2 H1683 V10 H1702 H1712 V2 H1729 V10 H1748 H1758 V2 H1775 V10 H1794 H1804 V2 H1821 V10 H1840 H1850 V2 H1867 V10 H1886 H1896 V2 H1913 V10 H1932 H1942 V2 H1959 V10 H1978 H1988 V2 H2005 V10 H2024 H2034 V2 H2051 V10 H2070 H2080 V2 H2097 V10 H2116" fill="none"/>
+    <path id="wave_ack" d="M0 10 H70 V2 H122 V10 H188 H258 V2 H310 V10 H376 H446 V2 H498 V10 H564 H634 V2 H686 V10 H752 H822 V2 H874 V10 H940 H1010 V2 H1062 V10 H1128 H1198 V2 H1250 V10 H1316 H1386 V2 H1438 V10 H1504 H1574 V2 H1626 V10 H1692 H1762 V2 H1814 V10 H1880 H1950 V2 H2002 V10 H2068 H2138 V2 H2190 V10 H2256 H2326 V2 H2378 V10 H2444 H2514 V2 H2566 V10 H2632" fill="none"/>
+    <path id="wave_clk" d="M0 2 H20 V10 H40 V2 H60 V10 H80 V2 H100 V10 H120 V2 H140 V10 H160 V2 H180 V10 H200 V2 H220 V10 H240 V2 H260 V10 H280 V2 H300 V10 H320 V2 H340 V10 H360 V2 H380 V10 H400 V2 H420 V10 H440 V2 H460 V10 H480 V2 H500 V10 H520 V2 H540 V10 H560 V2 H580 V10 H600 V2 H620 V10 H640 V2 H660 V10 H680 V2 H700 V10 H720 V2 H740 V10 H760 V2 H780 V10 H800 V2 H820 V10 H840 V2 H860 V10 H880 V2 H900 V10 H920 V2 H940 V10 H960 V2 H980 V10 H1000 V2 H1020 V10 H1040 V2 H1060 V10 H1080 V2 H1100 V10 H1120 V2 H1140 V10 H1160 V2 H1180 V10 H1200 V2 H1220 V10 H1240 V2 H1260 V10 H1280 V2 H1300 V10 H1320 V2 H1340 V10 H1360 V2 H1380 V10 H1400 V2 H1420 V10 H1440 V2 H1460 V10 H1480 V2 H1500 V10 H1520 V2 H1540 V10 H1560 V2 H1580 V10 H1600 V2 H1620 V10 H1640 V2 H1660 V10 H1680 V2 H1700 V10 H1720 V2 H1740 V10 H1760 V2 H1780 V10 H1800 V2 H1820 V10 H1840 V2 H1860 V10 H1880 V2 H1900 V10 H1920 V2 H1940 V10 H1960 V2 H1980 V10 H2000 V2 H2020 V10 H2040 V2 H2060 V10 H2080 V2 H2100 V10 H2120 V2 H2140 V10 H2160 V2 H2180 V10 H2200 V2 H2220 V10 H2240 V2 H2260 V10 H2280 V2 H2300 V10 H2320 V2 H2340 V10 H2360 V2 H2380 V10 H2400 V2 H2420 V10 H2440 V2 H2460 V10 H2480 V2 H2500 V10 H2520" fill="none"/>
+    <path id="wave_en" d="M0 10 H90 V2 H116 V10 H224 H314 V2 H340 V10 H448 H538 V2 H564 V10 H672 H762 V2 H788 V10 H896 H986 V2 H1012 V10 H1120 H1210 V2 H1236 V10 H1344 H1434 V2 H1460 V10 H1568 H1658 V2 H1684 V10 H1792 H1882 V2 H1908 V10 H2016 H2106 V2 H2132 V10 H2240 H2330 V2 H2356 V10 H2464 H2554 V2 H2580 V10 H2688" fill="none"/>
+    <path id="wave_irq" d="M0 10 H120 V2 H130 V10 H200 V2 H210 V10 H330 V2 H340 V10 H410 V2 H420 V10 H540 V2 H550 V10 H620 V2 H630 V10 H750 V2 H760 V10 H830 V2 H840 V10 H960 V2 H970 V10 H1040 V2 H1050 V10 H1170 V2 H1180 V10 H1250 V2 H1260 V10 H1380 V2 H1390 V10 H1460 V2 H1470 V10 H1590 V2 H1600 V10 H1670 V2 H1680 V10 H1800 V2 H1810 V10 H1880 V2 H1890 V10 H2010 V2 H2020 V10 H2090 V2 H2100 V10 H2220 V2 H2230 V10 H2300 V2 H2310 V10 H2430 V2 H2440 V10 H2510 V2 H2520" fill="none"/>
+    <path id="wave_valid" d="M0 10 H66 V2 H186 V10 H240 H306 V2 H426 V10 H480 H546 V2 H666 V10 H720 H786 V2 H906 V10 H960 H1026 V2 H1146 V10 H1200 H1266 V2 H1386 V10 H1440 H1506 V2 H1626 V10 H1680 H1746 V2 H1866 V10 H1920 H1986 V2 H2106 V10 H2160 H2226 V2 H2346 V10 H2400 H2466 V2 H2586 V10 H2640" fill="none"/>
   </defs>
 </svg>
 
@@ -162,9 +167,11 @@
           <li><span aria-current="page">associate</span></li>
         </ol>
       </nav>
+      <div class="hero-glass">
       <p class="thesis-meta mono"><span class="thesis-badge">ASSOCIATE THESIS</span><span class="thesis-year">DEFENDED 7 SEP 2013</span></p>
       <h1>Three-phase Pure Sine Inverter</h1>
       <p class="page-sub">Amirkabir Technical &amp; Vocational University of Markazi, Arak · 2011 – 2013</p>
+      </div>
 
       <div class="spec reveal" role="group" aria-label="Thesis fact sheet">
         <p class="spec-cap" aria-hidden="true">// fact sheet · thesis_assoc</p>
@@ -191,7 +198,7 @@
           <h2 id="overview-h">Overview</h2>
         </div>
         <span class="sec-signal mono">clk</span>
-        <span class="sec-rule" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#clkwave"/></svg></span>
+        <span class="sec-rule sig-clk" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_clk"/></svg></span>
         <span class="sec-sig mono" aria-hidden="true">CSR 0x00 · RO</span>
       </header>
 
@@ -229,7 +236,7 @@
           <h2 id="contributions-h">Highlights</h2>
         </div>
         <span class="sec-signal mono">valid</span>
-        <span class="sec-rule" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#clkwave"/></svg></span>
+        <span class="sec-rule sig-valid" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_valid"/></svg></span>
         <span class="sec-sig mono" aria-hidden="true">CSR 0x04 · RO</span>
       </header>
 
@@ -254,7 +261,7 @@
           <h2 id="methods-h">Methods &amp; technologies</h2>
         </div>
         <span class="sec-signal mono">en</span>
-        <span class="sec-rule" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#clkwave"/></svg></span>
+        <span class="sec-rule sig-en" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_en"/></svg></span>
         <span class="sec-sig mono" aria-hidden="true">CSR 0x08 · RO</span>
       </header>
 
@@ -281,7 +288,7 @@
           <h2 id="links-h">Related</h2>
         </div>
         <span class="sec-signal mono">irq</span>
-        <span class="sec-rule" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#clkwave"/></svg></span>
+        <span class="sec-rule sig-irq" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_irq"/></svg></span>
         <span class="sec-sig mono" aria-hidden="true">CSR 0x0C · RO</span>
       </header>
 
@@ -312,7 +319,7 @@
           <h2 id="more-h">Other theses</h2>
         </div>
         <span class="sec-signal mono">ack</span>
-        <span class="sec-rule" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#clkwave"/></svg></span>
+        <span class="sec-rule sig-ack" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_ack"/></svg></span>
         <span class="sec-sig mono" aria-hidden="true">CSR 0x10 · RO</span>
       </header>
 
@@ -372,7 +379,7 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=48c1"></script>
 <!-- first-party visit beacon -> /api/hit on this domain (Cloudflare Worker).
      One POST per pageview: path + referrer. No cookies, fails silently.
      See CV_2026/website/analytics/ for the full setup. -->

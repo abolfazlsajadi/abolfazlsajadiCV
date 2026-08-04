@@ -441,6 +441,7 @@ html.js .sec-rule.live .sec-wave use {
 .sig-wren  { --sw-shift: -144px; --sw-dur: 2.3s; }
 .sig-irq   { --sw-shift: -210px; --sw-dur: 5s;   }
 .sig-done  { --sw-shift: -244px; --sw-dur: 4s;   }
+.sig-vsync { --sw-shift: -360px; --sw-dur: 6.5s; }
 .sec-sig {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -1888,6 +1889,37 @@ html.js-anim .reveal.in {
   letter-spacing: -0.018em;
   max-width: 26ch;
   margin: 0.35rem 0 0.75rem;
+}
+/* frosted-glass backing so the title reads clearly over the hero circuit */
+.hero-glass {
+  display: inline-block;
+  margin-top: 0.9rem;
+  padding: 1.05rem 1.35rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
+  -webkit-backdrop-filter: blur(9px) saturate(1.15);
+  backdrop-filter: blur(9px) saturate(1.15);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .hero-glass { background: var(--bg-2); }
+}
+.hero-glass .page-sub { margin-bottom: 0; }
+
+/* thesis subpages: centered section composition — the header stacks as a
+   centered emblem (icon, title, signal, waveform, CSR tag) over centered prose;
+   structured content (lists, tables, fact sheets) stays left-aligned inside */
+.subpage .sec-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.subpage .sec-rule { width: min(360px, 70%); }
+.subpage .section { text-align: center; }
+.subpage .section :is(ul, ol, dl, table, pre, figure, .spec, .note-live, .pub-card, .ccard) {
+  text-align: left;
 }
 .page-sub {
   color: var(--muted);
