@@ -1,0 +1,44 @@
+# Deploys the static site to GitHub Pages.
+# The repository root IS the site root — there is no build step.
+# Enable in the repo: Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  # Allow manual runs from the Actions tab
+  workflow_dispatch:
+
+# Minimum permissions required by deploy-pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; don't cancel a production deploy mid-flight
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact (repo root, no build)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
