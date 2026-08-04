@@ -453,10 +453,12 @@ html.js .sec-rule.live .sec-wave use {
   .sec-head { grid-template-columns: auto auto auto 1fr; }
 }
 @media (max-width: 620px) {
-  /* phones: the signal name + waveform rule steal width from the title and
-     read as misaligned debris — give the h2 the full row instead */
-  .sec-head { gap: 0.7rem; grid-template-columns: auto 1fr; }
-  .sec-signal, .sec-rule { display: none; }
+  /* phones: give the h2 the full first row, and move the signal name + live
+     waveform onto their own full-width second row (hiding them lost a
+     signature detail the owner wants visible on mobile too) */
+  .sec-head { gap: 0.45rem 0.7rem; grid-template-columns: auto 1fr; }
+  .sec-signal { grid-row: 2; grid-column: 1; align-self: center; justify-self: end; }
+  .sec-rule { grid-row: 2; grid-column: 2; align-self: center; }
   .tags { gap: 0.4rem; }
   .tags li { font-size: 0.78rem; padding: 0.22rem 0.55rem; }
 }
@@ -786,7 +788,10 @@ html.js .sec-rule.live .sec-wave use {
     width: 100%;
     height: clamp(150px, 42vw, 230px);
   }
-  .hero-sch-mob-top { top: 0; }
+  /* the top strip is sized so its drawing (fixed 400:210 ratio, vertically
+     centered by `meet`) lands BEHIND the portrait, wires passing under the
+     photo like the desktop schematic — not as a separate band above it */
+  .hero-sch-mob-top { top: 0; height: min(97vw, 420px); }
   .hero-sch-mob-bot { bottom: 0; }
 }
 /* light theme was the worst offender: #9fb0bf on a light page disappears on phones */
