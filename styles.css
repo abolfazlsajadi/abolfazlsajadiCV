@@ -792,9 +792,14 @@ html.js .sec-rule.live .sec-wave use {
      centered by `meet`) land BEHIND the content — top behind the portrait,
      bottom behind the buttons/contact links — background art like desktop */
   .hero-sch-mob-top { top: 0; height: min(97vw, 420px); }
-  /* the bottom strip runs behind the buttons/contact links: subdued like the
-     desktop mask does under text, so the links stay comfortably readable */
-  .hero-sch-mob-bot { bottom: 0; height: min(115vw, 500px); opacity: 0.5; }
+  /* the second strip sits right under the photo, its wires flowing behind the
+     name/title block — clear of the small contact links, subdued under text */
+  .hero-sch-mob-bot {
+    top: min(95vw, 400px);
+    bottom: auto;
+    height: min(55vw, 240px);
+    opacity: 0.55;
+  }
 }
 /* light theme was the worst offender: #9fb0bf on a light page disappears on phones */
 @media (max-width: 880px) {
