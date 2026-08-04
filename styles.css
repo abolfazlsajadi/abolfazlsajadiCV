@@ -787,13 +787,6 @@ html.js .sec-rule.live .sec-wave use {
   }
   .hero-sch-mob-top { top: 0; }
   .hero-sch-mob-bot { bottom: 0; }
-  /* phones render the desktop-tuned hairlines nearly invisible (small physical
-     size + high DPI); thicken the line-art — user rule: traces must be clearly
-     visible at every width. Desktop is untouched. */
-  .hero-bg .trace, .hero-bg .via { stroke-width: 2.6; }
-  .hero-bg .gate-body, .hero-bg .gate-arc { stroke-width: 2.6; }
-  .hero-bg .pulse { stroke-width: 2.8; }
-  .hero-bg .net-lbl { font-size: 13px; opacity: 0.95; }
 }
 /* light theme was the worst offender: #9fb0bf on a light page disappears on phones */
 @media (max-width: 880px) {
@@ -846,6 +839,16 @@ html.js .sec-rule.live .sec-wave use {
   stroke-dashoffset: 100;
   filter: drop-shadow(0 0 5px var(--glow));
   animation: signal 9s linear infinite;
+}
+/* phones render the desktop-tuned hairlines nearly invisible (small physical
+   size + high DPI); thicken the hero line-art — user rule: traces must be
+   clearly visible at every width. MUST stay AFTER the base .hero-bg rules
+   above (equal specificity: source order decides). Desktop untouched. */
+@media (max-width: 880px) {
+  .hero-bg .trace, .hero-bg .via { stroke-width: 2.6; }
+  .hero-bg .gate-body, .hero-bg .gate-arc { stroke-width: 2.6; }
+  .hero-bg .pulse { stroke-width: 2.8; }
+  .hero-bg .net-lbl { font-size: 13px; opacity: 0.95; }
 }
 /* calm, slow travelling pulses (7-13s, v1 pace), staggered by negative delays
    so every gate sees a signal without the scene ever getting busy; p5 keeps

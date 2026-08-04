@@ -312,6 +312,56 @@
     });
   }
 
+  /* ---------- visit-beacon extras: downloads, video plays, sections ----------
+     The inline beacon in each page records the pageview; this adds:
+       dl:<file>            — a download link was clicked (PDFs)
+       play:<file>          — a demo video was started
+       <page>#<section-id>  — a section was actually scrolled into view
+     One tiny POST each, same endpoint, fails silently, no cookies. */
+  var beaconUrl = 'https://abolfazlsajadi.com/api/hit';
+  var sendHit = function (p, r) {
+    try {
+      var data = JSON.stringify({ p: p, r: r || '' });
+      if (navigator.sendBeacon) navigator.sendBeacon(beaconUrl, data);
+      else window.fetch(beaconUrl, { method: 'POST', body: data, keepalive: true }).catch(function () {});
+    } catch (e) { /* never break the page */ }
+  };
+
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (/\.pdf($|\?)/i.test(href) || a.hasAttribute('download')) {
+      sendHit('dl:' + href.split('/').pop().split('?')[0], location.pathname);
+    }
+  }, true);
+
+  Array.prototype.slice.call(document.querySelectorAll('video')).forEach(function (v) {
+    var reported = false;
+    v.addEventListener('play', function () {
+      if (reported) return;
+      reported = true;
+      var src = v.currentSrc || (v.querySelector('source') ? v.querySelector('source').src : '');
+      sendHit('play:' + (src ? src.split('/').pop() : 'video'), location.pathname);
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var seenSections = {};
+    var secObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var id = en.target.id;
+        if (!id || seenSections[id]) return;
+        seenSections[id] = true;
+        secObs.unobserve(en.target);
+        sendHit(location.pathname + '#' + id);
+      });
+    }, { threshold: 0.3 });
+    Array.prototype.slice.call(document.querySelectorAll('main section[id]'))
+      .forEach(function (s) { secObs.observe(s); });
+  }
+
   /* ---------- Print: expand collapsed details so content is not lost ---------- */
   var detailsEls = Array.prototype.slice.call(document.querySelectorAll('details'));
   if (detailsEls.length && 'onbeforeprint' in window) {
