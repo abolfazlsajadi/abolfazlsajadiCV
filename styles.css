@@ -164,6 +164,12 @@ a:hover { text-decoration-thickness: 2px; }
   margin-inline: auto;
 }
 
+/* line-breaking: even out multi-line headings (no lone last word like
+   "…Cryptographic / Circuits") and avoid single-word last lines in running
+   text; both are safe no-ops in engines without text-wrap support */
+h1, h2, h3 { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+
 .visually-hidden {
   position: absolute; width: 1px; height: 1px;
   margin: -1px; padding: 0; border: 0;
@@ -1621,6 +1627,20 @@ html.js .sec-rule.live .sec-wave use {
   height: 108px;
   margin-bottom: 1rem;
 }
+/* the Credly badge PNGs are transparent with near-black artwork text
+   (contrast 1.14:1 on --bg-2 in dark) — plate them light in dark theme */
+:root[data-theme="dark"] .cert-card img {
+  background: #eef1f4;
+  border-radius: 10px;
+  padding: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .cert-card img {
+    background: #eef1f4;
+    border-radius: 10px;
+    padding: 6px;
+  }
+}
 .cert-card h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
 .cert-org { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.6rem; }
 .cert-verify {
@@ -1896,6 +1916,11 @@ html.js-anim .reveal.in {
   .teach-ind { display: none; }
   .teach-sub { animation: none; border-top: 0; }
   .floorplan { position: static; }
+  /* the phone-only nickname leaks into print via the typeless ≤880px block
+     (A4 ≈ 794 CSS px); paper keeps the plain name */
+  .hero-copy h1 .nick { display: none !important; }
+  /* keep section headings attached to their first content block */
+  .section-flag, .sec-head { break-after: avoid; }
   body { font-size: 11pt; }
 }
 
@@ -1955,10 +1980,27 @@ html.js-anim .reveal.in {
 }
 .hero-glass .page-sub { margin-bottom: 0; }
 
-/* thesis subpages: headers + signal separators stay LEFT-aligned exactly like
-   the main page; only the running prose is centered (user preference).
-   Structured content (lists, tables, fact sheets, cards) stays left too. */
-.subpage .section { text-align: center; }
+/* per-page hero signature (PUF fingerprint, ASIC die, …): its own svg so the
+   main schematic's `slice` cropping can never push it off-screen; sits in the
+   hero's upper-right whitespace on wide screens. Phones/tablets have no free
+   column there — hidden ≤1080px. */
+/* selector must be `.hero-bg > svg.hero-sig` (0,2,1): the generic
+   `.hero-bg > svg {width/height:100%; display:block}` (0,1,1) would otherwise
+   override both the sizing AND the ≤1080px hide (found the hard way) */
+.hero-bg > svg.hero-sig {
+  position: absolute;
+  right: clamp(1.25rem, 4vw, 4.5rem);
+  top: clamp(3.25rem, 9vw, 4.75rem);
+  width: clamp(170px, 16vw, 250px);
+  height: auto;
+  pointer-events: none;
+}
+@media (max-width: 1080px) { .hero-bg > svg.hero-sig { display: none; } }
+
+/* thesis subpages: everything left-aligned exactly like the main page
+   (centered prose was tried 2026-08-04 and rejected 2026-08-05 — "center
+   align not good"). The :is() reset below stays as a guard. */
+.subpage .section { text-align: left; }
 .subpage .sec-head { text-align: left; }
 .subpage .section :is(ul, ol, dl, table, pre, figure, .spec, .note-live, .pub-card, .ccard) {
   text-align: left;
@@ -2170,3 +2212,17 @@ html.js-anim .reveal.in {
 /* "Abish" nickname lives in the h1 only on phones (the portrait caption that
    normally carries it is hidden there); desktop keeps the plain name */
 .nick { display: none; }
+
+/* ==========================================================================
+   FINAL print override — MUST stay at the very END of this file.
+   Chromium's print rasterization drops text painted after a backdrop-filter
+   (hero role/tagline on index, subtitle + entire fact sheet on thesis pages).
+   Equal-specificity source order: this must come AFTER the .hero-glass /
+   .hero-title-glass base rules above or it silently loses (verified). */
+@media print {
+  .hero-glass, .hero-title-glass, .hero-copy .tagline {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--bg-2);
+  }
+}

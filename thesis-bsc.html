@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%233ce8a8' stroke-width='2'/%3E%3Cpath stroke='%233ce8a8' stroke-width='2' stroke-linecap='round' d='M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4'/%3E%3Crect x='13.5' y='13.5' width='5' height='5' fill='%233ce8a8'/%3E%3C/svg%3E">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css?v=48c11">
+<link rel="stylesheet" href="styles.css?v=48c12">
 <style>
   /* ---- page-local: project system-diagram figure ---- */
   .proj-fig {
@@ -185,6 +185,22 @@
         <use href="#g-inv" x="200" y="330"/>
         <use href="#g-and" x="640" y="280"/>
       </svg>
+      <svg class="hero-sig" viewBox="0 0 260 240" preserveAspectRatio="xMidYMid meet" focusable="false" style="width:clamp(136px,10.5vw,150px);height:auto;right:1.25rem;top:0.5rem">
+        <g class="sig" opacity="0.55">
+          <!-- viewfinder corner brackets -->
+          <path class="trace" d="M22 48 V22 H48"/>
+          <path class="trace" d="M212 22 H238 V48"/>
+          <path class="trace" d="M238 192 V218 H212"/>
+          <path class="trace" d="M48 218 H22 V192"/>
+          <!-- dashed bounding box around tracked object -->
+          <rect class="trace" x="78" y="74" width="104" height="92" stroke-dasharray="6 6"/>
+          <circle class="via" cx="78" cy="74" r="3"/>
+          <!-- tracked object glyph + lock-on tick -->
+          <circle fill="none" stroke="var(--hgate)" stroke-width="2" cx="130" cy="120" r="17"/>
+          <path fill="none" stroke="var(--accent)" stroke-width="1.5" d="M130 113 V127 M123 120 H137"/>
+          <text class="net-lbl" x="182" y="182" text-anchor="end">track(x,y)</text>
+        </g>
+      </svg>
       <div class="binstream">
         <div class="bin-col bc1"></div>
         <div class="bin-col bc2"></div>
@@ -241,7 +257,7 @@
       <div class="prose reveal">
         <p>This thesis built a complete real-time system for detecting and tracking moving objects in public environments on a Xilinx Zynq-7000 SoC — running on a <strong>ZYBO development board</strong>, whose SoC pairs an ARM processor with FPGA fabric, making it a natural target for HW/SW co-design. The design targeted high speed, high accuracy and strong security at once, while staying cost-effective and able to run standalone — no host PC in the loop.</p>
         <p>The pipeline takes live video in over HDMI, isolates a target by color-range filtering, tracks it, and estimates the distance to the object from its apparent size. Results are shown simultaneously on an LED-matrix panel and a VGA monitor, while the distance telemetry streams out over UART.</p>
-        <p>The development flow moved from algorithm to silicon in three stages: the algorithms were first verified in MATLAB, then optimized in OpenCV, and finally synthesized to hardware with High-Level Synthesis in the Vivado toolchain (Vivado SDK) — with C, C++, HLS and Python across the stack.</p>
+        <p>The development flow moved from algorithm to silicon in three stages: the algorithms were first verified in MATLAB, then optimized in OpenCV, and finally synthesized to hardware with Vivado HLS, with the ARM software side built in the Xilinx SDK — C, C++, HLS and Python across the stack.</p>
       </div>
 
       <figure class="proj-fig reveal">
@@ -283,7 +299,7 @@
 
       <ul class="bullets teach-list reveal">
         <li><strong>End-to-end real-time video pipeline</strong> on a ZYBO (ARM + FPGA) SoC: HDMI input through detection, tracking and distance calculation to simultaneous VGA and LED-matrix output plus UART telemetry.</li>
-        <li><strong>HW/SW co-design flow:</strong> MATLAB for algorithm verification, OpenCV for optimization, then High-Level Synthesis and Vivado (SDK) synthesis to move the hot loops into FPGA fabric.</li>
+        <li><strong>HW/SW co-design flow:</strong> MATLAB for algorithm verification, OpenCV for optimization, then Vivado HLS to move the hot loops into FPGA fabric, with the ARM software built in the Xilinx SDK.</li>
         <li><strong>Color-range detection</strong> with object tracking and object-size-based distance estimation, designed for public-environment scenes.</li>
         <li><strong>Cost-effective, standalone build:</strong> the whole system runs on a single ZYBO board with no host PC, meeting the speed, accuracy and security goals together.</li>
         <li><strong>Open results:</strong> the full thesis (in Persian) and the source code are publicly available — see the links below.</li>
@@ -342,10 +358,10 @@
       <p class="contact-lede reveal">Defended on 30 August 2016 with a grade of <strong>19.75/20</strong>, supervised by Dr. Mohammadreza Zaker-Haghighi with collaborator Sina Shiry. Live demonstrations of the running system were shown at the defense — several are <a href="#demos">recorded below</a>. Both the thesis document and the implementation are public:</p>
 
       <div class="contact-grid reveal">
-        <a class="ccard" href="https://abolfazlsajadi.ir/wp-content/uploads/2021/07/Bachelors-thesis_3.pdf" target="_blank" rel="noopener" aria-label="Download the B.Sc. thesis PDF, written in Persian (opens in a new tab)">
+        <a class="ccard" href="https://web.archive.org/web/20250628094341/https://abolfazlsajadi.ir/wp-content/uploads/2021/07/Bachelors-thesis_3.pdf" target="_blank" rel="noopener" aria-label="Download the B.Sc. thesis PDF, written in Persian, archived copy (opens in a new tab)">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6Z"/><path d="M14.5 3v4.5H19M12 11v6m0 0-2.5-2.5M12 17l2.5-2.5"/></svg>
           <span class="cc-k mono">THESIS PDF</span>
-          <span class="cc-v">Full text (Persian)</span>
+          <span class="cc-v">Full text (Persian) · archived</span>
         </a>
         <a class="ccard" href="https://github.com/abolfazlsajadi/Object-Detection-And-Tracking" target="_blank" rel="noopener" aria-label="GitHub repository Object-Detection-And-Tracking (opens in a new tab)">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
@@ -385,7 +401,7 @@
             <source src="assets/projects/videos/zynq-frame-search.mp4" type="video/mp4">
             Your browser does not support embedded video. <a href="assets/projects/videos/zynq-frame-search.mp4">Download the clip (MP4)</a>.
           </video>
-          <figcaption>Real-time colour-based detection &amp; tracking: the target's RGB signature is matched per pixel and the object is localised by row/column bounds (TR/TC min–max), live on the Zynq.</figcaption>
+          <figcaption>Real-time color-based detection &amp; tracking: the target's RGB signature is matched per pixel and the object is localized by row/column bounds (TR/TC min–max), live on the Zynq.</figcaption>
         </figure>
         <figure class="demo">
           <video controls muted playsinline preload="none" width="640" height="640" poster="assets/projects/videos/zynq-sobel-poster.jpg">
@@ -477,7 +493,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=48c1"></script>
+<script src="script.js?v=48c2"></script>
 <!-- first-party visit beacon -> /api/hit on this domain (Cloudflare Worker).
      One POST per pageview: path + referrer. No cookies, fails silently.
      See CV_2026/website/analytics/ for the full setup. -->

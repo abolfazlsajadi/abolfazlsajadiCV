@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%233ce8a8' stroke-width='2'/%3E%3Cpath stroke='%233ce8a8' stroke-width='2' stroke-linecap='round' d='M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4'/%3E%3Crect x='13.5' y='13.5' width='5' height='5' fill='%233ce8a8'/%3E%3C/svg%3E">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css?v=48c11">
+<link rel="stylesheet" href="styles.css?v=48c12">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -307,7 +307,7 @@
         <h1>Abolfazl <span class="nick">“Abish” </span>Sajadi</h1>
         <p class="role">Digital Hardware Engineer&ensp;·&ensp;Hardware Security</p>
         </div>
-        <p class="tagline">Digital hardware engineer completing a PhD at Leiden University, with hands-on experience in RTL/SoC design, RISC-V integration, FPGA prototyping, ASIC implementation, and hardware security. Experienced in taking digital systems from RTL and verification through physical implementation and tape-out.</p>
+        <p class="tagline">Digital hardware engineer completing a PhD at Leiden University, with hands-on experience in RTL/SoC design, RISC-V integration, FPGA prototyping, ASIC implementation, and hardware security. Most recently: designed the PROACT dual-core RISC-V cryptographic SoC, taped out in GlobalFoundries 22&nbsp;nm (22FDX).</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="assets/Abolfazl_Sajadi_CV.pdf" download>
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v10m0 0l-4.5-4.5M12 14l4.5-4.5M4 19h16"/></svg>
@@ -388,7 +388,7 @@
       </header>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>I'm a digital hardware engineer completing my PhD at LIACS, Leiden University, working on hardware security and digital IC design in the PROACT project. I designed the full PROACT dual-core RISC-V cryptographic SoC — the RTL architecture, full-chip integration and all peripheral &amp; control logic (SPI, a configurable UART, control/status registers and a PRNG) — integrating third-party IP such as the Ibex RISC-V core and the AES, Ascon and Xoodyak cryptographic co-processors, first prototyping on Xilinx FPGAs and then taking the design to a 22&nbsp;nm ASIC: synthesis in Cadence Genus for GlobalFoundries 22FDX, functional and gate-level verification in Xcelium, and place-and-route and sign-off with the imec team, through to tape-out.</p>
+          <p>I'm a digital hardware engineer completing my PhD at LIACS, Leiden University, working on hardware security and digital IC design in the PROACT project. As the project's chip designer I took its dual-core RISC-V cryptographic SoC from architecture to silicon — full-chip integration and all peripheral &amp; control logic, FPGA prototypes first, then synthesis and verification for a 22&nbsp;nm GlobalFoundries 22FDX tape-out, with place-and-route and sign-off done with the imec team. The full breakdown is in <a href="#proact">The PROACT Chip</a> below.</p>
           <p>I also developed the chip's software stack — C and Python libraries and a control GUI — and its documentation, and designed a ChipWhisperer CW308 target board in Altium with an automated CPA/TVLA side-channel flow. I'm strongest in the front-end (RTL design, synthesis, functional verification), with hands-on FPGA prototyping, software and side-channel board experience.</p>
         </div>
         <aside class="interests-card card reveal" aria-labelledby="interests-h">
@@ -537,7 +537,7 @@
           <h3>Doctoral Researcher — Digital IC &amp; Hardware Security</h3>
           <p class="tl-org">Leiden University (LIACS) · Leiden, NL</p>
           <ul class="bullets">
-            <li>Designed the full PROACT dual-core RISC-V cryptographic SoC — RTL architecture, full-chip integration and all peripheral &amp; control logic (SPI, configurable UART, control/status registers, PRNG) — integrating the Ibex core and the AES, Ascon and Xoodyak co-processors as third-party/partner IP, from RTL to full chip.</li>
+            <li>Designed the full PROACT dual-core RISC-V cryptographic SoC — RTL architecture, full-chip integration and all peripheral &amp; control logic, with the Ibex core and three crypto co-processors integrated as third-party/partner IP (details in <a href="#proact">The PROACT Chip</a>).</li>
             <li>Prototyped and validated the SoC on Xilinx Artix-7 and Zynq-7000 FPGAs using SPI/UART interfaces; developed C and Python libraries, a control GUI, and user documentation.</li>
             <li>Synthesized the SoC for GlobalFoundries 22FDX using Cadence Genus and performed functional and SDF-annotated gate-level verification in Xcelium.</li>
             <li>Contributed to ASIC physical implementation and MPW tape-out with the imec team, including place-and-route, sign-off, GDSII generation, and design of the 28-pin DIP package bonding diagram.</li>
@@ -775,21 +775,22 @@
 
       <div class="cards-grid">
         <article class="card reveal">
-          <p class="card-tag mono"><span aria-hidden="true">BLK_01 · </span>OPEN-SOURCE / ACM CF'26</p>
+          <p class="card-tag mono"><span aria-hidden="true">BLK_01 · </span>OPEN-SOURCE / ACM CF '26</p>
           <h3>ASSESS — pre-silicon side-channel leakage analysis</h3>
           <p>A cycle-accurate methodology that localizes gate-level side-channel leakage from toggle activity, fast enough for routine checks during iterative ASIC design; benchmarked against RTL-PAT, PATCH and ACA on RISC-V/AES designs.</p>
+          <p class="card-link-row"><a href="https://doi.org/10.1145/3801488.3807896" target="_blank" rel="noopener">Paper (ACM CF Companion '26)<span class="visually-hidden"> (opens in a new tab)</span><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a></p>
         </article>
         <article class="card reveal">
           <p class="card-tag mono"><span aria-hidden="true">BLK_02 · </span>VIVADO HLS / B.SC. THESIS</p>
           <h3>Real-time object detection &amp; tracking on Zynq-7000</h3>
-          <p>Real-time object detection and tracking on a ZYBO Zynq-7000 — HDMI video in, colour-range filtering, and distance estimation from object size, with simultaneous LED-matrix and VGA output plus UART telemetry. Verified in MATLAB/OpenCV, then synthesized to hardware with HLS&nbsp;+&nbsp;Vivado.</p>
+          <p>Real-time object detection and tracking on a ZYBO Zynq-7000 — HDMI video in, color-range filtering, and distance estimation from object size, with simultaneous LED-matrix and VGA output plus UART telemetry. Verified in MATLAB/OpenCV, then synthesized to hardware with HLS&nbsp;+&nbsp;Vivado.</p>
           <img class="card-img" src="assets/projects/zynq-object-detection.png" alt="Real-time object detection &amp; tracking system on a ZYBO Zynq-7000: camera and HDMI input, color-based detection, LED-matrix and VGA output" width="1024" height="320" loading="lazy">
           <p class="card-link-row"><a href="thesis-bsc.html">View B.Sc. thesis<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a href="thesis-bsc.html#demos" aria-label="Watch demo videos on the B.Sc. thesis page"><span aria-hidden="true">▷</span>&nbsp;demos</a></p>
         </article>
         <article class="card reveal">
           <p class="card-tag mono"><span aria-hidden="true">BLK_03 · </span>RTL / QUARTUS / CYCLONE II</p>
           <h3>CNN accelerator on FPGA</h3>
-          <p>RTL implementation of a tiny convolutional-network accelerator (MNIST), validated against a Keras reference model and brought up on an Altera Cyclone II board.</p>
+          <p>RTL implementation of a quantized tiny convolutional-network accelerator (MNIST), validated against a Keras reference model and brought up on an Altera Cyclone II board.</p>
         </article>
         <article class="card reveal">
           <p class="card-tag mono"><span aria-hidden="true">BLK_04 · </span>ESP32 / AVR / ALTIUM · 2020</p>
@@ -1229,34 +1230,34 @@
         <a class="ccard" href="mailto:a.sajadi@liacs.leidenuniv.nl">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
           <span class="cc-k mono">EMAIL</span>
-          <span class="cc-v">a.sajadi@liacs.leidenuniv.nl</span>
+          <span class="cc-v">a.sajadi@<wbr>liacs.leidenuniv.nl</span>
         </a>
         <a class="ccard" href="tel:+31681183983">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.9v2.6a1.9 1.9 0 0 1-2.1 1.9 18.9 18.9 0 0 1-8.2-2.9 18.6 18.6 0 0 1-5.7-5.7A18.9 18.9 0 0 1 2.1 4.6 1.9 1.9 0 0 1 4 2.5h2.6a1.9 1.9 0 0 1 1.9 1.6c.1.9.3 1.8.7 2.7a1.9 1.9 0 0 1-.4 2L7.6 10a15.2 15.2 0 0 0 5.9 5.9l1.2-1.2a1.9 1.9 0 0 1 2-.4c.9.4 1.8.6 2.7.7a1.9 1.9 0 0 1 1.6 1.9Z"/></svg>
           <span class="cc-k mono">PHONE</span>
           <span class="cc-v">+31 6 81183983</span>
         </a>
-        <a class="ccard" href="https://www.linkedin.com/in/abisj" target="_blank" rel="noopener">
+        <a class="ccard" href="https://www.linkedin.com/in/abisj" target="_blank" rel="noopener" aria-label="LinkedIn — linkedin.com/in/abisj (opens in a new tab)">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5V17M7.5 7.2v.1M12 17v-4a2.4 2.4 0 0 1 4.8 0v4"/></svg>
           <span class="cc-k mono">LINKEDIN</span>
           <span class="cc-v">linkedin.com/in/abisj</span>
         </a>
-        <a class="ccard" href="https://github.com/abolfazlsajadi" target="_blank" rel="noopener">
+        <a class="ccard" href="https://github.com/abolfazlsajadi" target="_blank" rel="noopener" aria-label="GitHub — github.com/abolfazlsajadi (opens in a new tab)">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
           <span class="cc-k mono">GITHUB</span>
           <span class="cc-v">github.com/abolfazlsajadi</span>
         </a>
-        <a class="ccard" href="https://orcid.org/0000-0003-0657-7022" target="_blank" rel="noopener">
+        <a class="ccard" href="https://orcid.org/0000-0003-0657-7022" target="_blank" rel="noopener" aria-label="ORCID 0000-0003-0657-7022 (opens in a new tab)">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.3"/><path d="M8.4 10v7M8.4 6.9v.1"/><path d="M11.6 10h2.7a3.5 3.5 0 0 1 0 7h-2.7Z" stroke-linejoin="round"/></svg>
           <span class="cc-k mono">ORCID</span>
           <span class="cc-v">0000-0003-0657-7022</span>
         </a>
-        <a class="ccard" href="https://scholar.google.com/citations?user=6oefRlcAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <a class="ccard" href="https://scholar.google.com/citations?user=6oefRlcAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile (opens in a new tab)">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.5 9 12 14l9.5-5L12 4Z"/><path d="M6.3 11.7V16c0 1.6 2.6 3 5.7 3s5.7-1.4 5.7-3v-4.3"/></svg>
           <span class="cc-k mono">GOOGLE SCHOLAR</span>
           <span class="cc-v">Profile</span>
         </a>
-        <a class="ccard" href="https://www.universiteitleiden.nl/en/staffmembers/abolfazl-sajadi#tab-1" target="_blank" rel="noopener">
+        <a class="ccard" href="https://www.universiteitleiden.nl/en/staffmembers/abolfazl-sajadi#tab-1" target="_blank" rel="noopener" aria-label="Leiden University staff page (opens in a new tab)">
           <svg class="cc-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M5 21V10M19 21V10M9 21v-7h6v7M12 3 3 8h18l-9-5Z"/></svg>
           <span class="cc-k mono">LEIDEN UNIVERSITY</span>
           <span class="cc-v">Staff page</span>
@@ -1296,7 +1297,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=48c1"></script>
+<script src="script.js?v=48c2"></script>
 <!-- first-party visit beacon -> /api/hit on this domain (Cloudflare Worker).
      One POST per pageview: path + referrer. No cookies, fails silently.
      See CV_2026/website/analytics/ for the full setup. -->

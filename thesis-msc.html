@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%233ce8a8' stroke-width='2'/%3E%3Cpath stroke='%233ce8a8' stroke-width='2' stroke-linecap='round' d='M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4'/%3E%3Crect x='13.5' y='13.5' width='5' height='5' fill='%233ce8a8'/%3E%3C/svg%3E">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css?v=48c11">
+<link rel="stylesheet" href="styles.css?v=48c12">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -132,6 +132,30 @@
         <use href="#g-inv" x="200" y="330"/>
         <use href="#g-xor" x="640" y="280"/>
       </svg>
+      <svg class="hero-sig" viewBox="0 0 300 250" preserveAspectRatio="xMidYMid meet" focusable="false" style="width:clamp(150px,12vw,210px);height:auto;right:1.25rem;top:1.75rem">
+        <g class="sig" opacity="0.55">
+          <!-- chip package with stubby pins -->
+          <rect x="85" y="45" width="140" height="140" rx="7" fill="none" stroke="var(--hgate)" stroke-width="2" stroke-linejoin="round"/>
+          <path fill="none" stroke="var(--hgate)" stroke-width="2" stroke-linecap="round" d="M120 45 V33 M155 45 V33 M190 45 V33 M120 185 V197 M155 185 V197 M190 185 V197 M85 90 H73 M225 165 H237"/>
+          <!-- fingerprint ridges on the die -->
+          <path class="trace" stroke-linecap="round" d="M129.9 121.7 A26 26 0 0 1 148.3 89.9"/>
+          <path class="trace" stroke-linecap="round" d="M159.5 89.4 A26 26 0 0 1 180.9 117.3"/>
+          <path class="trace" stroke-linecap="round" d="M115.2 111.5 A40 40 0 0 1 168.7 77.4"/>
+          <path class="trace" stroke-linecap="round" d="M107.4 142.5 A55 55 0 0 1 119.6 72.9"/>
+          <!-- two ridges straighten into traces and exit to vias -->
+          <path class="trace" stroke-linecap="round" d="M177.9 82.2 A40 40 0 0 1 192.1 100 H264"/>
+          <path class="trace" stroke-linecap="round" d="M131.7 65.2 A55 55 0 0 1 207.9 130 H264"/>
+          <!-- ridge core, single tiny accent -->
+          <path fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" d="M142.8 110.6 A13 13 0 0 1 166.8 109.5"/>
+          <!-- challenge in, response out -->
+          <path class="trace" stroke-linecap="round" d="M30 140 H103"/>
+          <circle class="via" cx="30" cy="140" r="4"/>
+          <circle class="via" cx="264" cy="100" r="4"/>
+          <circle class="via" cx="264" cy="130" r="4"/>
+          <text class="net-lbl" x="80" y="131" text-anchor="end">challenge</text>
+          <text class="net-lbl" x="230" y="147">response</text>
+        </g>
+      </svg>
       <div class="binstream">
         <div class="bin-col bc1"></div>
         <div class="bin-col bc2"></div>
@@ -209,10 +233,11 @@
       </header>
 
       <ul class="bullets teach-list reveal">
+        <li><strong>Research continuity:</strong> the thesis line matured into <a href="https://doi.org/10.1016/j.jnca.2023.103693" target="_blank" rel="noopener">DC-PUF<span class="visually-hidden"> (paper, opens in a new tab)</span></a>, an ML-resistant authentication protocol for resource-constrained IoT (<em>J. Network &amp; Computer Applications</em>, 2023).</li>
+        <li><strong>SQ-PUF:</strong> a <a href="http://ijece.org/Article/34099" target="_blank" rel="noopener">secure, scalable, ML-attack-resistant PUF-based authentication architecture<span class="visually-hidden"> (paper, opens in a new tab)</span></a>, published in the <em>Iranian Journal of Electrical and Computer Engineering</em>.</li>
         <li><strong>Two ML attack strategies</strong> against the RPUF and OBPUF architectures, with significantly improved attack efficiency over previous work.</li>
-        <li><strong>SQ-PUF:</strong> a secure, scalable, ML-attack-resistant PUF-based authentication architecture, published in the <em>Iranian Journal of Electrical and Computer Engineering</em>.</li>
         <li><strong>Systematic evaluation</strong> of ML-attack resilience, uniformity, uniqueness, and hardware overhead of the proposed architecture.</li>
-        <li><strong>Research continuity:</strong> the thesis line matured into DC-PUF, an ML-resistant authentication protocol for resource-constrained IoT (<em>J. Network &amp; Computer Applications</em>, 2023).</li>
+        <li><strong>Also during the M.Sc.:</strong> a quantized CNN for MNIST digit recognition, implemented in RTL and brought up on an Altera Cyclone-II FPGA — see the <a href="index.html#projects">projects section</a>.</li>
       </ul>
     </div>
   </section>
@@ -357,7 +382,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=48c1"></script>
+<script src="script.js?v=48c2"></script>
 <!-- first-party visit beacon -> /api/hit on this domain (Cloudflare Worker).
      One POST per pageview: path + referrer. No cookies, fails silently.
      See CV_2026/website/analytics/ for the full setup. -->

@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%233ce8a8' stroke-width='2'/%3E%3Cpath stroke='%233ce8a8' stroke-width='2' stroke-linecap='round' d='M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4'/%3E%3Crect x='13.5' y='13.5' width='5' height='5' fill='%233ce8a8'/%3E%3C/svg%3E">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css?v=48c11">
+<link rel="stylesheet" href="styles.css?v=48c12">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -138,6 +138,46 @@
         <use href="#g-and" x="200" y="330"/>
         <use href="#g-inv" x="640" y="280"/>
       </svg>
+      <svg class="hero-sig" viewBox="0 0 260 240" preserveAspectRatio="xMidYMid meet" focusable="false" style="width:230px;height:auto;top:390px;right:96px">
+        <!-- top:390px sits the die BELOW the main schematic's wire band (page
+             y~236-437 at every width >=1081, since that svg is height-driven
+             `slice`) so no hero wire ever crosses the die at any width -->
+        <g class="sig" opacity="0.55">
+          <!-- seal-ring corner marks (double L) -->
+          <g fill="none" stroke="var(--hgate)" stroke-width="1.6">
+            <path d="M28 40 V14 H54 M24 44 V10 H58"/>
+            <path d="M206 14 H232 V40 M202 10 H236 V44"/>
+            <path d="M28 176 V202 H54 M24 172 V206 H58"/>
+            <path d="M206 202 H232 V176 M202 206 H236 V172"/>
+          </g>
+          <!-- die outline -->
+          <rect x="34" y="20" width="192" height="176" fill="none" stroke="var(--hgate)" stroke-width="2"/>
+          <!-- edge pad stubs -->
+          <g fill="none" stroke="var(--htrace)" stroke-width="2">
+            <path d="M96 20 V13 M128 20 V13 M160 20 V13"/>
+            <path d="M96 196 V203 M128 196 V203 M160 196 V203"/>
+            <path d="M34 60 H27 M34 160 H27"/>
+            <path d="M226 60 H233 M226 160 H233"/>
+          </g>
+          <!-- macro blocks: two RV32 cores left, crypto cores right; the empty
+               horizontal band y 98-134 is the routing channel the hero wire
+               passes through -->
+          <g fill="none" stroke="var(--hgate)" stroke-width="1.6">
+            <rect x="48" y="36" width="62" height="44"/>
+            <rect x="48" y="134" width="62" height="44"/>
+            <rect x="140" y="36" width="70" height="28"/>
+            <rect x="140" y="70" width="70" height="28"/>
+            <rect x="140" y="134" width="70" height="28"/>
+          </g>
+          <text class="net-lbl" x="79" y="62" text-anchor="middle">RV32</text>
+          <text class="net-lbl" x="79" y="160" text-anchor="middle">RV32</text>
+          <text class="net-lbl" x="175" y="54" text-anchor="middle">AES</text>
+          <text class="net-lbl" x="175" y="88" text-anchor="middle">ASCON</text>
+          <text class="net-lbl" x="175" y="152" text-anchor="middle">XOODYAK</text>
+          <rect x="204" y="25" width="5" height="5" fill="var(--accent)" opacity="0.8"/>
+          <text class="net-lbl" x="130" y="224" text-anchor="middle">GF 22FDX</text>
+        </g>
+      </svg>
       <div class="binstream">
         <div class="bin-col bc1"></div>
         <div class="bin-col bc2"></div>
@@ -157,12 +197,12 @@
       <div class="hero-glass">
       <p class="thesis-meta mono"><span class="thesis-badge">PH.D. DISSERTATION</span><span class="thesis-badge thesis-badge-live">ONGOING · EXPECTED FEB 2027</span></p>
       <h1>Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits</h1>
-      <p class="page-sub">Leiden University (LIACS) · Aug 2022 – Feb 2027 (expected) · PROACT project</p>
+      <p class="page-sub">Leiden University (LIACS) · Aug 2022 – Feb 2027 (expected) · PROACT&nbsp;project</p>
       </div>
 
       <div class="note-live" role="note">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3 2"/></svg>
-        <p><strong>Work in progress.</strong> This doctorate is ongoing: the title above is tentative and the defence is expected in February 2027. Everything below describes results achieved so far.</p>
+        <p><strong>Work in progress.</strong> This doctorate is ongoing: the title above is tentative and the defense is expected in February 2027. Everything below describes results achieved so far.</p>
       </div>
 
       <div class="spec reveal" role="group" aria-label="Thesis fact sheet">
@@ -171,7 +211,7 @@
           <div class="spec-row"><dt>TITLE (TENTATIVE)</dt><dd>Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits</dd></div>
           <div class="spec-row"><dt>DEGREE</dt><dd>Ph.D. in Computer Science — ongoing</dd></div>
           <div class="spec-row"><dt>UNIVERSITY</dt><dd>Leiden University (LIACS), Leiden, The Netherlands</dd></div>
-          <div class="spec-row"><dt>PERIOD</dt><dd>Aug 2022 – Feb 2027 (expected defence)</dd></div>
+          <div class="spec-row"><dt>PERIOD</dt><dd>Aug 2022 – Feb 2027 (expected defense)</dd></div>
           <div class="spec-row"><dt>SUPERVISORS</dt><dd>Prof. Nele Mentens · Dr. Todor Stefanov · Dr. Nuša Zidarič</dd></div>
           <div class="spec-row"><dt>PROJECT</dt><dd>PROACT — NWO NWA Cybersecurity programme, grant NWA.1215.18.014 (PI: Prof. Nele Mentens)</dd></div>
         </dl>
@@ -198,7 +238,7 @@
       <div class="prose reveal">
         <p>My doctorate sits at the intersection of hardware security and digital IC design, inside the <a href="https://doi.org/10.1007/978-3-031-55673-9_18" target="_blank" rel="noopener">PROACT project<span class="visually-hidden"> (opens in a new tab)</span></a>. The central question: how can the side-channel leakage of cryptographic hardware be evaluated <em>before</em> the chip exists — at design time, from simulation data — and how well do those pre-silicon estimates hold up against measurements on real silicon?</p>
         <p>The silicon half of the answer is the <a href="index.html#proact">PROACT test chip</a>, a dual-core RISC-V cryptographic SoC. I designed the full SoC — the RTL architecture, full-chip integration and all peripheral &amp; control logic (SPI, a configurable UART, control/status registers and a PRNG) — integrating third-party IP such as the Ibex RISC-V core and the AES, Ascon and Xoodyak cryptographic co-processors, which were developed by project partners. I prototyped the SoC on Xilinx FPGAs, developed its C and Python libraries, control GUI and documentation, synthesized it for GlobalFoundries 22FDX in Cadence Genus, verified it in Xcelium, and completed place-and-route and sign-off with the imec team, through to tape-out.</p>
-        <p>The pre-silicon half is <strong>ASSESS</strong>, a cycle-accurate methodology that localizes gate-level side-channel leakage from toggle activity fast enough for routine use during iterative ASIC design. It is described on the <a href="index.html#projects">projects</a> section of the main page.</p>
+        <p>The pre-silicon half is <strong>ASSESS</strong>, a cycle-accurate methodology that localizes gate-level side-channel leakage from toggle activity fast enough for routine use during iterative ASIC design. It is described in the <a href="index.html#projects">projects</a> section of the main page.</p>
         <p>Post-silicon evaluation is planned once the fabricated chip is delivered: a custom ChipWhisperer CW308 target board and an automated CPA/TVLA measurement flow are already in place, so pre-silicon predictions can be compared directly against physical measurements of the same design.</p>
       </div>
     </div>
@@ -449,7 +489,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=48c1"></script>
+<script src="script.js?v=48c2"></script>
 <!-- first-party visit beacon -> /api/hit on this domain (Cloudflare Worker).
      One POST per pageview: path + referrer. No cookies, fails silently.
      See CV_2026/website/analytics/ for the full setup. -->
