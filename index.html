@@ -18,7 +18,7 @@
 <meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%233ce8a8' stroke-width='2'/%3E%3Cpath stroke='%233ce8a8' stroke-width='2' stroke-linecap='round' d='M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4'/%3E%3Crect x='13.5' y='13.5' width='5' height='5' fill='%233ce8a8'/%3E%3C/svg%3E">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css?v=48c12">
+<link rel="stylesheet" href="styles.css?v=pubmem1">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,6 +44,63 @@
     "https://orcid.org/0000-0003-0657-7022",
     "https://scholar.google.com/citations?user=6oefRlcAAAAJ&hl=en",
     "https://www.universiteitleiden.nl/en/staffmembers/abolfazl-sajadi#tab-1"
+  ],
+  "subjectOf": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "DC-PUF: Machine learning-resistant PUF-based authentication protocol using dependency chain for resource-constraint IoT devices",
+      "datePublished": "2023",
+      "identifier": "https://doi.org/10.1016/j.jnca.2023.103693",
+      "url": "https://doi.org/10.1016/j.jnca.2023.103693",
+      "encoding": { "@type": "MediaObject", "contentUrl": "https://abolfazlsajadi.com/assets/publications/dc-puf-2023.pdf", "encodingFormat": "application/pdf" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "SQ-PUF: A Resistant PUF-Based Authentication Protocol against Machine-Learning Attacks",
+      "datePublished": "2023",
+      "url": "http://ijece.org/Article/34099",
+      "encoding": { "@type": "MediaObject", "contentUrl": "https://abolfazlsajadi.com/assets/publications/sq-puf-2023.pdf", "encodingFormat": "application/pdf" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Systematic Comparison and Improvement of Pre-silicon Leakage Analysis Tools",
+      "datePublished": "2026",
+      "identifier": "https://doi.org/10.1145/3801488.3807896",
+      "url": "https://doi.org/10.1145/3801488.3807896",
+      "encoding": { "@type": "MediaObject", "contentUrl": "https://abolfazlsajadi.com/assets/publications/assess-pre-silicon-leakage-analysis-2026.pdf", "encodingFormat": "application/pdf" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "A Systematic Comparison of Side-channel Countermeasures for RISC-V-based SoCs",
+      "datePublished": "2024",
+      "identifier": "https://doi.org/10.1109/NorCAS64408.2024.10752477",
+      "url": "https://doi.org/10.1109/NorCAS64408.2024.10752477",
+      "encoding": { "@type": "MediaObject", "contentUrl": "https://abolfazlsajadi.com/assets/publications/risc-v-side-channel-countermeasures-2024.pdf", "encodingFormat": "application/pdf" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "PROACT - Physical Attack Resistance of Cryptographic Algorithms and Circuits with Reduced Time to Market",
+      "datePublished": "2024",
+      "identifier": "https://doi.org/10.1007/978-3-031-55673-9_18",
+      "url": "https://doi.org/10.1007/978-3-031-55673-9_18",
+      "encoding": { "@type": "MediaObject", "contentUrl": "https://abolfazlsajadi.com/assets/publications/proact-physical-attack-resistance-2024.pdf", "encodingFormat": "application/pdf" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "A Survey of Recent Developments in Testability, Safety and Security of RISC-V Processors",
+      "datePublished": "2023",
+      "identifier": "https://doi.org/10.1109/ETS56758.2023.10174099",
+      "url": "https://doi.org/10.1109/ETS56758.2023.10174099",
+      "encoding": { "@type": "MediaObject", "contentUrl": "https://abolfazlsajadi.com/assets/publications/risc-v-testability-safety-security-survey-2023.pdf", "encodingFormat": "application/pdf" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "POSTER: Security and Cost Trade-offs of Side-Channel Countermeasures for AES Software on RISC-V SoCs",
+      "datePublished": "2026",
+      "identifier": "https://doi.org/10.1145/3801487.3805609",
+      "url": "https://doi.org/10.1145/3801487.3805609",
+      "encoding": { "@type": "MediaObject", "contentUrl": "https://abolfazlsajadi.com/assets/publications/aes-risc-v-side-channel-countermeasures-poster-2026.pdf", "encodingFormat": "application/pdf" }
+    }
   ]
 }
 </script>
@@ -818,68 +875,182 @@
         <span class="sec-sig mono" aria-hidden="true">CSR 0x14 · RW</span>
       </header>
 
+      <p class="pub-intro">Each record includes the paper PDF, its publisher page, and a detailed AI-readable memory with methods, evidence, limitations, and citation context.</p>
+
       <ol class="pub-list">
         <li class="reveal">
-          <article class="pub-card">
+          <article class="pub-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+            <meta itemprop="datePublished" content="2023">
             <p class="pub-meta"><span class="pub-badge mono">JOURNAL</span><span class="pub-year mono">2023</span></p>
-            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1016/j.jnca.2023.103693" target="_blank" rel="noopener">DC-PUF: ML-Resistant PUF-Based Authentication for Resource-Constrained IoT<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="pub-authors"><strong>A. Sajadi</strong>, A. Shabani, B. Alizadeh</p>
-            <p class="pub-venue"><em>J. Network &amp; Computer Applications</em>, vol. 217, 2023 · <span class="doi mono">DOI 10.1016/j.jnca.2023.103693</span></p>
-            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+            <h3 class="pub-title"><a class="pub-link" itemprop="url" href="https://doi.org/10.1016/j.jnca.2023.103693" target="_blank" rel="noopener"><span itemprop="headline">DC-PUF: Machine learning-resistant PUF-based authentication protocol using dependency chain for resource-constraint IoT devices</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors" itemprop="author"><strong>A. Sajadi</strong>, A. Shabani, B. Alizadeh</p>
+            <p class="pub-venue"><em itemprop="isPartOf">Journal of Network and Computer Applications</em>, vol. 217, article 103693, 2023 · <span class="doi mono">DOI 10.1016/j.jnca.2023.103693</span></p>
+            <div class="pub-actions" aria-label="DC-PUF publication resources">
+              <a class="pub-action pub-action-primary" href="assets/publications/dc-puf-2023.pdf" target="_blank" rel="noopener" type="application/pdf">Read PDF</a>
+              <a class="pub-action" href="https://doi.org/10.1016/j.jnca.2023.103693" target="_blank" rel="noopener">DOI / publisher</a>
+              <a class="pub-action" href="assets/publications/memory/01-dc-puf-2023.md" target="_blank" rel="noopener" type="text/markdown">AI paper memory</a>
+            </div>
+            <details class="pub-details">
+              <summary>Paper explanation and citation context</summary>
+              <div class="pub-details-body">
+                <p class="pub-abstract"><strong>Core contribution.</strong> A stateful Arbiter-PUF authentication protocol in which each effective challenge depends on the current challenge, a random bit, and the preceding authenticated response, making harvested challenge-response pairs harder to model.</p>
+                <dl class="pub-facts">
+                  <div><dt>Key evidence</dt><dd>At 400,000 CRPs, reported prediction accuracy was 51.55% for logistic regression, 52.56% for ANN, and 56.27% for CNN; measured uniformity was 51.57% and uniqueness 49.23%.</dd></div>
+                  <div><dt>Cite this for</dt><dd>Stateful or machine-learning-resistant PUFs, lightweight IoT authentication, and dependency-chain challenge obfuscation.</dd></div>
+                  <div><dt>Scope</dt><dd>The results are empirical under the evaluated attacks; secure enrollment and correct protocol-state synchronization are assumed, not proven universally.</dd></div>
+                </dl>
+              </div>
+            </details>
           </article>
         </li>
         <li class="reveal">
-          <article class="pub-card">
-            <p class="pub-meta"><span class="pub-badge mono">JOURNAL</span></p>
-            <h3 class="pub-title"><a class="pub-link" href="http://ijece.org/Article/34099" target="_blank" rel="noopener">SQ-PUF: A Resistant PUF-Based Authentication Protocol against Machine-Learning Attacks<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="pub-authors"><strong>A. Sajadi</strong>, B. Alizadeh</p>
-            <p class="pub-venue"><em>Iranian Journal of Electrical and Computer Engineering</em></p>
-            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <article class="pub-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+            <meta itemprop="datePublished" content="2023">
+            <p class="pub-meta"><span class="pub-badge mono">JOURNAL</span><span class="pub-year mono">2023</span><span class="pub-year mono">PERSIAN</span></p>
+            <h3 class="pub-title"><a class="pub-link" itemprop="url" href="http://ijece.org/Article/34099" target="_blank" rel="noopener"><span itemprop="headline">SQ-PUF: A Resistant PUF-Based Authentication Protocol against Machine-Learning Attacks</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors" itemprop="author"><strong>A. Sajadi</strong>, B. Alizadeh</p>
+            <p class="pub-venue"><em itemprop="isPartOf">Iranian Journal of Electrical and Computer Engineering</em>, vol. 21, no. 3, pp. 219–226, 2023</p>
+            <div class="pub-actions" aria-label="SQ-PUF publication resources">
+              <a class="pub-action pub-action-primary" href="assets/publications/sq-puf-2023.pdf" target="_blank" rel="noopener" type="application/pdf">Read PDF</a>
+              <a class="pub-action" href="http://ijece.org/Article/34099" target="_blank" rel="noopener">Publisher record</a>
+              <a class="pub-action" href="assets/publications/memory/02-sq-puf-2023.md" target="_blank" rel="noopener" type="text/markdown">AI paper memory</a>
+            </div>
+            <details class="pub-details">
+              <summary>Paper explanation and citation context</summary>
+              <div class="pub-details-body">
+                <p class="pub-abstract"><strong>Core contribution.</strong> SQ-PUF uses selected sequence-dependent modules so that the effective challenge depends on prior state and randomness, combining an LFSR with a single Arbiter PUF for lightweight authentication.</p>
+                <dl class="pub-facts">
+                  <div><dt>Key evidence</dt><dd>For the principal 400,000-CRP experiment, reported accuracies were 52.14% for logistic regression, 52.40% for ANN, and 50.22% for SVM; uniformity was 50.561% and uniqueness 49.101%.</dd></div>
+                  <div><dt>Cite this for</dt><dd>Sequence-dependent PUF constructions and lightweight authentication designed to resist evaluated machine-learning attacks.</dd></div>
+                  <div><dt>Scope</dt><dd>The paper is in Persian and reports simulation-based results for specified attack models; secure enrollment and synchronized state remain system assumptions.</dd></div>
+                </dl>
+              </div>
+            </details>
           </article>
         </li>
         <li class="reveal">
-          <article class="pub-card">
+          <article class="pub-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+            <meta itemprop="datePublished" content="2026">
             <p class="pub-meta"><span class="pub-badge mono">CONFERENCE</span><span class="pub-year mono">2026</span></p>
-            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1145/3801488.3807896" target="_blank" rel="noopener">Systematic Comparison and Improvement of Pre-silicon Leakage Analysis Tools<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="pub-authors"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
-            <p class="pub-venue"><em>ACM Computing Frontiers (CF Companion '26)</em>, 2026 · <span class="doi mono">DOI 10.1145/3801488.3807896</span></p>
-            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+            <h3 class="pub-title"><a class="pub-link" itemprop="url" href="https://doi.org/10.1145/3801488.3807896" target="_blank" rel="noopener"><span itemprop="headline">Systematic Comparison and Improvement of Pre-silicon Leakage Analysis Tools</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors" itemprop="author"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
+            <p class="pub-venue"><em itemprop="isPartOf">ACM Computing Frontiers (CF Companion '26)</em>, 2026 · <span class="doi mono">DOI 10.1145/3801488.3807896</span></p>
+            <div class="pub-actions" aria-label="ASSESS publication resources">
+              <a class="pub-action pub-action-primary" href="assets/publications/assess-pre-silicon-leakage-analysis-2026.pdf" target="_blank" rel="noopener" type="application/pdf">Read PDF</a>
+              <a class="pub-action" href="https://doi.org/10.1145/3801488.3807896" target="_blank" rel="noopener">DOI / publisher</a>
+              <a class="pub-action" href="assets/publications/memory/06-pre-silicon-leakage-analysis-assess-2026.md" target="_blank" rel="noopener" type="text/markdown">AI paper memory</a>
+            </div>
+            <details class="pub-details">
+              <summary>Paper explanation and citation context</summary>
+              <div class="pub-details-body">
+                <p class="pub-abstract"><strong>Core contribution.</strong> After comparing RTL-PAT, PATCH, and ACA, the paper introduces ASSESS: a cycle-accurate VCD plus one-off average-power scan that localizes pre-silicon side-channel leakage without repeatedly storing and processing full time-series traces.</p>
+                <dl class="pub-facts">
+                  <div><dt>Key evidence</dt><dd>On a 600-cycle Ibex case, ASSESS completed in 1 h 53 min 9 s versus 72 d 15 h 31 min for ACA, a reported 960× speedup; the corresponding PATCH comparison reports 1,030×.</dd></div>
+                  <div><dt>Cite this for</dt><dd>Pre-silicon leakage localization, Leakage Impact Factor analysis, gate-level side-channel assessment, or ASSESS runtime improvements.</dd></div>
+                  <div><dt>Scope</dt><dd>Results use GF22FDX gate-level Ibex/Tiny-AES and AES-coprocessor cases; the workflow requires a technology library and power-analysis tooling.</dd></div>
+                </dl>
+              </div>
+            </details>
           </article>
         </li>
         <li class="reveal">
-          <article class="pub-card">
+          <article class="pub-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+            <meta itemprop="datePublished" content="2024">
             <p class="pub-meta"><span class="pub-badge mono">CONFERENCE</span><span class="pub-year mono">2024</span></p>
-            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1109/NorCAS64408.2024.10752477" target="_blank" rel="noopener">A Systematic Comparison of Side-channel Countermeasures for RISC-V-based SoCs<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="pub-authors"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
-            <p class="pub-venue"><em>IEEE NorCAS</em>, 2024 · <span class="doi mono">DOI 10.1109/NorCAS64408.2024.10752477</span></p>
-            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+            <h3 class="pub-title"><a class="pub-link" itemprop="url" href="https://doi.org/10.1109/NorCAS64408.2024.10752477" target="_blank" rel="noopener"><span itemprop="headline">A Systematic Comparison of Side-channel Countermeasures for RISC-V-based SoCs</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors" itemprop="author"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
+            <p class="pub-venue"><em itemprop="isPartOf">IEEE Nordic Circuits and Systems Conference (NorCAS)</em>, 2024 · <span class="doi mono">DOI 10.1109/NorCAS64408.2024.10752477</span></p>
+            <div class="pub-actions" aria-label="RISC-V side-channel countermeasures publication resources">
+              <a class="pub-action pub-action-primary" href="assets/publications/risc-v-side-channel-countermeasures-2024.pdf" target="_blank" rel="noopener" type="application/pdf">Read PDF</a>
+              <a class="pub-action" href="https://doi.org/10.1109/NorCAS64408.2024.10752477" target="_blank" rel="noopener">DOI / publisher</a>
+              <a class="pub-action" href="assets/publications/memory/04-risc-v-side-channel-countermeasures-2024.md" target="_blank" rel="noopener" type="text/markdown">AI paper memory</a>
+            </div>
+            <details class="pub-details">
+              <summary>Paper explanation and citation context</summary>
+              <div class="pub-details-body">
+                <p class="pub-abstract"><strong>Core contribution.</strong> A same-platform security-and-cost comparison of Mask-AES, software and hardware noise generation, Secure-Ibex, and CoCo-Ibex countermeasures for AES software on RISC-V SoCs.</p>
+                <dl class="pub-facts">
+                  <div><dt>Key evidence</dt><dd>The baseline key was recovered at about 250 traces; Mask-AES resisted recovery through 21,000 traces at 2.03× code and 1.47× time, while Secure-Ibex resisted 18,000 traces at 1.41×–5.13× time.</dd></div>
+                  <div><dt>Cite this for</dt><dd>Side-channel security/cost trade-offs, AES on RISC-V, masking, noise generation, secure processors, or compositional countermeasures.</dd></div>
+                  <div><dt>Scope</dt><dd>The study uses first-order CPA on the first AES S-box round on a CW305 Artix-7 platform; results should not be generalized beyond that setup without qualification.</dd></div>
+                </dl>
+              </div>
+            </details>
           </article>
         </li>
         <li class="reveal">
-          <article class="pub-card">
-            <p class="pub-meta"><span class="pub-badge mono">CONFERENCE</span><span class="pub-year mono">2024</span></p>
-            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1007/978-3-031-55673-9_18" target="_blank" rel="noopener">PROACT — Physical Attack Resistance of Cryptographic Algorithms and Circuits with Reduced Time to Market<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="pub-authors">A. Adhikary <em>et al.</em> (incl. <strong>A. Sajadi</strong>)</p>
-            <p class="pub-venue"><em>Applied Reconfigurable Computing (ARC), LNCS</em>, Springer, 2024 · <span class="doi mono">DOI 10.1007/978-3-031-55673-9_18</span></p>
-            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <article class="pub-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+            <meta itemprop="datePublished" content="2024">
+            <p class="pub-meta"><span class="pub-badge mono">BOOK CHAPTER</span><span class="pub-year mono">2024</span></p>
+            <h3 class="pub-title"><a class="pub-link" itemprop="url" href="https://doi.org/10.1007/978-3-031-55673-9_18" target="_blank" rel="noopener"><span itemprop="headline">PROACT — Physical Attack Resistance of Cryptographic Algorithms and Circuits with Reduced Time to Market</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors" itemprop="author">A. Adhikary <em>et al.</em> (incl. <strong>A. Sajadi</strong>)</p>
+            <p class="pub-venue"><em itemprop="isPartOf">Applied Reconfigurable Computing (ARC), LNCS</em>, Springer, pp. 255–266, 2024 · <span class="doi mono">DOI 10.1007/978-3-031-55673-9_18</span></p>
+            <div class="pub-actions" aria-label="PROACT publication resources">
+              <a class="pub-action pub-action-primary" href="assets/publications/proact-physical-attack-resistance-2024.pdf" target="_blank" rel="noopener" type="application/pdf">Chapter PDF · pp. 255–266</a>
+              <a class="pub-action" href="https://doi.org/10.1007/978-3-031-55673-9_18" target="_blank" rel="noopener">DOI / publisher</a>
+              <a class="pub-action" href="assets/publications/memory/05-proact-2024.md" target="_blank" rel="noopener" type="text/markdown">AI paper memory</a>
+            </div>
+            <details class="pub-details">
+              <summary>Paper explanation and citation context</summary>
+              <div class="pub-details-body">
+                <p class="pub-abstract"><strong>Core contribution.</strong> PROACT integrates resistance to side-channel and fault-injection attacks into the ASIC design flow, using a dual-RISC-V benchmark SoC and pre-silicon analysis to reduce physical-security iteration time.</p>
+                <dl class="pub-facts">
+                  <div><dt>Reported status</dt><dd>The 2024 chapter reports an FPGA prototype approaching tape-out, a simulator-based analysis workflow, and two planned tape-outs.</dd></div>
+                  <div><dt>Cite this for</dt><dd>Physical-security-by-design, reduced time to market for protected circuits, the PROACT project, or its dual-RISC-V benchmark SoC.</dd></div>
+                  <div><dt>Scope</dt><dd>This is a project-status chapter: planned tape-outs and intended evaluations must not be described as completed results. The local PDF contains only printed pages 255–266.</dd></div>
+                </dl>
+              </div>
+            </details>
           </article>
         </li>
         <li class="reveal">
-          <article class="pub-card">
-            <p class="pub-meta"><span class="pub-badge mono">CONFERENCE</span><span class="pub-year mono">2023</span></p>
-            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1109/ETS56758.2023.10174099" target="_blank" rel="noopener">A Survey of Developments in Testability, Safety and Security of RISC-V Processors<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="pub-authors">J. Anders <em>et al.</em> (incl. <strong>A. Sajadi</strong>)</p>
-            <p class="pub-venue"><em>IEEE ETS</em>, 2023 · <span class="doi mono">DOI 10.1109/ETS56758.2023.10174099</span></p>
-            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <article class="pub-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+            <meta itemprop="datePublished" content="2023">
+            <p class="pub-meta"><span class="pub-badge pub-badge-review mono">SURVEY</span><span class="pub-year mono">2023</span></p>
+            <h3 class="pub-title"><a class="pub-link" itemprop="url" href="https://doi.org/10.1109/ETS56758.2023.10174099" target="_blank" rel="noopener"><span itemprop="headline">A Survey of Recent Developments in Testability, Safety and Security of RISC-V Processors</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors" itemprop="author">J. Anders <em>et al.</em> (incl. <strong>A. Sajadi</strong>)</p>
+            <p class="pub-venue"><em itemprop="isPartOf">IEEE European Test Symposium (ETS)</em>, 2023 · <span class="doi mono">DOI 10.1109/ETS56758.2023.10174099</span></p>
+            <div class="pub-actions" aria-label="RISC-V survey publication resources">
+              <a class="pub-action pub-action-primary" href="assets/publications/risc-v-testability-safety-security-survey-2023.pdf" target="_blank" rel="noopener" type="application/pdf">Read PDF</a>
+              <a class="pub-action" href="https://doi.org/10.1109/ETS56758.2023.10174099" target="_blank" rel="noopener">DOI / publisher</a>
+              <a class="pub-action" href="assets/publications/memory/03-risc-v-testability-safety-security-survey-2023.md" target="_blank" rel="noopener" type="text/markdown">AI paper memory</a>
+            </div>
+            <details class="pub-details">
+              <summary>Paper explanation and citation context</summary>
+              <div class="pub-details-body">
+                <p class="pub-abstract"><strong>Core contribution.</strong> A cross-domain snapshot of RISC-V processor testability, safety, and security research, connecting manufacturing and in-field testing with functional safety, cryptographic extensions, side-channel protection, roots of trust, and trusted execution.</p>
+                <dl class="pub-facts">
+                  <div><dt>Coverage</dt><dd>The survey organizes SBST and system-level test, functional and timing safety, cryptographic hardware and ISA extensions, side-channel defenses, and hardware security foundations.</dd></div>
+                  <div><dt>Cite this for</dt><dd>A broad 2023 overview of dependable and secure RISC-V processors or a taxonomy spanning testability, safety, and security.</dd></div>
+                  <div><dt>Scope</dt><dd>It is a selected research snapshot rather than an exhaustive systematic review; the fast-moving RISC-V ecosystem may have evolved since publication.</dd></div>
+                </dl>
+              </div>
+            </details>
           </article>
         </li>
         <li class="reveal">
-          <article class="pub-card">
+          <article class="pub-card" itemscope itemtype="https://schema.org/ScholarlyArticle">
+            <meta itemprop="datePublished" content="2026">
             <p class="pub-meta"><span class="pub-badge mono">POSTER</span><span class="pub-year mono">2026</span></p>
-            <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1145/3801487.3805609" target="_blank" rel="noopener">Security and Cost Trade-offs of Side-Channel Countermeasures for AES Software on RISC-V SoCs<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-            <p class="pub-authors"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
-            <p class="pub-venue"><em>ACM CF '26</em>, 2026 · <span class="doi mono">DOI 10.1145/3801487.3805609</span></p>
-            <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+            <h3 class="pub-title"><a class="pub-link" itemprop="url" href="https://doi.org/10.1145/3801487.3805609" target="_blank" rel="noopener"><span itemprop="headline">POSTER: Security and Cost Trade-offs of Side-Channel Countermeasures for AES Software on RISC-V SoCs</span><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p class="pub-authors" itemprop="author"><strong>A. Sajadi</strong>, N. Zidarič, T. Stefanov, N. Mentens</p>
+            <p class="pub-venue"><em itemprop="isPartOf">ACM Computing Frontiers (CF '26)</em>, pp. 341–342, 2026 · <span class="doi mono">DOI 10.1145/3801487.3805609</span></p>
+            <div class="pub-actions" aria-label="AES RISC-V side-channel poster resources">
+              <a class="pub-action pub-action-primary" href="assets/publications/aes-risc-v-side-channel-countermeasures-poster-2026.pdf" target="_blank" rel="noopener" type="application/pdf">Read PDF</a>
+              <a class="pub-action" href="https://doi.org/10.1145/3801487.3805609" target="_blank" rel="noopener">DOI / publisher</a>
+              <a class="pub-action" href="assets/publications/memory/07-aes-risc-v-countermeasures-poster-2026.md" target="_blank" rel="noopener" type="text/markdown">AI paper memory</a>
+            </div>
+            <details class="pub-details">
+              <summary>Paper explanation and citation context</summary>
+              <div class="pub-details-body">
+                <p class="pub-abstract"><strong>Core contribution.</strong> A concise CF '26 presentation of the same-platform comparison of AES side-channel countermeasures for RISC-V SoCs, emphasizing the measured security and implementation-cost trade-offs.</p>
+                <dl class="pub-facts">
+                  <div><dt>Key evidence</dt><dd>The poster summarizes baseline recovery at about 250 traces, no recovery for Mask-AES through 21,000 traces, and no recovery for Secure-Ibex through 18,000 traces, with their reported overheads.</dd></div>
+                  <div><dt>Cite this for</dt><dd>The CF '26 poster record or a compact security-versus-cost summary of AES countermeasures on RISC-V SoCs.</dd></div>
+                  <div><dt>Scope</dt><dd>This two-page poster presents the NorCAS experimental study concisely and should not be counted as an independent replication of that work.</dd></div>
+                </dl>
+              </div>
+            </details>
           </article>
         </li>
       </ol>
