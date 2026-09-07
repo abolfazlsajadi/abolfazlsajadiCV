@@ -2321,3 +2321,22 @@ html.js-anim .reveal.in {
     background: var(--bg-2);
   }
 }
+
+
+/* Real die photo above the stylized floorplan (added 2026-09) */
+.fp-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  margin-bottom: 0.6rem;
+}
+.fp-photo-cap {
+  margin: 0 0 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
