@@ -1,0 +1,11 @@
+{
+  "text_01": "This thesis built a complete real-time system for detecting and tracking moving objects in public environments on a Xilinx Zynq-7000 SoC:  running on a <strong>ZYBO development board</strong>, whose SoC pairs an ARM processor with FPGA fabric, making it a natural target for HW/SW co-design. The design targeted high speed, high accuracy and strong security at once, while staying cost-effective and able to run standalone:  no host PC in the loop.",
+  "text_02": "The pipeline takes live video in over HDMI, isolates a target by color-range filtering, tracks it, and estimates the distance to the object from its apparent size. Results are shown simultaneously on an LED-matrix panel and a VGA monitor, while the distance telemetry streams out over UART.",
+  "text_03": "The development flow moved from algorithm to silicon in three stages: the algorithms were first verified in MATLAB, then optimized in OpenCV, and finally synthesized to hardware with Vivado HLS, with the ARM software side built in the Xilinx SDK:  C, C++, HLS and Python across the stack.",
+  "text_04": "FIG. 1:  SYSTEM DIAGRAM: ZYBO (ZYNQ-7000) BOARD · CAMERA / HDMI IN · LED-MATRIX + VGA OUT · UART TELEMETRY",
+  "text_05": "HDMI IN",
+  "text_06": "COLOR FILTER",
+  "text_07": "OBJECT TRACKING",
+  "text_08": "DISTANCE CALC",
+  "text_09": "VGA · LED PANEL · UART"
+}

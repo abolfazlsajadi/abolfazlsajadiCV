@@ -1,0 +1,14 @@
+{
+  "text_01": "AUG 2022 – FEB 2027 · ONGOING",
+  "text_02": "Doctoral Researcher:  Digital IC &amp; Hardware Security",
+  "text_03": "Leiden University (LIACS) · Leiden, NL",
+  "text_04": "Designed the full PROACT dual-core RISC-V cryptographic SoC:  RTL architecture, full-chip integration and all peripheral &amp; control logic, with the Ibex core and three crypto co-processors integrated as third-party/partner IP (details in <a href=\"#proact\">The PROACT Chip</a>).",
+  "text_05": "Prototyped and validated the SoC on Xilinx Artix-7 and Zynq-7000 FPGAs using SPI/UART interfaces; developed C and Python libraries, a control GUI, and user documentation.",
+  "text_06": "Synthesized the SoC for GlobalFoundries 22FDX using Cadence Genus and performed functional and SDF-annotated gate-level verification in Xcelium.",
+  "text_07": "Contributed to ASIC physical implementation and MPW tape-out with the imec team, including place-and-route, sign-off, GDSII generation, and design of the 28-pin DIP package bonding diagram.",
+  "text_08": "Built a ChipWhisperer CW308 target board (Altium) and automated CPA/TVLA side-channel evaluation of AES on the RISC-V core.",
+  "text_09": "2018 – 2021",
+  "text_10": "M.Sc. + Research Assistant:  Digital Electronic Systems",
+  "text_11": "University of Tehran (DVD-ES Lab) · Tehran, IR",
+  "text_12": "M.Sc. (GPA 18.28/20, ranked 1st) alongside full-time research at the DVD-ES Lab: designed and evaluated ML-resistant PUF authentication protocols (DC-PUF, SQ-PUF) on FPGA and implemented CNN/SVM modeling attacks in Python (published in <em>J. Network &amp; Computer Applications</em>)."
+}

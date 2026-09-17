@@ -1,0 +1,12 @@
+{
+  "text_01": "I'm a digital hardware engineer completing my PhD at LIACS, Leiden University, working on hardware security and digital IC design in the PROACT project. As the project's chip designer I took its dual-core RISC-V cryptographic SoC from architecture to silicon:  full-chip integration and all peripheral &amp; control logic, FPGA prototypes first, then synthesis and verification for a 22&nbsp;nm GlobalFoundries 22FDX tape-out, with place-and-route and sign-off done with the imec team. The full breakdown is in <a href=\"#proact\">The PROACT Chip</a> below.",
+  "text_02": "I also developed the chip's software stack:  C and Python libraries and a control GUI:  and its documentation, and designed a ChipWhisperer CW308 target board in Altium with an automated CPA/TVLA side-channel flow. I'm strongest in the front-end (RTL design, synthesis, functional verification), with hands-on FPGA prototyping, software and side-channel board experience.",
+  "text_03": "Research interests",
+  "text_04": "Hardware security (offensive &amp; defensive)",
+  "text_05": "Pre-silicon side-channel leakage analysis",
+  "text_06": "ASIC design &amp; cryptographic hardware",
+  "text_07": "HW/SW co-design with FPGAs",
+  "text_08": "Machine learning / GNNs applied to hardware security",
+  "text_09": "Hardware implementation of ML algorithms",
+  "text_10": "PUF-based lightweight authentication"
+}

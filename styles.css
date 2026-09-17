@@ -2298,10 +2298,10 @@ html.js-anim .reveal.in {
 
 /* footer privacy one-liner (GDPR transparency for the first-party visit beacon) —
    deliberately the quietest text on the page */
-.foot-privacy { margin: 0.55rem 0 0; font-size: 0.56rem; letter-spacing: 0.05em; color: var(--muted); opacity: 0.65; }
+.foot-privacy { margin: 0.55rem 0 0; font-size: 0.56rem; letter-spacing: 0.05em; color: var(--muted); opacity: 1; }
 @media (max-width: 620px) {
   /* phones: quiet but still legible when it wraps */
-  .foot-privacy { font-size: 0.62rem; letter-spacing: 0; opacity: 0.75; line-height: 1.5; }
+  .foot-privacy { font-size: 0.62rem; letter-spacing: 0; opacity: 1; line-height: 1.5; }
 }
 
 /* "Abish" nickname lives in the h1 only on phones (the portrait caption that
@@ -2341,6 +2341,7 @@ html.js-anim .reveal.in {
   color: var(--muted);
 }
 
+.site-foot .foot-domain { opacity: 1; }
 /* Portfolio refinement. Homepage scope keeps thesis layouts stable. */
 .portfolio-home .container { width: min(1160px, 100% - 4rem); }
 .portfolio-home .brand { font-family: var(--sans); font-size: 1.1rem; letter-spacing: -.03em; text-transform: none; }

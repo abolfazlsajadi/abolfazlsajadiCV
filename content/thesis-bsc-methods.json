@@ -1,0 +1,13 @@
+{
+  "text_01": "Xilinx Zynq-7000 (ARM + FPGA)",
+  "text_02": "High-Level Synthesis (HLS)",
+  "text_03": "Vivado",
+  "text_04": "MATLAB (verification)",
+  "text_05": "OpenCV (optimization)",
+  "text_06": "C / C++",
+  "text_07": "Python",
+  "text_08": "HDMI video input",
+  "text_09": "VGA output",
+  "text_10": "LED-panel driver",
+  "text_11": "UART telemetry"
+}

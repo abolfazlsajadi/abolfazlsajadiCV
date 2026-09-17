@@ -1,0 +1,5 @@
+{
+  "text_01": "Before the FPGAs and the tape-outs, there was analog. This associate-degree thesis designed and built a <strong>three-phase pure sine inverter</strong>:  fully analog, with adjustable frequency, phase and amplitude, delivering a 220&nbsp;V output.",
+  "text_02": "The design brief pulled in two directions at once: keep the production cost low, and keep the output clean and dependable in electrically noisy, EMI-heavy environments. Meeting both constraints with analog circuitry:  no microcontroller cleanup, no digital regeneration:  is what made the project a proper engineering exercise, and an early lesson in the signal-integrity thinking that carries through all the later digital work.",
+  "text_03": "FIG. 1:  THREE-PHASE PURE SINE OUTPUT, 120° APART · ANIMATED"
+}

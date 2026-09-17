@@ -1,5 +1,5 @@
 # Deploys the static site to GitHub Pages.
-# The repository root IS the site root — there is no build step.
+# Content is rendered into static HTML before publishing the public artifact.
 # Enable in the repo: Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
 
 name: Deploy static site to GitHub Pages
@@ -34,10 +34,25 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload site artifact (repo root, no build)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install build tools
+        run: npm ci --ignore-scripts --no-bin-links --no-audit --no-fund
+
+      - name: Build static pages
+        run: npm run build:site
+
+      - name: Check content and links
+        run: npm test
+
+      - name: Upload public site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "_site"
 
       - name: Deploy to GitHub Pages
         id: deployment

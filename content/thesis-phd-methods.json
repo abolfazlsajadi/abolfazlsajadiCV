@@ -1,0 +1,15 @@
+{
+  "text_01": "RTL design (Verilog, SystemVerilog, VHDL)",
+  "text_02": "RISC-V (Ibex) integration",
+  "text_03": "Cadence Genus",
+  "text_04": "Cadence Xcelium",
+  "text_05": "Cadence Joules",
+  "text_06": "GlobalFoundries 22FDX",
+  "text_07": "SDF-annotated gate-level simulation",
+  "text_08": "Xilinx FPGAs (Artix-7, Zynq-7000)",
+  "text_09": "C / Python",
+  "text_10": "PyTorch Geometric (GNNs)",
+  "text_11": "CPA / TVLA",
+  "text_12": "ChipWhisperer CW308",
+  "text_13": "Altium Designer"
+}

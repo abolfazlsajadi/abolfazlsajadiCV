@@ -1,0 +1,13 @@
+{
+  "text_01": "A complete cryptographic research platform: a fabricated dual-core RISC-V SoC, its custom board, and the software to operate it.",
+  "text_02": "My contribution",
+  "text_03": "Full-chip design, peripheral and control RTL. Integrated third-party Ibex, AES, Ascon and Xoodyak IP.",
+  "text_04": "FPGA validation, ASIC implementation and chip testing. Place-and-route and sign-off with the imec team.",
+  "text_05": "Custom PCB, Python/C libraries, GUI, CLI and documentation. Power-trace analysis is ongoing.",
+  "text_06": "Synthesis in Cadence Genus for GlobalFoundries 22FDX; functional and SDF-annotated gate-level verification in Xcelium.",
+  "text_07": "Place-and-route, sign-off and GDSII with the imec team; 28-pin ceramic DIP bonding diagram.",
+  "text_08": "Custom ChipWhisperer CW308 target board (Altium, 4-layer, 0.01&nbsp;Ω shunt) with an automated CPA/TVLA evaluation flow.",
+  "text_09": "Stylized PROACT floorplan. Amber identifies peripheral and control RTL I designed; grey identifies integrated third-party IP.",
+  "text_10": "Designed around a complete system",
+  "text_11": "I designed the full-chip architecture, integration, and peripheral and control logic. Ibex and the AES, Ascon and Xoodyak co-processors are integrated third-party IP."
+}

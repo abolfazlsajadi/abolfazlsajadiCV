@@ -1,0 +1,3479 @@
+media:
+  - name: documents
+    label: CV and document uploads
+    input: assets/uploads
+    output: assets/uploads
+    extensions:
+      - pdf
+    rename: safe
+content:
+  - name: supervision
+    label: Student supervision
+    type: file
+    path: content/supervision.json
+    format: json
+    fields:
+      - name: intro
+        label: Supervision introduction
+        type: text
+        required: true
+      - name: completed
+        label: Completed bachelor’s theses
+        type: object
+        list:
+          min: 1
+          max: 100
+          collapsible:
+            collapsed: true
+            summary: "{student} ({year})"
+        fields:
+          - name: student
+            label: Student name
+            type: string
+            required: true
+          - name: title
+            label: Thesis title
+            type: text
+            required: true
+          - name: year
+            label: Completion year
+            type: number
+            required: true
+      - name: ongoing
+        label: Theses in progress
+        type: text
+        required: true
+  - name: downloads
+    label: Downloadable CV
+    type: file
+    path: content/downloads.json
+    format: json
+    fields:
+      - name: cv
+        label: CV PDF
+        type: file
+        required: true
+        options:
+          media: documents
+          extensions:
+            - pdf
+  - name: homepage
+    label: Homepage
+    type: group
+    items:
+      - name: home-seo
+        label: Homepage search settings
+        type: file
+        path: content/home-seo.json
+        format: json
+        fields:
+          - name: title
+            label: Search result title
+            type: string
+            required: true
+          - name: description
+            label: Search and sharing description
+            type: text
+            required: true
+      - name: home-hero
+        label: Introduction
+        type: file
+        path: content/home-hero.json
+        format: json
+        fields:
+          - name: text_01
+            label: Digital Hardware Engineer · Hardware Security
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: I design digital hardware, from RTL to working silicon. My work spans RISC-V systems, A...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-proact
+        label: PROACT chip
+        type: file
+        path: content/home-proact.json
+        format: json
+        fields:
+          - name: text_01
+            label: "A complete cryptographic research platform: a fabricated dual-core RISC-V SoC, its cust..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: My contribution
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Full-chip design, peripheral and control RTL. Integrated third-party Ibex, AES, Ascon a...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: FPGA validation, ASIC implementation and chip testing. Place-and-route and sign-off wit...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Custom PCB, Python/C libraries, GUI, CLI and documentation. Power-trace analysis is ong...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Synthesis in Cadence Genus for GlobalFoundries 22FDX; functional and SDF-annotated gate...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Place-and-route, sign-off and GDSII with the imec team; 28-pin ceramic DIP bonding diag...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: Custom ChipWhisperer CW308 target board (Altium, 4-layer, 0.01 Ω shunt) with an automat...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: Stylized PROACT floorplan. Amber identifies peripheral and control RTL I designed; grey...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: Designed around a complete system
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: I designed the full-chip architecture, integration, and peripheral and control logic. I...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-about
+        label: About
+        type: file
+        path: content/home-about.json
+        format: json
+        fields:
+          - name: text_01
+            label: I'm a digital hardware engineer completing my PhD at LIACS, Leiden University, working ...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: "I also developed the chip's software stack: C and Python libraries and a control GUI: a..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Research interests
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Hardware security (offensive & defensive)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Pre-silicon side-channel leakage analysis
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: ASIC design & cryptographic hardware
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: HW/SW co-design with FPGAs
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: Machine learning / GNNs applied to hardware security
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: Hardware implementation of ML algorithms
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: PUF-based lightweight authentication
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-experience
+        label: Experience
+        type: file
+        path: content/home-experience.json
+        format: json
+        fields:
+          - name: text_01
+            label: AUG 2022 – FEB 2027 · ONGOING
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: "Doctoral Researcher: Digital IC & Hardware Security"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Leiden University (LIACS) · Leiden, NL
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: "Designed the full PROACT dual-core RISC-V cryptographic SoC: RTL architecture, full-chi..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Prototyped and validated the SoC on Xilinx Artix-7 and Zynq-7000 FPGAs using SPI/UART i...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Synthesized the SoC for GlobalFoundries 22FDX using Cadence Genus and performed functio...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Contributed to ASIC physical implementation and MPW tape-out with the imec team, includ...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: Built a ChipWhisperer CW308 target board (Altium) and automated CPA/TVLA side-channel e...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: 2018 – 2021
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: "M.Sc. + Research Assistant: Digital Electronic Systems"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: University of Tehran (DVD-ES Lab) · Tehran, IR
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: "M.Sc. (GPA 18.28/20, ranked 1st) alongside full-time research at the DVD-ES Lab: design..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-projects
+        label: Projects
+        type: file
+        path: content/home-projects.json
+        format: json
+        fields:
+          - name: text_01
+            label: VIVADO HLS / B.SC. THESIS
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Real-time object detection & tracking on Zynq-7000
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: "Real-time object detection and tracking on a ZYBO Zynq-7000: HDMI video in, color-range..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: ESP32 / AVR / ALTIUM · 2020
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Home meter monitoring device
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: "Design & implementation of a Home Meter Monitoring Device: project-based (Arduino, AVR,..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: OPEN-SOURCE / ACM CF '26
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: "ASSESS: pre-silicon leakage analysis"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: A cycle-accurate methodology that localizes gate-level side-channel leakage from toggle...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: RTL / QUARTUS / CYCLONE II
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: CNN accelerator on FPGA
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: RTL implementation of a quantized tiny convolutional-network accelerator (MNIST), valid...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-publications
+        label: Publications
+        type: file
+        path: content/home-publications.json
+        format: json
+        fields:
+          - name: text_01
+            label: Each record has the paper PDF, the publisher page, and a short summary of the method, e...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: A. Sajadi, A. Shabani, B. Alizadeh
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Core contribution. A stateful Arbiter-PUF authentication protocol in which each effecti...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Key evidence
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: At 400,000 CRPs, reported prediction accuracy was 51.55% for logistic regression, 52.56...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Cite this for
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Stateful or machine-learning-resistant PUFs, lightweight IoT authentication, and depend...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: Scope
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: The results are empirical under the evaluated attacks; secure enrollment and correct pr...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: A. Sajadi, B. Alizadeh
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: Iranian Journal of Electrical and Computer Engineering, vol. 21, no. 3, pp. 219–226, 2023
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: Core contribution. SQ-PUF uses selected sequence-dependent modules so that the effectiv...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_13
+            label: Key evidence
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_14
+            label: For the principal 400,000-CRP experiment, reported accuracies were 52.14% for logistic ...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_15
+            label: Cite this for
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_16
+            label: Sequence-dependent PUF constructions and lightweight authentication designed to resist ...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_17
+            label: Scope
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_18
+            label: The paper is in Persian and reports simulation-based results for specified attack model...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_19
+            label: A. Sajadi, N. Zidarič, T. Stefanov, N. Mentens
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_20
+            label: Core contribution. After comparing RTL-PAT, PATCH, and ACA, the paper introduces ASSESS...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_21
+            label: Key evidence
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_22
+            label: On a 600-cycle Ibex case, ASSESS completed in 1 h 53 min 9 s versus 72 d 15 h 31 min fo...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_23
+            label: Cite this for
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_24
+            label: Pre-silicon leakage localization, Leakage Impact Factor analysis, gate-level side-chann...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_25
+            label: Scope
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_26
+            label: Results use GF22FDX gate-level Ibex/Tiny-AES and AES-coprocessor cases; the workflow re...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_27
+            label: A. Sajadi, N. Zidarič, T. Stefanov, N. Mentens
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_28
+            label: Core contribution. A same-platform security-and-cost comparison of Mask-AES, software a...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_29
+            label: Key evidence
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_30
+            label: The baseline key was recovered at about 250 traces; Mask-AES resisted recovery through ...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_31
+            label: Cite this for
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_32
+            label: Side-channel security/cost trade-offs, AES on RISC-V, masking, noise generation, secure...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_33
+            label: Scope
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_34
+            label: The study uses first-order CPA on the first AES S-box round on a CW305 Artix-7 platform...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_35
+            label: A. Adhikary et al. (incl. A. Sajadi)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_36
+            label: Core contribution. PROACT integrates resistance to side-channel and fault-injection att...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_37
+            label: Reported status
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_38
+            label: The 2024 chapter reports an FPGA prototype approaching tape-out, a simulator-based anal...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_39
+            label: Cite this for
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_40
+            label: Physical-security-by-design, reduced time to market for protected circuits, the PROACT ...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_41
+            label: Scope
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_42
+            label: "This is a project-status chapter: planned tape-outs and intended evaluations must not b..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_43
+            label: J. Anders et al. (incl. A. Sajadi)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_44
+            label: Core contribution. A cross-domain snapshot of RISC-V processor testability, safety, and...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_45
+            label: Coverage
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_46
+            label: The survey organizes SBST and system-level test, functional and timing safety, cryptogr...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_47
+            label: Cite this for
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_48
+            label: A broad 2023 overview of dependable and secure RISC-V processors or a taxonomy spanning...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_49
+            label: Scope
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_50
+            label: It is a selected research snapshot rather than an exhaustive systematic review; the fas...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_51
+            label: A. Sajadi, N. Zidarič, T. Stefanov, N. Mentens
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_52
+            label: Core contribution. A concise CF '26 presentation of the same-platform comparison of AES...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_53
+            label: Key evidence
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_54
+            label: The poster summarizes baseline recovery at about 250 traces, no recovery for Mask-AES t...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_55
+            label: Cite this for
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_56
+            label: The CF '26 poster record or a compact security-versus-cost summary of AES countermeasur...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_57
+            label: Scope
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_58
+            label: This two-page poster presents the NorCAS experimental study concisely and should not be...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-education
+        label: Education
+        type: file
+        path: content/home-education.json
+        format: json
+        fields:
+          - name: text_01
+            label: AUG 2022 – FEB 2027 · ONGOING
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Ph.D. in Computer Science
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Leiden University (LIACS), NL
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: "Hardware security & digital IC design (PROACT). Dissertation: pre/post-silicon side-cha..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Thesis details →
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: 2018 – 2021 · GPA 18.28/20
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: "M.Sc. in Electrical Engineering: Digital Electronic Systems"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: "Thesis: ML-based modeling attacks on Physical Unclonable Functions (PUFs). Completed al..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: Thesis details →
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: 2014 – 2017 · GPA 16.87/20
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: "B.Sc. in Electrical Engineering: Electronic Technology"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: "Thesis: real-time object detection & tracking on a Zynq-7000 SoC."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_13
+            label: Thesis details →
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_14
+            label: 2011 – 2013 · FULL SCHOLARSHIP
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_15
+            label: Associate Degree in Electronics
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_16
+            label: Amirkabir Technical & Vocational University of Markazi, Arak
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_17
+            label: "Thesis: three-phase pure sine inverter: analog design with adjustable frequency, phase ..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_18
+            label: Thesis details →
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-theses
+        label: Thesis cards
+        type: file
+        path: content/home-theses.json
+        format: json
+        fields:
+          - name: text_01
+            label: Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Leiden University (LIACS) · 2022 – 2027 (expected)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Pre- and post-silicon side-channel leakage evaluation across the PROACT SoC and ASSESS.
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Implementation of Machine-Learning-based Attacks on PUF
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: University of Tehran
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: "ML modeling attacks on RPUF and OBPUF, and SQ-PUF: a secure, scalable, ML-attack-resist..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Detection and Tracking of Moving Objects on the ZYNQ Platform
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: Mohajer Technical University of Isfahan
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: Real-time HDMI-in object detection and tracking on Zynq-7000, from MATLAB and OpenCV to...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: Three-phase Pure Sine Inverter
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: Amirkabir Technical & Vocational University, Arak
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: Analog three-phase pure-sine inverter with adjustable frequency, phase and amplitude at...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-honors
+        label: Honors
+        type: file
+        path: content/home-honors.json
+        format: json
+        fields:
+          - name: text_01
+            label: Ranked 1st in class (Digital Electronic Systems, cumulative GPA) · University of Tehran
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Ranked 102nd of 30,000+ · Iran nationwide M.Sc. entrance exam (electronics)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Ranked 1st in the class of 2014 (cumulative GPA) · Mohajer Technical University
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Top 1% · nationwide Associate-to-Bachelor entrance exam (TVU)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: 1st place, provincial stage · 14th National Skills Competition (WorldSkills, electronics)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: 3rd place, provincial stage · National Scientific-Practical Competition (electronics)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Diligent Student Award · Bozorgmehr Technical & Vocational School
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-certifications
+        label: Certifications
+        type: file
+        path: content/home-certifications.json
+        format: json
+        fields:
+          - name: text_01
+            label: Genus Physical Synthesis Flow v23.1
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Cadence · 2024
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Artificial Intelligence & Machine Learning Fundamentals v1.0
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Cadence · 2025
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Semiconductor 101 v1.0
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Cadence · 2024
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Cadence · 2025
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: Cadence · 2025
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-skills
+        label: Skills
+        type: file
+        path: content/home-skills.json
+        format: json
+        fields:
+          - name: text_01
+            label: HARDWARE LANGUAGES
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: VHDL
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Verilog
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: SystemVerilog
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: High-Level Synthesis (HLS)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: PROGRAMMING
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Python
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: C/C++
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: Tcl (EDA scripting)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: ASIC FRONT-END
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: RTL design
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: RISC-V (Ibex) integration
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_13
+            label: Logic synthesis
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_14
+            label: SDC constraints
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_15
+            label: Gate-level simulation
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_16
+            label: BACK-END
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_17
+            label: Place-and-route
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_18
+            label: Sign-off
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_19
+            label: GDSII
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_20
+            label: Bonding diagram (GF 22FDX)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_21
+            label: VERIFICATION
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_22
+            label: RTL testbenches
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_23
+            label: Functional simulation
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_24
+            label: SDF-annotated gate-level simulation
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_25
+            label: FPGA validation
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_26
+            label: Hardware debugging
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_27
+            label: FPGA & EMBEDDED
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_28
+            label: Xilinx FPGAs
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_29
+            label: Vivado & Vivado HLS
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_30
+            label: Catapult HLS
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_31
+            label: SPI/UART
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_32
+            label: ESP32
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_33
+            label: HARDWARE SECURITY
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_34
+            label: TVLA
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_35
+            label: SNR/NICV
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_36
+            label: ChipWhisperer
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_37
+            label: Pre-silicon leakage analysis
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_38
+            label: PUFs
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_39
+            label: DESIGN METHODS
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_40
+            label: HW/SW co-design
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_41
+            label: Continuous integration (CI)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_42
+            label: Design-for-test (DfT)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_43
+            label: Fault-tolerant design
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_44
+            label: ML & EDA
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_45
+            label: Cadence (Genus, Joules, Xcelium)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_46
+            label: Altium
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_47
+            label: MATLAB
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_48
+            label: PyTorch
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_49
+            label: PyTorch Geometric
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_50
+            label: scikit-learn
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_51
+            label: Keras
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_52
+            label: PARALLEL COMPUTING
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_53
+            label: CUDA
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_54
+            label: OpenMP
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_55
+            label: POSIX threads
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_56
+            label: SIMD
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-teaching
+        label: Teaching and activities
+        type: file
+        path: content/home-teaching.json
+        format: json
+        fields:
+          - name: text_01
+            label: Teaching Assistant, System & Software Security, Leiden University (2022–present).
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Earlier TA experience at the University of Tehran (2019–2022), including Chief TA for C...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Reviewer, IEEE Transactions on Computer-Aided Design (TCAD).
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: CPS Summer School 2023 (Sardinia).
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Real-World Crypto & Privacy 2023 (Croatia).
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: PROACT Hardware-Security Training Schools (2023, 2025).
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: home-contact
+        label: Contact
+        type: file
+        path: content/home-contact.json
+        format: json
+        fields:
+          - name: text_01
+            label: Open to roles in RTL/SoC design, HW/SW co-design, FPGA prototyping, ASIC physical desig...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+  - name: thesis-pages
+    label: Thesis pages
+    type: group
+    items:
+      - name: thesis-phd-seo
+        label: PHD search settings
+        type: file
+        path: content/thesis-phd-seo.json
+        format: json
+        fields:
+          - name: title
+            label: Search result title
+            type: string
+            required: true
+          - name: description
+            label: Search and sharing description
+            type: text
+            required: true
+      - name: thesis-phd-hero
+        label: "PHD: Introduction"
+        type: file
+        path: content/thesis-phd-hero.json
+        format: json
+        fields:
+          - name: text_01
+            label: index
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: theses
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Leiden University (LIACS) · Aug 2022 – Feb 2027 (expected) · PROACT project
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: "Work in progress. This doctorate is ongoing: the title above is tentative and the defen..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: TITLE (TENTATIVE)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: DEGREE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: "Ph.D. in Computer Science: ongoing"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: UNIVERSITY
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: Leiden University (LIACS), Leiden, The Netherlands
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: PERIOD
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_13
+            label: Aug 2022 – Feb 2027 (expected defense)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_14
+            label: SUPERVISORS
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_15
+            label: Prof. Nele Mentens · Dr. Todor Stefanov · Dr. Nuša Zidarič
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_16
+            label: PROJECT
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_17
+            label: "PROACT: NWO NWA Cybersecurity programme, grant NWA.1215.18.014 (PI: Prof. Nele Mentens)"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-phd-overview
+        label: "PHD: overview"
+        type: file
+        path: content/thesis-phd-overview.json
+        format: json
+        fields:
+          - name: text_01
+            label: The silicon half of the answer is the PROACT test chip, a dual-core RISC-V cryptographi...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: The pre-silicon half is ASSESS, a cycle-accurate methodology that localizes gate-level ...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: "Post-silicon evaluation is planned once the fabricated chip is delivered: a custom Chip..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-phd-contributions
+        label: "PHD: contributions"
+        type: file
+        path: content/thesis-phd-contributions.json
+        format: json
+        fields:
+          - name: text_01
+            label: "PROACT SoC: full-chip design & integration: designed the full dual-core RISC-V SoC: the..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: "Software stack & documentation: C and Python control libraries, a control GUI, and user..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: "ASIC implementation: synthesis for GlobalFoundries 22FDX in Cadence Genus, functional a..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: "ASSESS: a cycle-accurate pre-silicon leakage-analysis methodology that localizes gate-l..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: "Countermeasure studies: a systematic comparison of side-channel countermeasures for RIS..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: "Measurement platform: a ChipWhisperer CW308 target board designed in Altium with an aut..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-phd-methods
+        label: "PHD: methods"
+        type: file
+        path: content/thesis-phd-methods.json
+        format: json
+        fields:
+          - name: text_01
+            label: RTL design (Verilog, SystemVerilog, VHDL)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: RISC-V (Ibex) integration
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Cadence Genus
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Cadence Xcelium
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Cadence Joules
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: GlobalFoundries 22FDX
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: SDF-annotated gate-level simulation
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: Xilinx FPGAs (Artix-7, Zynq-7000)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: C / Python
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: PyTorch Geometric (GNNs)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: CPA / TVLA
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: ChipWhisperer CW308
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_13
+            label: Altium Designer
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-phd-outcomes
+        label: "PHD: outcomes"
+        type: file
+        path: content/thesis-phd-outcomes.json
+        format: json
+        fields:
+          - name: text_01
+            label: "The PROACT test chip: taped out in GlobalFoundries 22FDX"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: 2.009 × 2.055 mm² die · Europractice MPW, 50 packaged units
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: "Fabrication in progress: post-silicon side-channel evaluation is the next phase of this..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: A. Sajadi, N. Zidarič, T. Stefanov, N. Mentens
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: A. Sajadi, N. Zidarič, T. Stefanov, N. Mentens
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: A. Sajadi, N. Zidarič, T. Stefanov, N. Mentens
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-phd-more
+        label: "PHD: more"
+        type: file
+        path: content/thesis-phd-more.json
+        format: json
+        fields:
+          - name: text_01
+            label: Implementation of Machine-Learning-based Attacks on PUF
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: University of Tehran
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Detection and Tracking of Moving Objects on the ZYNQ Platform
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Mohajer Technical University of Isfahan
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Three-phase Pure Sine Inverter
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Amirkabir Technical & Vocational University, Arak
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-msc-seo
+        label: MSC search settings
+        type: file
+        path: content/thesis-msc-seo.json
+        format: json
+        fields:
+          - name: title
+            label: Search result title
+            type: string
+            required: true
+          - name: description
+            label: Search and sharing description
+            type: text
+            required: true
+      - name: thesis-msc-hero
+        label: "MSC: Introduction"
+        type: file
+        path: content/thesis-msc-hero.json
+        format: json
+        fields:
+          - name: text_01
+            label: index
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: theses
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Implementation of Machine-Learning-based Attacks on PUF
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: University of Tehran · Digital Electronic Systems · 2018 – 2021
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: TITLE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Implementation of Machine-Learning-based Attacks on PUF
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: DEGREE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: "M.Sc. in Electrical Engineering: Digital Electronic Systems"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: UNIVERSITY
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: University of Tehran, Tehran, Iran
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: DEFENDED
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: 19 September 2021
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_13
+            label: GRADE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_14
+            label: Excellent
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_15
+            label: SUPERVISOR
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_16
+            label: Dr. Bijan Alizadeh
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-msc-overview
+        label: "MSC: overview"
+        type: file
+        path: content/thesis-msc-overview.json
+        format: json
+        fields:
+          - name: text_01
+            label: "Securing communication in the Internet of Things is not just an encryption problem: it ..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: "PUFs, however, have a well-known weakness: their challenge–response behaviour can often..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: On the defensive side, the lessons from those attacks led to SQ-PUF, a secure, scalable...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-msc-contributions
+        label: "MSC: contributions"
+        type: file
+        path: content/thesis-msc-contributions.json
+        format: json
+        fields:
+          - name: text_01
+            label: Two ML attack strategies against the RPUF and OBPUF architectures, with significantly i...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Systematic evaluation of ML-attack resilience, uniformity, uniqueness, and hardware ove...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: "Also during the M.Sc.: a quantized CNN for MNIST digit recognition, implemented in RTL ..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-msc-methods
+        label: "MSC: methods"
+        type: file
+        path: content/thesis-msc-methods.json
+        format: json
+        fields:
+          - name: text_01
+            label: Physical Unclonable Functions (RPUF, OBPUF)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Machine-learning modeling attacks
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: CNN / SVM models in Python
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Authentication protocol design
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: FPGA implementation
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Uniformity & uniqueness metrics
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Hardware overhead analysis
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-msc-outcomes
+        label: "MSC: outcomes"
+        type: file
+        path: content/thesis-msc-outcomes.json
+        format: json
+        fields:
+          - name: text_01
+            label: A. Sajadi, B. Alizadeh
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: "Iranian Journal of Electrical and Computer Engineering: the thesis's defensive architec..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: A. Sajadi, A. Shabani, B. Alizadeh
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-msc-more
+        label: "MSC: more"
+        type: file
+        path: content/thesis-msc-more.json
+        format: json
+        fields:
+          - name: text_01
+            label: Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Leiden University (LIACS)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Detection and Tracking of Moving Objects on the ZYNQ Platform
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Mohajer Technical University of Isfahan
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Three-phase Pure Sine Inverter
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Amirkabir Technical & Vocational University, Arak
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-bsc-seo
+        label: BSC search settings
+        type: file
+        path: content/thesis-bsc-seo.json
+        format: json
+        fields:
+          - name: title
+            label: Search result title
+            type: string
+            required: true
+          - name: description
+            label: Search and sharing description
+            type: text
+            required: true
+      - name: thesis-bsc-hero
+        label: "BSC: Introduction"
+        type: file
+        path: content/thesis-bsc-hero.json
+        format: json
+        fields:
+          - name: text_01
+            label: index
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: theses
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Detection and Tracking of Moving Objects in Public Environments on the ZYNQ Platform
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Real-time processing · Mohajer Technical University of Isfahan · 2014 – 2017
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: TITLE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Detection and tracking of moving objects in public environments on the ZYNQ platform (r...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: DEGREE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: "B.Sc. in Electrical Engineering: Electronic Technology"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: UNIVERSITY
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: Mohajer Technical University of Isfahan (MTU), Isfahan, Iran
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: DEFENDED
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: 30 August 2016
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_13
+            label: GRADE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_14
+            label: 19.75 / 20
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_15
+            label: SUPERVISOR
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_16
+            label: Dr. Mohammadreza Zaker-Haghighi
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_17
+            label: COLLABORATOR
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_18
+            label: Sina Shiry
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-bsc-overview
+        label: "BSC: overview"
+        type: file
+        path: content/thesis-bsc-overview.json
+        format: json
+        fields:
+          - name: text_01
+            label: This thesis built a complete real-time system for detecting and tracking moving objects...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: The pipeline takes live video in over HDMI, isolates a target by color-range filtering,...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: "The development flow moved from algorithm to silicon in three stages: the algorithms we..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: "FIG. 1: SYSTEM DIAGRAM: ZYBO (ZYNQ-7000) BOARD · CAMERA / HDMI IN · LED-MATRIX + VGA OU..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: HDMI IN
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: COLOR FILTER
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: OBJECT TRACKING
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: DISTANCE CALC
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: VGA · LED PANEL · UART
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-bsc-contributions
+        label: "BSC: contributions"
+        type: file
+        path: content/thesis-bsc-contributions.json
+        format: json
+        fields:
+          - name: text_01
+            label: "End-to-end real-time video pipeline on a ZYBO (ARM + FPGA) SoC: HDMI input through dete..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: "HW/SW co-design flow: MATLAB for algorithm verification, OpenCV for optimization, then ..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Color-range detection with object tracking and object-size-based distance estimation, d...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: "Cost-effective, standalone build: the whole system runs on a single ZYBO board with no ..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: "Open results: the full thesis (in Persian) and the source code are publicly available: ..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-bsc-methods
+        label: "BSC: methods"
+        type: file
+        path: content/thesis-bsc-methods.json
+        format: json
+        fields:
+          - name: text_01
+            label: Xilinx Zynq-7000 (ARM + FPGA)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: High-Level Synthesis (HLS)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Vivado
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: MATLAB (verification)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: OpenCV (optimization)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: C / C++
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: Python
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: HDMI video input
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: VGA output
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: LED-panel driver
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: UART telemetry
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-bsc-links
+        label: "BSC: links"
+        type: file
+        path: content/thesis-bsc-links.json
+        format: json
+        fields:
+          - name: text_01
+            label: Defended on 30 August 2016 with a grade of 19.75/20, supervised by Dr. Mohammadreza Zak...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-bsc-demos
+        label: "BSC: demos"
+        type: file
+        path: content/thesis-bsc-demos.json
+        format: json
+        fields:
+          - name: text_01
+            label: Recorded demonstrations of the running system, captured on the Digilent ZYBO (Zynq-7000...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: "Real-time color-based detection & tracking: the target's RGB signature is matched per p..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Sobel edge-detection filter running on the Digilent ZYBO (Zynq-7000) with HDMI input an...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Execution-time and accuracy comparison of the detector in MATLAB vs OpenCV vs HLS on th...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-bsc-more
+        label: "BSC: more"
+        type: file
+        path: content/thesis-bsc-more.json
+        format: json
+        fields:
+          - name: text_01
+            label: Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Leiden University (LIACS)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Implementation of Machine-Learning-based Attacks on PUF
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: University of Tehran
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Three-phase Pure Sine Inverter
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Amirkabir Technical & Vocational University, Arak
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-assoc-seo
+        label: ASSOC search settings
+        type: file
+        path: content/thesis-assoc-seo.json
+        format: json
+        fields:
+          - name: title
+            label: Search result title
+            type: string
+            required: true
+          - name: description
+            label: Search and sharing description
+            type: text
+            required: true
+      - name: thesis-assoc-hero
+        label: "ASSOC: Introduction"
+        type: file
+        path: content/thesis-assoc-hero.json
+        format: json
+        fields:
+          - name: text_01
+            label: index
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: theses
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Three-phase Pure Sine Inverter
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Amirkabir Technical & Vocational University of Markazi, Arak · 2011 – 2013
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: TITLE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Three-phase Pure Sine Inverter
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_07
+            label: DEGREE
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_08
+            label: Associate Degree in Electronics (full scholarship)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_09
+            label: UNIVERSITY
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_10
+            label: Amirkabir Technical & Vocational University of Markazi, Arak, Iran
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_11
+            label: DEFENDED
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_12
+            label: 7 September 2013
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_13
+            label: SUPERVISOR
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_14
+            label: Eng. Mahmoud Fereydoni
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-assoc-overview
+        label: "ASSOC: overview"
+        type: file
+        path: content/thesis-assoc-overview.json
+        format: json
+        fields:
+          - name: text_01
+            label: Before the FPGAs and the tape-outs, there was analog. This associate-degree thesis desi...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: "The design brief pulled in two directions at once: keep the production cost low, and ke..."
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: "FIG. 1: THREE-PHASE PURE SINE OUTPUT, 120° APART · ANIMATED"
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-assoc-contributions
+        label: "ASSOC: contributions"
+        type: file
+        path: content/thesis-assoc-contributions.json
+        format: json
+        fields:
+          - name: text_01
+            label: Fully analog design generating three pure sine phases, with adjustable frequency, phase...
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: 220 V three-phase output.
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Low production cost as an explicit design constraint.
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: High reliability in noisy / EMI-heavy environments.
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-assoc-methods
+        label: "ASSOC: methods"
+        type: file
+        path: content/thesis-assoc-methods.json
+        format: json
+        fields:
+          - name: text_01
+            label: Analog circuit design
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Power electronics
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Three-phase systems
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: Sine-wave generation
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: EMI-robust design
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Low-cost design
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+      - name: thesis-assoc-more
+        label: "ASSOC: more"
+        type: file
+        path: content/thesis-assoc-more.json
+        format: json
+        fields:
+          - name: text_01
+            label: Pre/Post-Silicon Evaluation of Side-Channel Leakage in Lightweight Cryptographic Circuits
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_02
+            label: Leiden University (LIACS)
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_03
+            label: Implementation of Machine-Learning-based Attacks on PUF
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_04
+            label: University of Tehran
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_05
+            label: Detection and Tracking of Moving Objects on the ZYNQ Platform
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+          - name: text_06
+            label: Mohajer Technical University of Isfahan
+            type: rich-text
+            required: true
+            options:
+              format: html
+              media: false
+              switcher: false
+settings:
+  hide: true
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      update: "Update website content: {name}"

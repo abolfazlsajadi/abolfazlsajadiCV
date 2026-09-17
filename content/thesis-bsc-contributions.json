@@ -1,0 +1,7 @@
+{
+  "text_01": "<strong>End-to-end real-time video pipeline</strong> on a ZYBO (ARM + FPGA) SoC: HDMI input through detection, tracking and distance calculation to simultaneous VGA and LED-matrix output plus UART telemetry.",
+  "text_02": "<strong>HW/SW co-design flow:</strong> MATLAB for algorithm verification, OpenCV for optimization, then Vivado HLS to move the hot loops into FPGA fabric, with the ARM software built in the Xilinx SDK.",
+  "text_03": "<strong>Color-range detection</strong> with object tracking and object-size-based distance estimation, designed for public-environment scenes.",
+  "text_04": "<strong>Cost-effective, standalone build:</strong> the whole system runs on a single ZYBO board with no host PC, meeting the speed, accuracy and security goals together.",
+  "text_05": "<strong>Open results:</strong> the full thesis (in Persian) and the source code are publicly available:  see the links below."
+}

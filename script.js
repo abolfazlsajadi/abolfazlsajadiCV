@@ -187,6 +187,7 @@
     });
 
     var binTimer = null;
+    var binVisible = true;
     function flipOnce() {
       var c = Math.floor(Math.random() * colBits.length);
       var flips = 1 + Math.floor(Math.random() * 2);
@@ -198,7 +199,7 @@
       binTimer = window.setTimeout(flipOnce, 650 + Math.random() * 900);
     }
     function startBin() {
-      if (binTimer === null && !reduceMotion.matches && !document.hidden) {
+      if (binTimer === null && !reduceMotion.matches && !document.hidden && binVisible) {
         binTimer = window.setTimeout(flipOnce, 800);
       }
     }
@@ -215,6 +216,13 @@
       reduceMotion.addEventListener('change', function (e) {
         if (e.matches) stopBin(); else startBin();
       });
+    }
+    if ('IntersectionObserver' in window) {
+      var binObserver = new IntersectionObserver(function (entries) {
+        binVisible = entries[0].isIntersecting;
+        if (binVisible) startBin(); else stopBin();
+      });
+      binObserver.observe(binHost.closest('.hero-bg') || binHost);
     }
     startBin();
   }

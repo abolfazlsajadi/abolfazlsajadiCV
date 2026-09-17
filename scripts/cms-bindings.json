@@ -1,0 +1,2796 @@
+[
+  {
+    "key": "home-seo.title",
+    "file": "content/home-seo.json",
+    "field": "title",
+    "kind": "text"
+  },
+  {
+    "key": "home-seo.description",
+    "file": "content/home-seo.json",
+    "field": "description",
+    "kind": "text"
+  },
+  {
+    "key": "supervision.list",
+    "file": "content/supervision.json",
+    "kind": "supervision"
+  },
+  {
+    "key": "home-hero.text_01",
+    "file": "content/home-hero.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-hero.text_02",
+    "file": "content/home-hero.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-proact.text_01",
+    "file": "content/home-proact.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-proact.text_02",
+    "file": "content/home-proact.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-proact.text_03",
+    "file": "content/home-proact.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-proact.text_04",
+    "file": "content/home-proact.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-proact.text_05",
+    "file": "content/home-proact.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-proact.text_06",
+    "file": "content/home-proact.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-proact.text_07",
+    "file": "content/home-proact.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-proact.text_08",
+    "file": "content/home-proact.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-proact.text_09",
+    "file": "content/home-proact.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "figcaption"
+  },
+  {
+    "key": "home-proact.text_10",
+    "file": "content/home-proact.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-proact.text_11",
+    "file": "content/home-proact.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-about.text_01",
+    "file": "content/home-about.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-about.text_02",
+    "file": "content/home-about.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-about.text_03",
+    "file": "content/home-about.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-about.text_04",
+    "file": "content/home-about.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-about.text_05",
+    "file": "content/home-about.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-about.text_06",
+    "file": "content/home-about.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-about.text_07",
+    "file": "content/home-about.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-about.text_08",
+    "file": "content/home-about.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-about.text_09",
+    "file": "content/home-about.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-about.text_10",
+    "file": "content/home-about.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-experience.text_01",
+    "file": "content/home-experience.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-experience.text_02",
+    "file": "content/home-experience.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-experience.text_03",
+    "file": "content/home-experience.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-experience.text_04",
+    "file": "content/home-experience.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-experience.text_05",
+    "file": "content/home-experience.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-experience.text_06",
+    "file": "content/home-experience.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-experience.text_07",
+    "file": "content/home-experience.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-experience.text_08",
+    "file": "content/home-experience.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-experience.text_09",
+    "file": "content/home-experience.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-experience.text_10",
+    "file": "content/home-experience.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-experience.text_11",
+    "file": "content/home-experience.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-experience.text_12",
+    "file": "content/home-experience.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-projects.text_01",
+    "file": "content/home-projects.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-projects.text_02",
+    "file": "content/home-projects.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-projects.text_03",
+    "file": "content/home-projects.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-projects.text_04",
+    "file": "content/home-projects.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-projects.text_05",
+    "file": "content/home-projects.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-projects.text_06",
+    "file": "content/home-projects.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-projects.text_07",
+    "file": "content/home-projects.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-projects.text_08",
+    "file": "content/home-projects.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-projects.text_09",
+    "file": "content/home-projects.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-projects.text_10",
+    "file": "content/home-projects.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-projects.text_11",
+    "file": "content/home-projects.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-projects.text_12",
+    "file": "content/home-projects.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_01",
+    "file": "content/home-publications.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_02",
+    "file": "content/home-publications.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_03",
+    "file": "content/home-publications.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_04",
+    "file": "content/home-publications.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_05",
+    "file": "content/home-publications.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_06",
+    "file": "content/home-publications.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_07",
+    "file": "content/home-publications.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_08",
+    "file": "content/home-publications.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_09",
+    "file": "content/home-publications.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_10",
+    "file": "content/home-publications.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_11",
+    "file": "content/home-publications.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_12",
+    "file": "content/home-publications.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_13",
+    "file": "content/home-publications.json",
+    "field": "text_13",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_14",
+    "file": "content/home-publications.json",
+    "field": "text_14",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_15",
+    "file": "content/home-publications.json",
+    "field": "text_15",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_16",
+    "file": "content/home-publications.json",
+    "field": "text_16",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_17",
+    "file": "content/home-publications.json",
+    "field": "text_17",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_18",
+    "file": "content/home-publications.json",
+    "field": "text_18",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_19",
+    "file": "content/home-publications.json",
+    "field": "text_19",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_20",
+    "file": "content/home-publications.json",
+    "field": "text_20",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_21",
+    "file": "content/home-publications.json",
+    "field": "text_21",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_22",
+    "file": "content/home-publications.json",
+    "field": "text_22",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_23",
+    "file": "content/home-publications.json",
+    "field": "text_23",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_24",
+    "file": "content/home-publications.json",
+    "field": "text_24",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_25",
+    "file": "content/home-publications.json",
+    "field": "text_25",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_26",
+    "file": "content/home-publications.json",
+    "field": "text_26",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_27",
+    "file": "content/home-publications.json",
+    "field": "text_27",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_28",
+    "file": "content/home-publications.json",
+    "field": "text_28",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_29",
+    "file": "content/home-publications.json",
+    "field": "text_29",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_30",
+    "file": "content/home-publications.json",
+    "field": "text_30",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_31",
+    "file": "content/home-publications.json",
+    "field": "text_31",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_32",
+    "file": "content/home-publications.json",
+    "field": "text_32",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_33",
+    "file": "content/home-publications.json",
+    "field": "text_33",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_34",
+    "file": "content/home-publications.json",
+    "field": "text_34",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_35",
+    "file": "content/home-publications.json",
+    "field": "text_35",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_36",
+    "file": "content/home-publications.json",
+    "field": "text_36",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_37",
+    "file": "content/home-publications.json",
+    "field": "text_37",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_38",
+    "file": "content/home-publications.json",
+    "field": "text_38",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_39",
+    "file": "content/home-publications.json",
+    "field": "text_39",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_40",
+    "file": "content/home-publications.json",
+    "field": "text_40",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_41",
+    "file": "content/home-publications.json",
+    "field": "text_41",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_42",
+    "file": "content/home-publications.json",
+    "field": "text_42",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_43",
+    "file": "content/home-publications.json",
+    "field": "text_43",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_44",
+    "file": "content/home-publications.json",
+    "field": "text_44",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_45",
+    "file": "content/home-publications.json",
+    "field": "text_45",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_46",
+    "file": "content/home-publications.json",
+    "field": "text_46",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_47",
+    "file": "content/home-publications.json",
+    "field": "text_47",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_48",
+    "file": "content/home-publications.json",
+    "field": "text_48",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_49",
+    "file": "content/home-publications.json",
+    "field": "text_49",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_50",
+    "file": "content/home-publications.json",
+    "field": "text_50",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_51",
+    "file": "content/home-publications.json",
+    "field": "text_51",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_52",
+    "file": "content/home-publications.json",
+    "field": "text_52",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-publications.text_53",
+    "file": "content/home-publications.json",
+    "field": "text_53",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_54",
+    "file": "content/home-publications.json",
+    "field": "text_54",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_55",
+    "file": "content/home-publications.json",
+    "field": "text_55",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_56",
+    "file": "content/home-publications.json",
+    "field": "text_56",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-publications.text_57",
+    "file": "content/home-publications.json",
+    "field": "text_57",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-publications.text_58",
+    "file": "content/home-publications.json",
+    "field": "text_58",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "home-education.text_01",
+    "file": "content/home-education.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_02",
+    "file": "content/home-education.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-education.text_03",
+    "file": "content/home-education.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_04",
+    "file": "content/home-education.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_05",
+    "file": "content/home-education.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_06",
+    "file": "content/home-education.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_07",
+    "file": "content/home-education.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-education.text_08",
+    "file": "content/home-education.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_09",
+    "file": "content/home-education.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_10",
+    "file": "content/home-education.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_11",
+    "file": "content/home-education.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-education.text_12",
+    "file": "content/home-education.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_13",
+    "file": "content/home-education.json",
+    "field": "text_13",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_14",
+    "file": "content/home-education.json",
+    "field": "text_14",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_15",
+    "file": "content/home-education.json",
+    "field": "text_15",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-education.text_16",
+    "file": "content/home-education.json",
+    "field": "text_16",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_17",
+    "file": "content/home-education.json",
+    "field": "text_17",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-education.text_18",
+    "file": "content/home-education.json",
+    "field": "text_18",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-theses.text_01",
+    "file": "content/home-theses.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-theses.text_02",
+    "file": "content/home-theses.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-theses.text_03",
+    "file": "content/home-theses.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-theses.text_04",
+    "file": "content/home-theses.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-theses.text_05",
+    "file": "content/home-theses.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-theses.text_06",
+    "file": "content/home-theses.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-theses.text_07",
+    "file": "content/home-theses.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-theses.text_08",
+    "file": "content/home-theses.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-theses.text_09",
+    "file": "content/home-theses.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-theses.text_10",
+    "file": "content/home-theses.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-theses.text_11",
+    "file": "content/home-theses.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-theses.text_12",
+    "file": "content/home-theses.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-honors.text_01",
+    "file": "content/home-honors.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-honors.text_02",
+    "file": "content/home-honors.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-honors.text_03",
+    "file": "content/home-honors.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-honors.text_04",
+    "file": "content/home-honors.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-honors.text_05",
+    "file": "content/home-honors.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-honors.text_06",
+    "file": "content/home-honors.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-honors.text_07",
+    "file": "content/home-honors.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-certifications.text_01",
+    "file": "content/home-certifications.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-certifications.text_02",
+    "file": "content/home-certifications.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-certifications.text_03",
+    "file": "content/home-certifications.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-certifications.text_04",
+    "file": "content/home-certifications.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-certifications.text_05",
+    "file": "content/home-certifications.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "home-certifications.text_06",
+    "file": "content/home-certifications.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-certifications.text_07",
+    "file": "content/home-certifications.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-certifications.text_08",
+    "file": "content/home-certifications.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "home-skills.text_01",
+    "file": "content/home-skills.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_02",
+    "file": "content/home-skills.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_03",
+    "file": "content/home-skills.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_04",
+    "file": "content/home-skills.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_05",
+    "file": "content/home-skills.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_06",
+    "file": "content/home-skills.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_07",
+    "file": "content/home-skills.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_08",
+    "file": "content/home-skills.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_09",
+    "file": "content/home-skills.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_10",
+    "file": "content/home-skills.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_11",
+    "file": "content/home-skills.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_12",
+    "file": "content/home-skills.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_13",
+    "file": "content/home-skills.json",
+    "field": "text_13",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_14",
+    "file": "content/home-skills.json",
+    "field": "text_14",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_15",
+    "file": "content/home-skills.json",
+    "field": "text_15",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_16",
+    "file": "content/home-skills.json",
+    "field": "text_16",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_17",
+    "file": "content/home-skills.json",
+    "field": "text_17",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_18",
+    "file": "content/home-skills.json",
+    "field": "text_18",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_19",
+    "file": "content/home-skills.json",
+    "field": "text_19",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_20",
+    "file": "content/home-skills.json",
+    "field": "text_20",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_21",
+    "file": "content/home-skills.json",
+    "field": "text_21",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_22",
+    "file": "content/home-skills.json",
+    "field": "text_22",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_23",
+    "file": "content/home-skills.json",
+    "field": "text_23",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_24",
+    "file": "content/home-skills.json",
+    "field": "text_24",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_25",
+    "file": "content/home-skills.json",
+    "field": "text_25",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_26",
+    "file": "content/home-skills.json",
+    "field": "text_26",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_27",
+    "file": "content/home-skills.json",
+    "field": "text_27",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_28",
+    "file": "content/home-skills.json",
+    "field": "text_28",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_29",
+    "file": "content/home-skills.json",
+    "field": "text_29",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_30",
+    "file": "content/home-skills.json",
+    "field": "text_30",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_31",
+    "file": "content/home-skills.json",
+    "field": "text_31",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_32",
+    "file": "content/home-skills.json",
+    "field": "text_32",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_33",
+    "file": "content/home-skills.json",
+    "field": "text_33",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_34",
+    "file": "content/home-skills.json",
+    "field": "text_34",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_35",
+    "file": "content/home-skills.json",
+    "field": "text_35",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_36",
+    "file": "content/home-skills.json",
+    "field": "text_36",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_37",
+    "file": "content/home-skills.json",
+    "field": "text_37",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_38",
+    "file": "content/home-skills.json",
+    "field": "text_38",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_39",
+    "file": "content/home-skills.json",
+    "field": "text_39",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_40",
+    "file": "content/home-skills.json",
+    "field": "text_40",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_41",
+    "file": "content/home-skills.json",
+    "field": "text_41",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_42",
+    "file": "content/home-skills.json",
+    "field": "text_42",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_43",
+    "file": "content/home-skills.json",
+    "field": "text_43",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_44",
+    "file": "content/home-skills.json",
+    "field": "text_44",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_45",
+    "file": "content/home-skills.json",
+    "field": "text_45",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_46",
+    "file": "content/home-skills.json",
+    "field": "text_46",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_47",
+    "file": "content/home-skills.json",
+    "field": "text_47",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_48",
+    "file": "content/home-skills.json",
+    "field": "text_48",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_49",
+    "file": "content/home-skills.json",
+    "field": "text_49",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_50",
+    "file": "content/home-skills.json",
+    "field": "text_50",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_51",
+    "file": "content/home-skills.json",
+    "field": "text_51",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_52",
+    "file": "content/home-skills.json",
+    "field": "text_52",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "home-skills.text_53",
+    "file": "content/home-skills.json",
+    "field": "text_53",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_54",
+    "file": "content/home-skills.json",
+    "field": "text_54",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_55",
+    "file": "content/home-skills.json",
+    "field": "text_55",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-skills.text_56",
+    "file": "content/home-skills.json",
+    "field": "text_56",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-teaching.text_01",
+    "file": "content/home-teaching.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-teaching.text_02",
+    "file": "content/home-teaching.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-teaching.text_03",
+    "file": "content/home-teaching.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-teaching.text_04",
+    "file": "content/home-teaching.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-teaching.text_05",
+    "file": "content/home-teaching.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-teaching.text_06",
+    "file": "content/home-teaching.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "home-contact.text_01",
+    "file": "content/home-contact.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "downloads.cv",
+    "file": "content/downloads.json",
+    "field": "cv",
+    "kind": "file"
+  },
+  {
+    "key": "thesis-phd-seo.title",
+    "file": "content/thesis-phd-seo.json",
+    "field": "title",
+    "kind": "text"
+  },
+  {
+    "key": "thesis-phd-seo.description",
+    "file": "content/thesis-phd-seo.json",
+    "field": "description",
+    "kind": "text"
+  },
+  {
+    "key": "thesis-phd-hero.text_01",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-hero.text_02",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-hero.text_03",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h1"
+  },
+  {
+    "key": "thesis-phd-hero.text_04",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-hero.text_05",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-hero.text_06",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-phd-hero.text_07",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-phd-hero.text_08",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-phd-hero.text_09",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-phd-hero.text_10",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-phd-hero.text_11",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-phd-hero.text_12",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-phd-hero.text_13",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_13",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-phd-hero.text_14",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_14",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-phd-hero.text_15",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_15",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-phd-hero.text_16",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_16",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-phd-hero.text_17",
+    "file": "content/thesis-phd-hero.json",
+    "field": "text_17",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-phd-overview.text_01",
+    "file": "content/thesis-phd-overview.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-overview.text_02",
+    "file": "content/thesis-phd-overview.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-overview.text_03",
+    "file": "content/thesis-phd-overview.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-contributions.text_01",
+    "file": "content/thesis-phd-contributions.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-contributions.text_02",
+    "file": "content/thesis-phd-contributions.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-contributions.text_03",
+    "file": "content/thesis-phd-contributions.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-contributions.text_04",
+    "file": "content/thesis-phd-contributions.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-contributions.text_05",
+    "file": "content/thesis-phd-contributions.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-contributions.text_06",
+    "file": "content/thesis-phd-contributions.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_01",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_02",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_03",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_04",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_05",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_06",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_07",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_08",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_09",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_10",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_11",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_12",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-methods.text_13",
+    "file": "content/thesis-phd-methods.json",
+    "field": "text_13",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-phd-outcomes.text_01",
+    "file": "content/thesis-phd-outcomes.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-phd-outcomes.text_02",
+    "file": "content/thesis-phd-outcomes.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-outcomes.text_03",
+    "file": "content/thesis-phd-outcomes.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-outcomes.text_04",
+    "file": "content/thesis-phd-outcomes.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-outcomes.text_05",
+    "file": "content/thesis-phd-outcomes.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-outcomes.text_06",
+    "file": "content/thesis-phd-outcomes.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-more.text_01",
+    "file": "content/thesis-phd-more.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-phd-more.text_02",
+    "file": "content/thesis-phd-more.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-more.text_03",
+    "file": "content/thesis-phd-more.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-phd-more.text_04",
+    "file": "content/thesis-phd-more.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-phd-more.text_05",
+    "file": "content/thesis-phd-more.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-phd-more.text_06",
+    "file": "content/thesis-phd-more.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-seo.title",
+    "file": "content/thesis-msc-seo.json",
+    "field": "title",
+    "kind": "text"
+  },
+  {
+    "key": "thesis-msc-seo.description",
+    "file": "content/thesis-msc-seo.json",
+    "field": "description",
+    "kind": "text"
+  },
+  {
+    "key": "thesis-msc-hero.text_01",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-hero.text_02",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-hero.text_03",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h1"
+  },
+  {
+    "key": "thesis-msc-hero.text_04",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-hero.text_05",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-msc-hero.text_06",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-msc-hero.text_07",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-msc-hero.text_08",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-msc-hero.text_09",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-msc-hero.text_10",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-msc-hero.text_11",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-msc-hero.text_12",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-msc-hero.text_13",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_13",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-msc-hero.text_14",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_14",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-msc-hero.text_15",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_15",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-msc-hero.text_16",
+    "file": "content/thesis-msc-hero.json",
+    "field": "text_16",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-msc-overview.text_01",
+    "file": "content/thesis-msc-overview.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-overview.text_02",
+    "file": "content/thesis-msc-overview.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-overview.text_03",
+    "file": "content/thesis-msc-overview.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-contributions.text_01",
+    "file": "content/thesis-msc-contributions.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-contributions.text_02",
+    "file": "content/thesis-msc-contributions.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-contributions.text_03",
+    "file": "content/thesis-msc-contributions.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-methods.text_01",
+    "file": "content/thesis-msc-methods.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-methods.text_02",
+    "file": "content/thesis-msc-methods.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-methods.text_03",
+    "file": "content/thesis-msc-methods.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-methods.text_04",
+    "file": "content/thesis-msc-methods.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-methods.text_05",
+    "file": "content/thesis-msc-methods.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-methods.text_06",
+    "file": "content/thesis-msc-methods.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-methods.text_07",
+    "file": "content/thesis-msc-methods.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-msc-outcomes.text_01",
+    "file": "content/thesis-msc-outcomes.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-outcomes.text_02",
+    "file": "content/thesis-msc-outcomes.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-outcomes.text_03",
+    "file": "content/thesis-msc-outcomes.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-more.text_01",
+    "file": "content/thesis-msc-more.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-msc-more.text_02",
+    "file": "content/thesis-msc-more.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-more.text_03",
+    "file": "content/thesis-msc-more.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-msc-more.text_04",
+    "file": "content/thesis-msc-more.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-msc-more.text_05",
+    "file": "content/thesis-msc-more.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-msc-more.text_06",
+    "file": "content/thesis-msc-more.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-seo.title",
+    "file": "content/thesis-bsc-seo.json",
+    "field": "title",
+    "kind": "text"
+  },
+  {
+    "key": "thesis-bsc-seo.description",
+    "file": "content/thesis-bsc-seo.json",
+    "field": "description",
+    "kind": "text"
+  },
+  {
+    "key": "thesis-bsc-hero.text_01",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-hero.text_02",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-hero.text_03",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h1"
+  },
+  {
+    "key": "thesis-bsc-hero.text_04",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-hero.text_05",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-bsc-hero.text_06",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-bsc-hero.text_07",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-bsc-hero.text_08",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-bsc-hero.text_09",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-bsc-hero.text_10",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-bsc-hero.text_11",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-bsc-hero.text_12",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-bsc-hero.text_13",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_13",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-bsc-hero.text_14",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_14",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-bsc-hero.text_15",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_15",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-bsc-hero.text_16",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_16",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-bsc-hero.text_17",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_17",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-bsc-hero.text_18",
+    "file": "content/thesis-bsc-hero.json",
+    "field": "text_18",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-bsc-overview.text_01",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-overview.text_02",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-overview.text_03",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-overview.text_04",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "figcaption"
+  },
+  {
+    "key": "thesis-bsc-overview.text_05",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-overview.text_06",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-overview.text_07",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-overview.text_08",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-overview.text_09",
+    "file": "content/thesis-bsc-overview.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-contributions.text_01",
+    "file": "content/thesis-bsc-contributions.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-contributions.text_02",
+    "file": "content/thesis-bsc-contributions.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-contributions.text_03",
+    "file": "content/thesis-bsc-contributions.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-contributions.text_04",
+    "file": "content/thesis-bsc-contributions.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-contributions.text_05",
+    "file": "content/thesis-bsc-contributions.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_01",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_02",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_03",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_04",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_05",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_06",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_07",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_08",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_09",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_10",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-methods.text_11",
+    "file": "content/thesis-bsc-methods.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-bsc-links.text_01",
+    "file": "content/thesis-bsc-links.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-demos.text_01",
+    "file": "content/thesis-bsc-demos.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-demos.text_02",
+    "file": "content/thesis-bsc-demos.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "figcaption"
+  },
+  {
+    "key": "thesis-bsc-demos.text_03",
+    "file": "content/thesis-bsc-demos.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "figcaption"
+  },
+  {
+    "key": "thesis-bsc-demos.text_04",
+    "file": "content/thesis-bsc-demos.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "figcaption"
+  },
+  {
+    "key": "thesis-bsc-more.text_01",
+    "file": "content/thesis-bsc-more.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-bsc-more.text_02",
+    "file": "content/thesis-bsc-more.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-more.text_03",
+    "file": "content/thesis-bsc-more.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-bsc-more.text_04",
+    "file": "content/thesis-bsc-more.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-bsc-more.text_05",
+    "file": "content/thesis-bsc-more.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-bsc-more.text_06",
+    "file": "content/thesis-bsc-more.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-assoc-seo.title",
+    "file": "content/thesis-assoc-seo.json",
+    "field": "title",
+    "kind": "text"
+  },
+  {
+    "key": "thesis-assoc-seo.description",
+    "file": "content/thesis-assoc-seo.json",
+    "field": "description",
+    "kind": "text"
+  },
+  {
+    "key": "thesis-assoc-hero.text_01",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-hero.text_02",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-hero.text_03",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h1"
+  },
+  {
+    "key": "thesis-assoc-hero.text_04",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-assoc-hero.text_05",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-assoc-hero.text_06",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-assoc-hero.text_07",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_07",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-assoc-hero.text_08",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_08",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-assoc-hero.text_09",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_09",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-assoc-hero.text_10",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_10",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-assoc-hero.text_11",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_11",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-assoc-hero.text_12",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_12",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-assoc-hero.text_13",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_13",
+    "kind": "inline",
+    "tag": "dt"
+  },
+  {
+    "key": "thesis-assoc-hero.text_14",
+    "file": "content/thesis-assoc-hero.json",
+    "field": "text_14",
+    "kind": "inline",
+    "tag": "dd"
+  },
+  {
+    "key": "thesis-assoc-overview.text_01",
+    "file": "content/thesis-assoc-overview.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-assoc-overview.text_02",
+    "file": "content/thesis-assoc-overview.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-assoc-overview.text_03",
+    "file": "content/thesis-assoc-overview.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "figcaption"
+  },
+  {
+    "key": "thesis-assoc-contributions.text_01",
+    "file": "content/thesis-assoc-contributions.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-contributions.text_02",
+    "file": "content/thesis-assoc-contributions.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-contributions.text_03",
+    "file": "content/thesis-assoc-contributions.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-contributions.text_04",
+    "file": "content/thesis-assoc-contributions.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-methods.text_01",
+    "file": "content/thesis-assoc-methods.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-methods.text_02",
+    "file": "content/thesis-assoc-methods.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-methods.text_03",
+    "file": "content/thesis-assoc-methods.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-methods.text_04",
+    "file": "content/thesis-assoc-methods.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-methods.text_05",
+    "file": "content/thesis-assoc-methods.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-methods.text_06",
+    "file": "content/thesis-assoc-methods.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "li"
+  },
+  {
+    "key": "thesis-assoc-more.text_01",
+    "file": "content/thesis-assoc-more.json",
+    "field": "text_01",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-assoc-more.text_02",
+    "file": "content/thesis-assoc-more.json",
+    "field": "text_02",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-assoc-more.text_03",
+    "file": "content/thesis-assoc-more.json",
+    "field": "text_03",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-assoc-more.text_04",
+    "file": "content/thesis-assoc-more.json",
+    "field": "text_04",
+    "kind": "inline",
+    "tag": "p"
+  },
+  {
+    "key": "thesis-assoc-more.text_05",
+    "file": "content/thesis-assoc-more.json",
+    "field": "text_05",
+    "kind": "inline",
+    "tag": "h3"
+  },
+  {
+    "key": "thesis-assoc-more.text_06",
+    "file": "content/thesis-assoc-more.json",
+    "field": "text_06",
+    "kind": "inline",
+    "tag": "p"
+  }
+]

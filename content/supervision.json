@@ -1,0 +1,36 @@
+{
+  "intro": "Co-supervision of 6+ B.Sc. and M.Sc. theses in hardware security, AES/RISC-V side-channel analysis, and PROACT testing and leakage assessment.",
+  "completed": [
+    {
+      "student": "Imke van Ooijen",
+      "title": "Optimizing AES for RISC-V Cores",
+      "year": 2024
+    },
+    {
+      "student": "Niels de Wit",
+      "title": "Power Leakage of AES Implementations",
+      "year": 2024
+    },
+    {
+      "student": "Lennart van Drunick",
+      "title": "On the Vulnerabilities of FPGAs to Power Hammering Circuits",
+      "year": 2026
+    },
+    {
+      "student": "Nathanael Mohanu",
+      "title": "Side-Channel Analysis of the PROACT Chip Prototype",
+      "year": 2026
+    },
+    {
+      "student": "Nick Stijger",
+      "title": "How can the testing setup for the PROACT SoC be optimized?",
+      "year": 2026
+    },
+    {
+      "student": "Lisa Schouten",
+      "title": "Differences in Side-Channel Power Analysis attacks of selected cryptographic algorithms on different implementation targets",
+      "year": 2026
+    }
+  ],
+  "ongoing": "Further B.Sc. and M.Sc. theses are in progress."
+}

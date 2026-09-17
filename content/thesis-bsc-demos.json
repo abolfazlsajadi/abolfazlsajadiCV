@@ -1,0 +1,6 @@
+{
+  "text_01": "Recorded demonstrations of the running system, captured on the Digilent ZYBO (Zynq-7000) board. Videos are muted and play only on demand.",
+  "text_02": "Real-time color-based detection &amp; tracking: the target's RGB signature is matched per pixel and the object is localized by row/column bounds (TR/TC min–max), live on the Zynq.",
+  "text_03": "Sobel edge-detection filter running on the Digilent ZYBO (Zynq-7000) with HDMI input and VGA output.",
+  "text_04": "Execution-time and accuracy comparison of the detector in MATLAB vs OpenCV vs HLS on the Zynq:  the FPGA/HLS implementation processes each frame far faster at matching accuracy."
+}

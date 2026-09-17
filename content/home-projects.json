@@ -1,0 +1,14 @@
+{
+  "text_01": "VIVADO HLS / B.SC. THESIS",
+  "text_02": "Real-time object detection &amp; tracking on Zynq-7000",
+  "text_03": "Real-time object detection and tracking on a ZYBO Zynq-7000:  HDMI video in, color-range filtering, and distance estimation from object size, with simultaneous LED-matrix and VGA output plus UART telemetry. Verified in MATLAB/OpenCV, then synthesized to hardware with HLS&nbsp;+&nbsp;Vivado.",
+  "text_04": "ESP32 / AVR / ALTIUM · 2020",
+  "text_05": "Home meter monitoring device",
+  "text_06": "Design &amp; implementation of a Home Meter Monitoring Device:  project-based (Arduino, AVR, PCB). Implemented on ESP32 and AVR (ATmega8) microcontrollers, with a custom PCB designed in Altium Designer (2020). Delivered for Shahab&nbsp;Co.",
+  "text_07": "OPEN-SOURCE / ACM CF '26",
+  "text_08": "ASSESS: pre-silicon leakage analysis",
+  "text_09": "A cycle-accurate methodology that localizes gate-level side-channel leakage from toggle activity, fast enough for routine checks during iterative ASIC design; benchmarked against RTL-PAT, PATCH and ACA on RISC-V/AES designs.",
+  "text_10": "RTL / QUARTUS / CYCLONE II",
+  "text_11": "CNN accelerator on FPGA",
+  "text_12": "RTL implementation of a quantized tiny convolutional-network accelerator (MNIST), validated against a Keras reference model and brought up on an Altera Cyclone II board."
+}

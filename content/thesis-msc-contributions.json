@@ -1,0 +1,5 @@
+{
+  "text_01": "<strong>Two ML attack strategies</strong> against the RPUF and OBPUF architectures, with significantly improved attack efficiency over previous work.",
+  "text_02": "<strong>Systematic evaluation</strong> of ML-attack resilience, uniformity, uniqueness, and hardware overhead of the proposed architecture.",
+  "text_03": "<strong>Also during the M.Sc.:</strong> a quantized CNN for MNIST digit recognition, implemented in RTL and brought up on an Altera Cyclone-II FPGA:  see the <a href=\"./#projects\">projects section</a>."
+}

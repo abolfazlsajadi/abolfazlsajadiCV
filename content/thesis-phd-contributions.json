@@ -1,0 +1,8 @@
+{
+  "text_01": "<strong>PROACT SoC:  full-chip design &amp; integration:</strong> designed the full dual-core RISC-V SoC:  the RTL architecture, full-chip integration and all peripheral &amp; control logic (SPI, configurable UART, control/status registers, PRNG):  integrating the Ibex core and the AES, Ascon and Xoodyak co-processors as third-party IP; prototyped on Xilinx Artix-7 and Zynq-7000 FPGAs.",
+  "text_02": "<strong>Software stack &amp; documentation:</strong> C and Python control libraries, a control GUI, and user documentation for the chip.",
+  "text_03": "<strong>ASIC implementation:</strong> synthesis for GlobalFoundries 22FDX in Cadence Genus, functional and SDF-annotated gate-level verification in Xcelium; place-and-route, sign-off and GDSII with the imec team, including the 28-pin DIP bonding diagram:  taped out via a Europractice MPW (50 packaged units).",
+  "text_04": "<strong>ASSESS:</strong> a cycle-accurate pre-silicon leakage-analysis methodology that localizes gate-level leakage from toggle activity, benchmarked against RTL-PAT, PATCH and ACA on RISC-V/AES designs (ACM CF Companion '26).",
+  "text_05": "<strong>Countermeasure studies:</strong> a systematic comparison of side-channel countermeasures for RISC-V-based SoCs (IEEE NorCAS 2024) and a security/cost trade-off study of AES software countermeasures (ACM CF '26 poster).",
+  "text_06": "<strong>Measurement platform:</strong> a ChipWhisperer CW308 target board designed in Altium with an automated CPA/TVLA side-channel evaluation flow, ready for the post-silicon phase."
+}

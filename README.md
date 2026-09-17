@@ -1,23 +1,58 @@
-# Site update — what's inside
+# Abolfazl Sajadi's portfolio
 
-- `index.html`, `styles.css` — the deployed site with the priority-1 fixes applied
-- `assets/proact-die.jpg` — photo of the fabricated chip, used above the floorplan
-- `apply.sh` — copies the files into your repo and commits (see header for usage)
+Production: https://abolfazlsajadi.com/
 
-Before running `apply.sh`, export **CV Improved** to PDF and save it here as
-`Abolfazl_Sajadi_CV.pdf`; the script will replace `assets/Abolfazl_Sajadi_CV.pdf`
-so the "Download CV" button serves the new version at the same URL.
+The visitor-facing website is static HTML, CSS and JavaScript. Local images,
+responsive AVIF/WebP sources, circuit graphics and signal separators are retained.
+The online editing layer is Pages CMS, which uses GitHub sign-in and repository
+access. Its code is not loaded by visitors.
 
-## Changes applied to index.html
+## Edit online
 
-1. PROACT stat tile: "Taped out · fabrication in progress" → "Working silicon · fabricated, packaged, brought up"
-2. Hero tagline: "…taped out in GlobalFoundries 22 nm (22FDX)." → "…fabricated in GlobalFoundries 22 nm (22FDX) and working in silicon."
-3. Real die photo + caption inserted above the stylized floorplan
-4. Experience: removed Ryan iMachines, Shahab Co. and the "Earlier" row so it matches the PDF (Shahab remains on the Home-meter project card)
-5. Publications: intro reworded; all seven "AI paper memory" links renamed "Summary"
-6. Stylesheet cache-buster bumped (`styles.css?v=silicon1`)
+See [the editor guide](docs/EDITOR.md). The editor entrance is `/admin/`.
+The owner must connect the Pages CMS GitHub app to this repository once.
 
-## Not changed (your decision needed)
+Editable content lives in `content/*.json`. `.pages.yml` defines the forms:
 
-- PhD end date: site says **Feb 2027**, PDF says **Dec 2026**. Search for `FEB 2027` in index.html (3 places) once you decide.
-- Priority-2 readability items (section-header decorations, pipeline lane, hero layers, nav grouping) are described in Review Notes and left untouched.
+- Student supervision with an expandable list of completed bachelor’s theses.
+- Existing homepage introduction, PROACT, experience, projects, publications,
+  education, skills, honors, teaching and activity text.
+- The four thesis pages and each page's search/sharing title and description.
+- CV PDF uploads and selection of the downloadable file.
+
+Adding a new project card, section or circuit graphic remains a layout change.
+The forms edit the existing text and allow adding/removing completed thesis entries.
+This keeps the current design stable while supporting routine updates.
+
+## Build and preview
+
+```sh
+npm ci --ignore-scripts --no-bin-links --no-audit --no-fund
+npm run build:site
+npm test
+python3 -m http.server 8092 --directory _site
+```
+
+Open `http://localhost:8092/`. Node 24 is used by the publishing workflow.
+`--no-bin-links` supports external drives without symbolic links.
+
+- `content/`: editable text and PDF selection; authoritative for routine content.
+- `templates/`: page layout with content placeholders; edit these for layout changes.
+- `scripts/cms-bindings.json`: typed mapping between forms and template placeholders.
+- `styles.css`, `script.js`: readable sources.
+- `styles.min.css`, `script.min.js`: generated production assets with hashed versions.
+- Root HTML: generated static pages, retained for the existing local preview workflow.
+- `_site/`: generated public artifact; ignored in Git.
+
+Commit the content, templates, sources and generated HTML/minified files together
+when editing locally. Online edits only commit content; Actions rebuilds the pages
+and deploys them. After pulling an online edit, run `npm run build` before previewing.
+Do not edit generated HTML as the only source: the next build replaces it.
+
+Publishing on a push to `main` renders all content, minifies assets, validates
+content and local links, and uploads only `_site/`. Build tools, templates, tests
+and content-source JSON are not included in the public artifact. A failed check
+stops deployment and leaves the previous live site available.
+
+The portrait preload and `<picture>` sources must use the same candidates and
+rendered sizes. No front-end package or editor library is required by visitors.
