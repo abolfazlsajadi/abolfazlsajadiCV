@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>M.Sc. Thesis — Abolfazl Sajadi</title>
+<title>M.Sc. Thesis:  Abolfazl Sajadi</title>
 <meta name="description" content="M.Sc. thesis of Abolfazl Sajadi at the University of Tehran: machine-learning-based modeling attacks on PUFs and SQ-PUF, an ML-attack-resistant authentication architecture. Defended 19 September 2021, grade Excellent.">
 <link rel="canonical" href="https://abolfazlsajadi.com/thesis-msc.html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://abolfazlsajadi.com/thesis-msc.html">
-<meta property="og:title" content="M.Sc. Thesis — Abolfazl Sajadi">
-<meta property="og:description" content="Implementation of Machine-Learning-based Attacks on PUF — University of Tehran, defended 2021, grade Excellent.">
+<meta property="og:title" content="M.Sc. Thesis:  Abolfazl Sajadi">
+<meta property="og:description" content="Implementation of Machine-Learning-based Attacks on PUF:  University of Tehran, defended 2021, grade Excellent.">
 <meta property="og:image" content="https://abolfazlsajadi.com/assets/portrait.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="M.Sc. Thesis — Abolfazl Sajadi">
-<meta name="twitter:description" content="Implementation of Machine-Learning-based Attacks on PUF — University of Tehran, defended 2021, grade Excellent.">
+<meta name="twitter:title" content="M.Sc. Thesis:  Abolfazl Sajadi">
+<meta name="twitter:description" content="Implementation of Machine-Learning-based Attacks on PUF:  University of Tehran, defended 2021, grade Excellent.">
 <meta name="theme-color" content="#0a0f16" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f4f7f9" media="(prefers-color-scheme: light)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' rx='2' fill='none' stroke='%233ce8a8' stroke-width='2'/%3E%3Cpath stroke='%233ce8a8' stroke-width='2' stroke-linecap='round' d='M12 8V4M20 8V4M12 28v-4M20 28v-4M8 12H4M8 20H4M28 12h-4M28 20h-4'/%3E%3Crect x='13.5' y='13.5' width='5' height='5' fill='%233ce8a8'/%3E%3C/svg%3E">
 <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
-<link rel="stylesheet" href="styles.css?v=48c12">
+<link rel="stylesheet" href="styles.css?v=20260917-design4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,7 +34,7 @@
     "sameAs": ["https://orcid.org/0000-0003-0657-7022"]
   },
   "sourceOrganization": { "@type": "CollegeOrUniversity", "name": "University of Tehran" },
-  "inSupportOf": "M.Sc. in Electrical Engineering — Digital Electronic Systems, University of Tehran",
+  "inSupportOf": "M.Sc. in Electrical Engineering:  Digital Electronic Systems, University of Tehran",
   "contributor": [ { "@type": "Person", "name": "Bijan Alizadeh" } ],
   "about": ["Physical Unclonable Functions", "Machine-learning modeling attacks", "IoT authentication", "Hardware security"]
 }
@@ -182,7 +182,7 @@
         <p class="spec-cap" aria-hidden="true">// fact sheet · thesis_msc</p>
         <dl>
           <div class="spec-row"><dt>TITLE</dt><dd>Implementation of Machine-Learning-based Attacks on PUF</dd></div>
-          <div class="spec-row"><dt>DEGREE</dt><dd>M.Sc. in Electrical Engineering — Digital Electronic Systems</dd></div>
+          <div class="spec-row"><dt>DEGREE</dt><dd>M.Sc. in Electrical Engineering:  Digital Electronic Systems</dd></div>
           <div class="spec-row"><dt>UNIVERSITY</dt><dd>University of Tehran, Tehran, Iran</dd></div>
           <div class="spec-row"><dt>DEFENDED</dt><dd>19 September 2021</dd></div>
           <div class="spec-row"><dt>GRADE</dt><dd>Excellent</dd></div>
@@ -205,13 +205,12 @@
         </div>
         <span class="sec-signal mono">clk</span>
         <span class="sec-rule sig-clk" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_clk"/></svg></span>
-        <span class="sec-sig mono" aria-hidden="true">CSR 0x00 · RO</span>
       </header>
 
       <div class="prose reveal">
-        <p>Securing communication in the Internet of Things is not just an encryption problem — it is an <em>authentication</em> problem. If a device cannot prove who it is, an attacker can simply replay or relay legitimate messages, and encryption alone does not help. Physical Unclonable Functions (PUFs) offer a lightweight answer: they derive a device-unique challenge–response behaviour from uncontrollable manufacturing variation, giving every chip a fingerprint that is cheap to evaluate and hard to clone.</p>
+        <p>Securing communication in the Internet of Things is not just an encryption problem:  it is an <em>authentication</em> problem. If a device cannot prove who it is, an attacker can simply replay or relay legitimate messages, and encryption alone does not help. Physical Unclonable Functions (PUFs) offer a lightweight answer: they derive a device-unique challenge–response behaviour from uncontrollable manufacturing variation, giving every chip a fingerprint that is cheap to evaluate and hard to clone.</p>
         <p>PUFs, however, have a well-known weakness: their challenge–response behaviour can often be learned. This thesis attacks the problem from both sides. On the offensive side, I developed two machine-learning strategies that model the behaviour of RPUF and OBPUF architectures with significantly improved attack efficiency compared to prior approaches.</p>
-        <p>On the defensive side, the lessons from those attacks led to <strong>SQ-PUF</strong>, a secure, scalable PUF-based authentication architecture designed to resist machine-learning attacks. I evaluated SQ-PUF for ML-attack resilience as well as the standard PUF quality metrics — uniformity and uniqueness — and its hardware overhead. The same research line later produced <strong>DC-PUF</strong>, an ML-resistant PUF-based authentication protocol for resource-constrained IoT, published in the <em>Journal of Network &amp; Computer Applications</em>.</p>
+        <p>On the defensive side, the lessons from those attacks led to <strong>SQ-PUF</strong>, a secure, scalable PUF-based authentication architecture designed to resist machine-learning attacks. I evaluated SQ-PUF for ML-attack resilience as well as the standard PUF quality metrics:  uniformity and uniqueness:  and its hardware overhead. The same research line later produced <strong>DC-PUF</strong>, an ML-resistant PUF-based authentication protocol for resource-constrained IoT, published in the <em>Journal of Network &amp; Computer Applications</em>.</p>
       </div>
     </div>
   </section>
@@ -229,7 +228,6 @@
         </div>
         <span class="sec-signal mono">valid</span>
         <span class="sec-rule sig-valid" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_valid"/></svg></span>
-        <span class="sec-sig mono" aria-hidden="true">CSR 0x04 · RO</span>
       </header>
 
       <ul class="bullets teach-list reveal">
@@ -237,7 +235,7 @@
         <li><strong>SQ-PUF:</strong> a <a href="http://ijece.org/Article/34099" target="_blank" rel="noopener">secure, scalable, ML-attack-resistant PUF-based authentication architecture<span class="visually-hidden"> (paper, opens in a new tab)</span></a>, published in the <em>Iranian Journal of Electrical and Computer Engineering</em>.</li>
         <li><strong>Two ML attack strategies</strong> against the RPUF and OBPUF architectures, with significantly improved attack efficiency over previous work.</li>
         <li><strong>Systematic evaluation</strong> of ML-attack resilience, uniformity, uniqueness, and hardware overhead of the proposed architecture.</li>
-        <li><strong>Also during the M.Sc.:</strong> a quantized CNN for MNIST digit recognition, implemented in RTL and brought up on an Altera Cyclone-II FPGA — see the <a href="index.html#projects">projects section</a>.</li>
+        <li><strong>Also during the M.Sc.:</strong> a quantized CNN for MNIST digit recognition, implemented in RTL and brought up on an Altera Cyclone-II FPGA:  see the <a href="index.html#projects">projects section</a>.</li>
       </ul>
     </div>
   </section>
@@ -255,7 +253,6 @@
         </div>
         <span class="sec-signal mono">en</span>
         <span class="sec-rule sig-en" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_en"/></svg></span>
-        <span class="sec-sig mono" aria-hidden="true">CSR 0x08 · RO</span>
       </header>
 
       <ul class="tags reveal">
@@ -283,7 +280,6 @@
         </div>
         <span class="sec-signal mono">done</span>
         <span class="sec-rule sig-done" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_done"/></svg></span>
-        <span class="sec-sig mono" aria-hidden="true">CSR 0x0C · RO</span>
       </header>
 
       <ol class="pub-list">
@@ -292,7 +288,7 @@
             <p class="pub-meta"><span class="pub-badge mono">JOURNAL</span></p>
             <h3 class="pub-title"><a class="pub-link" href="http://ijece.org/Article/34099" target="_blank" rel="noopener">SQ-PUF: A Resistant PUF-Based Authentication Protocol against Machine-Learning Attacks<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p class="pub-authors"><strong>A. Sajadi</strong>, B. Alizadeh</p>
-            <p class="pub-venue"><em>Iranian Journal of Electrical and Computer Engineering</em> — the thesis's defensive architecture</p>
+            <p class="pub-venue"><em>Iranian Journal of Electrical and Computer Engineering</em>:  the thesis's defensive architecture</p>
             <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           </article>
         </li>
@@ -301,7 +297,7 @@
             <p class="pub-meta"><span class="pub-badge mono">JOURNAL</span><span class="pub-year mono">2023</span></p>
             <h3 class="pub-title"><a class="pub-link" href="https://doi.org/10.1016/j.jnca.2023.103693" target="_blank" rel="noopener">DC-PUF: ML-Resistant PUF-Based Authentication for Resource-Constrained IoT<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
             <p class="pub-authors"><strong>A. Sajadi</strong>, A. Shabani, B. Alizadeh</p>
-            <p class="pub-venue"><em>J. Network &amp; Computer Applications</em>, vol. 217, 2023 — from the same research line · <span class="doi mono">DOI 10.1016/j.jnca.2023.103693</span></p>
+            <p class="pub-venue"><em>J. Network &amp; Computer Applications</em>, vol. 217, 2023:  from the same research line · <span class="doi mono">DOI 10.1016/j.jnca.2023.103693</span></p>
             <span class="pub-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           </article>
         </li>
@@ -323,7 +319,6 @@
         </div>
         <span class="sec-signal mono">ack</span>
         <span class="sec-rule sig-ack" aria-hidden="true"><svg class="sec-wave" focusable="false"><use href="#wave_ack"/></svg></span>
-        <span class="sec-sig mono" aria-hidden="true">CSR 0x10 · RO</span>
       </header>
 
       <div class="more-theses">
@@ -378,11 +373,11 @@
     <p class="mono foot-updated">last updated: AUG 2026</p>
   </div>
   <div class="container">
-    <p class="foot-privacy mono">Visit statistics only — IP, pages viewed, referrer, browser · kept &le; 90 days · abolfazlsajadi1993@gmail.com</p>
+    <p class="foot-privacy mono">Visit statistics only:  IP, pages viewed, referrer, browser · kept &le; 90 days · abolfazlsajadi1993@gmail.com</p>
   </div>
 </footer>
 
-<script src="script.js?v=48c2"></script>
+<script src="script.js?v=20260917-design4"></script>
 <!-- first-party visit beacon -> /api/hit on this domain (Cloudflare Worker).
      One POST per pageview: path + referrer. No cookies, fails silently.
      See CV_2026/website/analytics/ for the full setup. -->
